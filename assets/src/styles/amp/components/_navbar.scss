@@ -60,12 +60,17 @@
 }
 
 .nx-sidebar {
-  background-color: var(--navbar-bg-color);
-  color: var(--black-high);
+  // background-color: var(--navbar-bg-color);
+  background-color: #ededee;
+  // color: var(--black-high);
+  color: #58595b;
   min-width: 300px;
   width: 300px;
   .nx-icon {
     fill: var(--black-medium);
+  }
+  .nx-nav-item {
+    border-bottom-color:rgba(0, 0, 0, 0.08);
   }
   .nx-dropdown-items::after {
     content: '';
