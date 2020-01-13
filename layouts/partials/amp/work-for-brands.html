@@ -1,0 +1,18 @@
+{{$domain := .Site.Params.domain }}
+
+{{ if .Site.Params.showWFB}}
+{{ if or (eq .Site.Params.locale "en-IE") (eq .Site.Params.locale "en-HU") (eq .Site.Params.locale "zh-HK") (eq .Site.Params.locale "pt-BR") (eq .Site.Params.locale "de-AT") (eq .Site.Params.locale "fr-LU") (eq .Site.Params.locale "sv-SE") (eq .Site.Params.locale "cs-CZ") (eq .Site.Params.locale "da-DK") (eq .Site.Params.locale "fi-FI") (eq .Site.Params.locale "en-JP") (eq .Site.Params.locale "nb-NO") (eq .Site.Params.locale "pt-PT") (eq .Site.Params.locale "pl-PL") (eq .Site.Params.locale "tr-TR") (eq .Site.Params.locale "en-IN") }}
+{{ else }}
+<section class="grid-container-logos">
+    {{ range seq 12 }}
+    <div class="mx-auto">
+            <amp-ad width="150"
+            height="50"
+            type="doubleclick"
+            data-slot="/53457124/{{ $domain }}/wfb{{ . }}">
+        </amp-ad>
+    </div>
+    {{ end }}
+</section>
+{{ end }}
+{{ end }}

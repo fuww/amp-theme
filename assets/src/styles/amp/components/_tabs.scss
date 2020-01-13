@@ -1,0 +1,112 @@
+
+
+  /* Styles for the flex layout based tabs */
+  amp-selector[role=tablist].tabs-with-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 42px;
+
+    @media (max-width: 320px) {
+      max-width: 270px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 480px) {
+      padding-top: 72px;
+    }
+  }
+  amp-selector[role=tablist].tabs-with-flex [role=tab] {
+      flex-grow: 1;
+      /* custom styling, feel free to change */
+      text-align: center;
+      padding: var(--space-1);
+  }
+  amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
+      outline: none;
+      /* custom styling, feel free to change */
+      border-bottom: 2px solid $theme-primary;
+    //   border-bottom: 2px solid var(--brand-primary);
+  }
+  amp-selector[role=tablist].tabs-with-flex [role=tabpanel]  {
+      display: none;
+      width: 100%;
+      order: 1; /* must be greater than the order of the tab buttons to flex to the next line */
+      /* custom styling, feel free to change */
+      padding: var(--space-4);
+
+      @media (max-width: 480px) {
+        padding: 20px 10px;
+    }
+  }
+  amp-selector[role=tablist].tabs-with-flex [role=tab][selected] + [role=tabpanel] {
+      display: block;
+  }
+
+  /* Styles for the selector based tabs */
+  amp-selector[role=tablist].tabs-with-selector {
+      display: flex;
+  }
+  amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
+      outline: none;
+      /* custom styling, feel free to change */
+      border-bottom: 2px solid $theme-primary;
+    //   border-bottom: 2px solid var(--brand-primary, $theme-primary);
+  }
+  amp-selector[role=tablist].tabs-with-selector {
+      display: flex;
+  }
+  amp-selector[role=tablist].tabs-with-selector [role=tab] {
+    /* custom styling, feel free to change */
+    width: 100%;
+    text-align: center;
+    padding: var(--space-1);
+  }
+  amp-selector.tabpanels [role=tabpanel] {
+    display: none;
+    /* custom styling, feel free to change */
+    padding: var(--space-4);
+  }
+  amp-selector.tabpanels [role=tabpanel][selected] {
+    outline: none;
+    display: block;
+  }
+
+  .mdc-tab {
+    position: relative;
+    font-family: 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: .875rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+    letter-spacing: .08929em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    z-index: 1;
+}
+
+amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
+    color: $theme-primary;
+}

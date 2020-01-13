@@ -1,0 +1,13 @@
+@mixin basic-styles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: teal;
+    // color: white;
+    // font-family: Arial;
+    // font-size: 48px;
+  }
+  @mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+  }

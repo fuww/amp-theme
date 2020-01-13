@@ -1,0 +1,24 @@
+{{ define "hero"}}
+<header class="header-hero">
+    {{ partial "_shared/hero-developers" . }}
+</header>
+{{ end }}
+{{ define "sidebarmenu" }}
+{{- partial "_shared/menu-developers.html" . -}}
+{{ end}}
+{{ define "main" }}
+<div class="grid-content">
+{{ .Content }}
+        <section class="recent-posts">            
+                <div class="section-title">                
+                    <h2><span>All Posts</span></h2>                
+                </div>            
+                <div class="row listrecent">
+                        {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
+                    {{ range $post_paginator.Pages }}
+                        {{- partial "list/card" . -}}
+                    {{end}}
+                </div>
+            </section>
+</div>
+{{ end }}

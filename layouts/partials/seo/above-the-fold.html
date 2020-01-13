@@ -1,0 +1,45 @@
+{{ if ne .Params.amp.enable false }}
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        {{ partial "stylesheet" | safeCSS }}
+        {{ if eq .Type "developers" }}
+        {{ partial "highlight-syntax" | safeCSS }}
+        {{ end }}
+        {{ if eq .Type "jobs" }}
+ :root {
+    {{if .Params.theme_primary_ebp}}--theme-primary-ebp:{{ index .Params "theme_primary_ebp" }};{{else}}{{end}}
+    {{if .Params.theme_secondary_ebp}}--theme-secondary-ebp:{{ index .Params "theme_secondary_ebp" }};{{else}}{{end}}
+    
+    --primary-font-family-ebp:{{ if isset .Params "primary_font_family_ebp" }}{{ .Params.primary_font_family_ebp | safeCSS }}, {{ end }}-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --secondary-font-family-ebp:{{ if isset .Params "secondary_font_family_ebp" }}{{ .Params.secondary_font_family_ebp | safeCSS }}, {{ end }}-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --primary_font_weight_ebp:{{ if isset .Params "primary_font_weight_ebp" }}{{ .Params.primary_font_weight_ebp | safeCSS }}{{ else }}300{{ end }};
+    --secondary_font_weight_ebp:{{ if isset .Params "secondary_font_weight_ebp" }}{{ .Params.secondary_font_weight_ebp | safeCSS }}{{ else }}700{{ end }};
+
+    {{if .Params.hero_border_color}}--hero-border-color:{{ index .Params "hero_border_color" }};{{else}}{{end}}
+    {{if .Params.tab_color}}--tab-color:{{ index .Params "tab_color" }};{{else}}{{end}}
+    {{if .Params.tab_underline_color}}--tab-underline-color:{{ index .Params "tab_underline_color" }};{{else}}{{end}}
+    {{if .Params.heading_color}}--heading-color:{{ index .Params "heading_color" }};{{else}}{{end}}
+    {{if .Params.heading_background_color}}--heading-background-color:{{ index .Params "heading_background_color" }};{{else}}{{end}}
+    {{if .Params.social_icon_color}}--social-icon-color:{{ index .Params "social_icon_color" }};{{else}}{{end}}
+}
+{{ end }}
+{{ if isset .Params "custom_style" }}{{ .Params.custom_style | safeCSS }}{{end}}
+{{ if isset .Params "fullpage_background" }}
+:root {
+--fullpage-background:{{ .Params.fullpage_background | safeCSS }};
+}
+footer {
+    margin-top: 0;
+}
+.fullpage-background {
+    height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/landing/images/home/header.jpg);
+    background-image: var(--fullpage-background);
+}{{ end }}
+    </style>
+{{ else }}
+    {{ partial "stylesheet.regular" . }}
+{{ end }}

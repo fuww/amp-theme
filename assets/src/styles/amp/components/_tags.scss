@@ -1,0 +1,11 @@
+.tags--borderless .tag-button, .tags--borderless>.button, .tags--borderless>a, .tags--borderless>li {
+    border: none;
+    color: rgba(0,0,0,.68);
+    background: rgba(0,0,0,.05);
+}
+
+.tags a {
+    font-weight: 400;
+    font-family: var(--heading-font-family);
+    text-transform: uppercase;
+}

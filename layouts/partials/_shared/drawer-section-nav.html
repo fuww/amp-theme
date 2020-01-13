@@ -1,0 +1,14 @@
+<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            {{ $sectionPages := where .Site.Pages "Section" .Section }}
+            {{ if ge (len $sectionPages) 1 }}
+                {{ range $sectionPages }}
+                    <a class="mdc-list-item" href="{{.RelPermalink }}" >
+                    <span class="mdc-list-item__text">{{ .Title }}</span>
+                    </a>
+                {{ end }}
+            {{ end }}
+        </nav>
+    </div>
+</aside>

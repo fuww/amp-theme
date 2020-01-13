@@ -1,0 +1,50 @@
+.no-padding{
+  padding: 0;
+}
+
+.container{
+  width: auto;
+  padding: 0;
+}
+.article-post {
+  p,li,div{
+    color: #404040;
+    outline: none;
+  }
+  .panel{
+    display:none;
+    padding: 20px;
+    h2{
+      text-align: center;
+    }
+  }
+  .panel.active{
+    display:block;
+  }
+  .accordion{
+    i{
+      margin-left:auto;
+    }
+    .panel {
+      display: none;
+    }
+  }
+  .accordion.active{
+    i{
+      transform: rotate(180deg);
+    }
+    .panel {
+      display: block;
+    }
+  }
+}
+article {
+  a{
+    text-decoration: none;
+    font-weight:bold;
+    cursor:pointer;
+  }
+}
+img{
+  max-width: 100%;
+}

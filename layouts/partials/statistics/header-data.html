@@ -1,0 +1,118 @@
+<div class="clearfix col-10 center     section--center mdl-grid mdl-grid--no-spacing fu-body-container-position fu-color--white">
+        {{ if and (.Params.country) (.Params.continent) }}
+        <div class="sm-col sm-col-6 md-col-8 lg-col-7      col-4-xs mdl-cell mdl-cell--7-col mdl-cell--8-col-tablet mdl-cell--4-phone">
+            <div class="fu-container-support-text--box">
+                    <h2 class="h4 pb1 fu-statistics-subtitle center border-bottom">{{ .Params.sub_title }}</h2>
+                <table class="fu-statistics-table--no-margin">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text1 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data1 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text2 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data2 }}</td>
+                        </tr>
+                        {{if .Params.country_general_data_text3}}
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text3 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data3 }}</td>
+                        </tr>
+                        {{else}}{{end}}
+                        {{if .Params.country_general_data_text4}}
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text4 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data4 }}</td>
+                        </tr>
+                        {{else}}{{end}}
+                        {{if .Params.country_general_data_text5}}
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text5 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data5 }}</td>
+                        </tr>
+                        {{else}}{{end}}
+                        {{if .Params.country_general_data_text6}}
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text6 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data6 }}</td>
+                        </tr>
+                        {{else}}{{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="sm-col sm-col-6 md-col-8 lg-col-5    mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-phone fu-statistics-tabs-container">
+                <div class="clearfix pl2 mt3">
+                        <div class="sm-col sm-col-6 center"><a href="#{{ .Params.country | urlize }}"
+                            class="btn btn-outline center mt0 mb3 inline-block">
+                            {{ .Params.country }}
+                        </a>
+                    </div>
+                        <div class="sm-col sm-col-6 center"><a href="#{{ .Params.continent | urlize }}"
+                            class="btn btn-outline center mt0 mb3 inline-block">
+                            {{ .Params.continent }}
+                        </a></div>
+                      </div>
+        </div>
+        {{ else }}
+        <div class="sm-col sm-col-4 md-col-8 lg-col-12        mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-phone">
+            <div class="fu-container-support-text--box">
+                <h2 class="fu-statistics-subtitle">
+                    {{ .Params.sub_title }}</h2>
+                <hr class="fu-statistics-horizontalrule--normal">
+                <table class="fu-statistics-table--no-margin">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text1 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data1 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text2 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data2 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text3 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data3 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text4 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data4 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text5 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data5 }}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <strong>{{ .Params.country_general_data_text6 }}</strong>
+                            </td>
+                            <td align="left">{{ .Params.country_general_data6 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{ end }}
+    </div>

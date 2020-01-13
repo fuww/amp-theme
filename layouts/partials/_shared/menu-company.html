@@ -1,0 +1,31 @@
+<!-- sidebar start -->
+<aside class="aside-nav">
+    <ul class="list-reset">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.company }}
+        {{ if .HasChildren }}
+        <li class="{{ if $currentPage.HasMenuCurrent "company" . }}active{{ end }}">
+            {{/* <a href="#">  */}}
+            <a href="{{ .URL }}" class="text-decoration-none">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        <ul class="sub-menu pl1 list-style-none">
+            {{ range .Children }}
+            <li class="{{ if $currentPage.IsMenuCurrent "company" . }}active{{ end }}">
+                <a href="{{ .URL }}" class="text-decoration-none">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ else }}
+        <li>
+            <a href="{{ .URL }}" class="text-decoration-none">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+</aside>

@@ -1,0 +1,14 @@
+.aside-nav {
+    // padding: 4px;
+    color: var(--black-medium);
+    font-family: var(--heading-font-family);
+    // font-size:15px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+line-height: 1.6rem;
+
+li.active {
+    font-weight: 700;
+}
+}

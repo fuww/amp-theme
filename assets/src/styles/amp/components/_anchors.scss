@@ -1,0 +1,7 @@
+a, a:active, a:visited {
+    color: inherit;
+  }
+
+  a:-webkit-any-link {
+    text-decoration: none;
+}

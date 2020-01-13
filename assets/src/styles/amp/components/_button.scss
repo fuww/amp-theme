@@ -1,0 +1,183 @@
+.btn {
+  // btn typography is in typography
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  will-change: transform, opacity;
+  padding: 0 8px 0 8px;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 64px;
+  height: 36px;
+  border: none;
+  outline: none;
+  /* @alternate */
+  line-height: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.btn::before, .btn::after {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+.btn::before {
+  transition: opacity 15ms linear, background-color 15ms linear;
+  z-index: 1;
+}
+
+.btn-primary { 
+  background-color: var(--theme-primary, #0002ff);
+  // border-radius: 4px;
+}
+
+.btn-outline {
+  // border-radius: 4px;
+  color: var(--theme-primary, #0002ff)
+}
+
+.btn-outline, .btn-outline:hover {
+  border-color: currentcolor;
+}
+
+
+  .btn::before, .btn::after {
+    top: calc(50% - 100%);
+    /* @noflip */
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%;
+  }
+  .btn.mdc-ripple-upgraded::after {
+  }
+  .btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  .btn:active {
+    outline: none;
+  }
+  .btn:hover {
+    cursor: pointer;
+  }
+  .btn.btn--dense {
+    border-radius: 4px;
+  }
+  .btn:not(:disabled) {
+    background-color: transparent;
+  }
+  .btn .btn__icon {
+    /* @noflip */
+    margin-left: 0;
+    /* @noflip */
+    margin-right: 8px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    vertical-align: top;
+  }
+  [dir=rtl] .btn .btn__icon, .btn .btn__icon[dir=rtl] {
+    /* @noflip */
+    margin-left: 8px;
+    /* @noflip */
+    margin-right: 0;
+  }
+  .btn:not(:disabled) {
+    color: #6200ee;
+    /* @alternate */
+    color: var(--theme-primary, #6200ee);
+  }
+  .btn::before, .btn::after {
+    background-color: #6200ee;
+  }
+  @supports not (-ms-ime-align: auto) {
+    .btn::before, .btn::after {
+      /* @alternate */
+      background-color: var(--theme-primary, #6200ee);
+    }
+  }
+  .btn:hover::before {
+    opacity: 0.04;
+  }
+  
+  .btn__label + .btn__icon {
+    /* @noflip */
+    margin-left: 8px;
+    /* @noflip */
+    margin-right: 0;
+  }
+  [dir=rtl] .btn__label + .btn__icon, .btn__label + .btn__icon[dir=rtl] {
+    /* @noflip */
+    margin-left: 0;
+    /* @noflip */
+    margin-right: 8px;
+  }
+  
+  svg.btn__icon {
+    fill: currentColor;
+  }
+  
+  .btn--raised .btn__icon,
+  .btn--unelevated .btn__icon,
+  .btn-outline .btn__icon {
+    /* @noflip */
+    margin-left: -4px;
+    /* @noflip */
+    margin-right: 8px;
+  }
+  [dir=rtl] .btn--raised .btn__icon, .btn--raised .btn__icon[dir=rtl],
+  [dir=rtl] .btn--unelevated .btn__icon,
+  .btn--unelevated .btn__icon[dir=rtl],
+  [dir=rtl] .btn-outline .btn__icon,
+  .btn-outline .btn__icon[dir=rtl] {
+    /* @noflip */
+    margin-left: 8px;
+    /* @noflip */
+    margin-right: -4px;
+  }
+  .btn--raised .btn__label + .btn__icon,
+  .btn--unelevated .btn__label + .btn__icon,
+  .btn-outline .btn__label + .btn__icon {
+    /* @noflip */
+    margin-left: 8px;
+    /* @noflip */
+    margin-right: -4px;
+  }
+  [dir=rtl] .btn--raised .btn__label + .btn__icon, .btn--raised .btn__label + .btn__icon[dir=rtl],
+  [dir=rtl] .btn--unelevated .btn__label + .btn__icon,
+  .btn--unelevated .btn__label + .btn__icon[dir=rtl],
+  [dir=rtl] .btn-outline .btn__label + .btn__icon,
+  .btn-outline .btn__label + .btn__icon[dir=rtl] {
+    /* @noflip */
+    margin-left: -4px;
+    /* @noflip */
+    margin-right: 8px;
+  }
+  .btn-outline {
+    border-style: solid;
+    padding: 0 14px 0 14px;
+    border-width: 2px;
+  }
+  .btn-outline:disabled {
+    border-color: rgba(0, 0, 0, 0.37);
+  }
+  .btn-outline:not(:disabled) {
+    border-color: #6200ee;
+    /* @alternate */
+    border-color: var(--theme-primary, #6200ee);
+  }
+  
+  .btn--dense {
+    height: 32px;
+    font-size: 0.8125rem;
+  }

@@ -1,0 +1,64 @@
+{{ if isset .Params "test"}}
+<h2>Debug</h2> 
+{{/* {{ range .Resources }} */}}
+<h2>List resources</h2> 
+{{ range .Resources.ByType "image" }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }} </a>{{ . }}</li>
+{{ end }}
+
+{{/*  {{ $image := (.Resources.ByType "image").GetMatch "header*" }}  */}}
+{{/* {{ $image := (.Resources.ByType "image").GetMatch "**header.jpg" }} */}}
+{{/*  {{ $image := (.Resources.GetMatch "**-header.jpg") }}  */}}
+{{/*  {{ $image := ((.Resources.ByType "image").GetMatch "**header.jpg").Content }}  */}}
+{{/*  {{ $image := (.Resources.GetMatch "**-header**") }} only matches image-header-placeholder.svg but not image-header.jpg  */}}
+{{/*  {{ $image := (.Resources.GetMatch "image-header.jpg") }}  */}}
+{{/*  {{ $image := (.Resources.GetMatch "somename.jpg") }} Does not work  */}}
+{{/*  {{ $image := .GetMatch "header" }}  */}}
+{{/*  {{  $.Page.Resources.GetMatch (.Get 0)}}  */}}
+<h2>headless</h2>
+{{/*  {{ $headless := .Site.GetPage "/headless-bundle" }}  */}}
+{{/*  {{ $reusablePages := $headless.Resources.Match "header*" }}  */}}
+{{/*  {{ $image := ($headless.Resources.ByType "image").GetMatch "*header.jpg" }}  */}}
+
+{{/*  {{ $image := (.Resources.ByType "image").GetMatch "*header.jpg" }}  */}}
+{{/*  {{ $placeholder := (.Resources.ByType "image").GetMatch "*placeholder.svg" }}  */}}
+
+
+
+
+<h2>List params</h2> 
+{{ range $key, $value := $.Params }}
+     <li>{{ $.Param $key }}</li>
+{{ end }}
+<p>
+
+
+{{/*  {{ with .Resources.GetMatch "header" }}
+{{ . }}
+<amp-img
+{{ with .src }}src="{{ . }}"{{ end }}
+>
+</amp-img>{{ end }}  */}}
+
+{{/*  src="//placehold.it/350x350"
+    srcset="//placehold.it/600x600 640w, //placehold.it/150x150 320w"
+    height="300"
+    width="300"
+    layout="responsive"
+    alt="Alternative Text"
+    attribution="CC courtesy of placehold.it"  */}}
+    {{/*  (dict "test" "yourTestData" "term" "yourTerm")  */}}
+    {{/*  {{ partial "yourPartial" (dict "test" "yourTestData" "term" "yourTerm") }}  */}}
+
+{{/*  {{ partial "amp/image" . }}  */}}
+
+</p>
+<h2>Print var</h2> 
+{{/*  {{ printf "%#v" $image }}  */}}
+{{ printf "%#v" . }}
+{{ end }}
+
+{{/*  Output should have the image filename like so:
+
+&resources.genericResource{commonResource:resources.commonResource{}, resourcePathDescriptor:resources.resourcePathDescriptor{relTargetDirFile:resources.dirFile{dir:"", file:"image-header-placeholder.svg"}, targetPathBuilder:(func(string) string)(0xd29e80), baseURLDir:"", baseTargetPathDirs:[]string{""}, baseOffset:""}, title:"image-header-placeholder.svg", name:"image-header-placeholder.svg", params:map[string]interface {}{}, sourceFilename:"/home/joost/git/landing/content/fashionunited.com/company/content-marketing/image-header-placeholder.svg", openReadSeekerCloser:(resource.OpenReadSeekCloser)(nil), resourceHash:(*resources.resourceHash)(0xc00335b7e0), overriddenSourceFs:(*hugofs.LanguageFs)(0xc000152d70), spec:(*resources.Spec)(0xc0001991f0), resourceType:"image", mediaType:media.Type{MainType:"image", SubType:"svg", mimeSuffix:"xml", Delimiter:".", Suffixes:[]string{"svg"}, fileSuffix:"svg"}, osFileInfo:(*hugofs.LanguageFileInfo)(0xc0034672c0), resourceContent:(*resources.resourceContent)(0xc00335b7c0), publishOnce:(*resources.publishOnce)(nil)}  */}}
+

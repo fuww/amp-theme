@@ -1,0 +1,4 @@
+{{/* simple div, helpful for adding styling/classes to content */}}
+<div class="{{ with .Get "class"}}{{.}}{{ end }}" id="{{ with .Get "id"}}{{.}}{{ end }}">
+    {{ .Inner }}
+</div>

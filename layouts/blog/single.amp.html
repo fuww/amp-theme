@@ -1,0 +1,37 @@
+{{ define "hero"}}
+{{ partial "_shared/hero-developers" . }}
+{{ end }}
+{{ define "title"}}
+{{/* {{ partial "_shared/author" }} */}}<div></div>
+{{ end }}
+{{ define "main" }}
+<div class="grid-content blogpost">
+  <h1 class="title" id="{{ .Title | urlize }}">{{ .Title }}</h1>
+  {{- range .Params.authors }}
+  {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+  <div class="flex author mt4 mb4">
+    <div class="u-flex-0">
+      <figure class="m0">
+        <img class="circle" src="{{ .Params.photo }}" alt="{{ .Params.name }}" width="50" height="50" />
+        <figcaption>
+          {{/* <a href="{{ .RelPermalink }}">{{ .Params.name }}</a> */}}
+        </figcaption>
+      </figure>
+    </div>
+    <div class="pl2">
+      <div class="pb1"><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></div>
+      <div><span class="post-date">{{ dateFormat "Jan 2, 2006" .Date }}</span> · <span
+          class="reading-time">{{ .ReadingTime }} min read</span></div>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+  <article class="post">
+    {{/* Sets grid for article  */}}
+    {{/* <span class="post-date">{{ dateFormat "Jan 2, 2006" .PublishDate }}</span> */}}
+    {{ .Content }}
+  </article>
+  {{/* <div class="section-divider center"><hr class="section-divider"></div>  */}}
+  {{- partial "_shared/after-post-tags" . }}
+</div>
+{{ end }}

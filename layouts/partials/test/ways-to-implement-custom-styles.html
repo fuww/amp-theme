@@ -1,0 +1,58 @@
+
+    {{ if eq .Section "jobs" }}
+    {{/*  // Minify can cause problems when inlining!  */}}
+    {{ $sassTemplate := resources.Get "sass/jobs-template.scss" }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify}}
+    {{/*  {{ $style.Content }}  */}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{/*  {{ $styles := resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS (dict "enableSourceMap" true) }}  */}}
+
+    {{/*  this works  */}}
+{{ $styles := resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS (dict "enableSourceMap" true) }}
+{{ $styles.Content }}
+
+
+        {{/*  {{ with resources.Get "main.css" }}
+      <style>{{ .Content | safeCSS }}</style>
+      {{ end }}  */}}
+
+
+    {{/*  {{ with resources.Get "sass/jobs-template.scss" | resources.ExecuteAsTemplate | toCSS | minify }}  */}}
+    {{/*  {{ with $jobsstyle }}
+    <style>{{ .Content | safeCSS }}</style>
+    {{ end }}    */}}
+    {{/*  {{ with $jobsstyle }}
+    {{ .Content | safeCSS }}
+    {{ end }}  */}}
+
+    {{ end }}
+    {{/*  {{ if eq .Section "jobs" }}
+    {{ $style := resources.Get "/jobs/mey.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}"> 
+    {{ end }}  */}}
+
+    {{/*  {{ $style := resources.Get "/jobs/jobs.css" | resources.ToCSS | resources.Minify | resources.Fingerprint }}  */}}
+    {{/*  {{ readFile "assets/main.css" | safeCSS }}
+      */}}
+      {{/*  {{ with resources.Get "main.scss" | minify }}
+      <style>{{ .Content | safeCSS }}</style>
+      {{ end }}  */}}
+
+
+    {{/*  {{ partial "employer-branding-custom-stylesheet" | safeCSS }}  */}}
+
+
+    :root {
+        {{if .Params.theme_primary_ebp}}--theme-primary-ebp:{{ index .Params "theme_primary_ebp" }};{{else}}{{end}}
+        {{if .Params.theme_secondary_ebp}}--theme-secondary-ebp:{{ index .Params "theme_secondary_ebp" }};{{else}}{{end}}
+        
+        {{ if isset .Params "secondary_font_family_ebp" }}--secondary-font-family-ebp:{{ .Params.secondary_font_family_ebp | safeCSS }}, 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;{{ end }}
+        {{ if isset .Params "primary_font_family_ebp" }}--primary-font-family-ebp:{{ .Params.primary_font_family_ebp | safeCSS }}, Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;{{ end }}
+    
+        {{if .Params.hero_border_color}}--hero-border-color:{{ index .Params "hero_border_color" }};{{else}}{{end}}
+        {{if .Params.tab_color}}--tab-color:{{ index .Params "tab_color" }};{{else}}{{end}}
+        {{if .Params.tab_underline_color}}--tab-underline-color:{{ index .Params "tab_underline_color" }};{{else}}{{end}}
+        {{if .Params.heading_color}}--heading-color:{{ index .Params "heading_color" }};{{else}}{{end}}
+        {{if .Params.heading_background_color}}--heading-background-color:{{ index .Params "heading_background_color" }};{{else}}{{end}}
+        {{if .Params.social_icon_color}}--social-icon-color:{{ index .Params "social_icon_color" }};{{else}}{{end}}
+    }

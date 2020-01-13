@@ -1,0 +1,54 @@
+{{/*  layout= intrinsic responsive */}}
+{{/* 
+    {{ $header := (.Site.Home.Resources.ByType "image").GetMatch "header*" }}
+
+
+
+    {{ range .Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+<figure>
+        <a href="{{.RelPermalink}}">
+          <img
+            srcset="
+              {{ (.Resize "320x").RelPermalink }} 320w,
+              {{ (.Resize "600x").RelPermalink }} 600w,
+              {{ (.Resize "1200x").RelPermalink }} 2x"
+            src="{{ (.Resize "600x").RelPermalink }}" />
+        </a>
+      </figure>
+{{ end }}
+
+    */}}
+{{ range .Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }} {{ . }}</a></li>
+{{ end }}
+
+{{ if isset .Params "testheader"}}
+
+{{ $header := (.Resources.ByType "image").GetMatch "header*" }}
+{{ $resized2048 := $header.Resize "2048x" }}
+{{ $resized1366 := $header.Resize "1366x" }}
+{{ $resized768 := $header.Resize "768x" }}
+{{ $resized375 := $header.Resize "375x" }}
+
+        <img src="{{ $resized2048.RelPermalink }}" alt="{{ with $.Page.Params.title }}{{ . }}{{ end }}">
+{{ end }}
+
+{{/*  layout= intrinsic responsive */}}
+{{ if (not (isset .Params "disableheaderimage"))}}
+
+<amp-img
+    src="{{ if isset .Params "image" }}{{ .Params.image }}{{ else }}/landing/theme/images/unit_denis_koval_174-2868x589.jpg{{ end }}"
+    srcset="/landing/theme/images/unit_denis_koval_174-2048x421.jpg 2048w, /landing/theme/images/unit_denis_koval_174-1366x421.jpg 1366w, /landing/theme/images/unit_denis_koval_174-768x158.jpg 768w, /landing/theme/images/unit_denis_koval_174-375x77.jpg 375w"
+    alt="{{ .Title }}"a
+    layout="responsive"
+    {{/*  You can use aspect ratio in amp-img  */}}
+    width="4.869269949" 
+    height="1"
+    class="header-hero--image ">
+    <amp-img placeholder
+        src="{{ if isset .Params "placeholder" }}{{ .Params.placeholder }}{{ else }}/landing/theme/images/unit_denis_koval_174-2868x589-placeholder.svg{{ end }}"
+        layout="fill">
+    </amp-img>
+</amp-img>
+{{ end }}

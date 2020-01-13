@@ -1,0 +1,48 @@
+{{ if ne .Params.amp.enable false }}
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js oldie"><![endif]-->
+<!--[if IE 8 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html {{ if isset $.Site.Params "amp" }}amp{{ end }} lang="en" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="{{ with $.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}" class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="utf-8"> {{/* Must be first for AMP  */}}
+    {{ if isset $.Site.Params "amp" }} 
+{{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
+    <link rel="preload" as="script" href="{{ $ampCorePath }}">{{ end }}
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="{{.Description}}" />
+    {{ partial "structure/scripts-amp" . }}
+    <link rel="icon" href="https://media.fashionunited.com/media/favicon/dark/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="60x60" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://media.fashionunited.com/media/favicon/dark/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://media.fashionunited.com/media/favicon/dark/favicon-32x32.png" />
+    <link rel="shortcut icon" href="https://media.fashionunited.com/media/favicon/dark/favicon.ico" />
+    <link rel="manifest" href="https://media.fashionunited.com/media/favicon/dark/site.webmanifest" />
+    <link rel="mask-icon" href="https://media.fashionunited.com/media/favicon/dark/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileImage" content="https://media.fashionunited.com/media/favicon/dark/mstile-144x144.png" />
+    <meta name="msapplication-config" content="https://media.fashionunited.com/media/favicon/dark/browserconfig.xml" />
+
+    {{ range .AlternativeOutputFormats -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" />    {{/*  Android address bar color  */}}
+    {{ partial "seo/main" . }}
+    {{ if .Params.googleFontLink }}<link rel="stylesheet" href="{{ .Params.googleFontLink }}">{{ end }}
+</head>
+
+<body>
+{{ if isset $.Site.Params "ampmanifest" }}
+{{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
+{{ end }}
+
+{{ else }}
+{{ partial "structure/head.no-amp" . }}
+{{ end }}
+
+{{ partial "googleTagManagerNoScript" . }}

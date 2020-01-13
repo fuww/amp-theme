@@ -1,0 +1,90 @@
+// Architecture
+// https://zellwk.com/blog/css-architecture-3/
+
+// Reset and base files
+// --------------------
+// Not needed, Basscss does a reset
+
+// Load fonts early. Fonts are allowed in AMP
+@import "font-face/futura-condensed";
+
+// Mixins
+@import "mixins/css-grid";
+@import "mixins/multiline-ellipsis";
+
+/* Basscss Modules */
+// https://github.com/basscss/basscss/blob/master/docs/GettingStarted.md
+// @import 'basscss/css/basscss.css';
+@import 'basscss-align/index.css';
+@import 'basscss-border/index.css';
+@import 'basscss-flexbox/index.css';
+@import 'basscss-grid/index.css';
+/* >> Use CSS Grid Instead >> needed for breakpoints navbar */
+// @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP. Created custom class for .hide
+@import 'basscss-layout/index.css';
+@import 'basscss-margin/index.css';
+@import 'basscss-padding/index.css';
+@import 'basscss-position/index.css';
+@import 'basscss-type-scale/index.css';
+@import 'basscss-typography/index.css';
+
+// https://basscss.com/
+/* Optional Modules (not included in Basscss by default) */
+@import 'basscss-addons/modules/responsive-margin/index.css';
+@import 'basscss-addons/modules/responsive-padding/index.css';
+
+// @import 'basscss-addons/modules/media-object/index.css';
+// @import 'basscss-addons/modules/all/index.css';
+@import 'basscss-addons/modules/forms/index.css';
+// @import 'basscss-addons/modules/input-range/index.css';
+// @import 'basscss-addons/modules/progress/index.css';
+
+// @import 'basscss-addons/modules/btn/index.css';
+// @import 'basscss-addons/modules/btn-primary/index.css';
+// @import 'basscss-addons/modules/btn-outline/index.css';
+// @import 'basscss-addons/modules/btn-sizes/index.css';
+
+@import 'basscss-addons/modules/colors/index.css';
+@import 'basscss-addons/modules/background-colors/index.css';
+// @import 'basscss-addons/modules/border-colors/index.css';
+// @import 'basscss-addons/modules/darken/index.css';
+// @import 'basscss-addons/modules/lighten/index.css';
+// @import 'basscss-addons/modules/background-images/index.css';
+
+@import 'components/navbar'; // Duplications in navbar and navigation
+
+@import 'variables/variables';
+// --------
+
+// // Components
+// // ----------
+@import "./components/typography/typography";
+@import "./components/anchors";
+@import "./components/elevation";
+@import "./components/author";
+@import "./components/form";
+@import "./components/hero";
+@import "./components/breadcrumbs";
+@import "./components/navigation";
+@import "./components/menu";
+@import "./components/mdc-branding"; // card grid a no underline, logo sizing etc.
+@import "./components/card";
+@import "./components/button";
+@import "./components/tabs";
+@import "./components/accordion";
+@import "./components/footer";
+@import "./components/figure";
+@import "./components/blogpost";
+@import "./components/tags";
+@import "./components/grid";
+@import "./components/hide";
+@import "./components/table";
+
+
+@import "./components/employer-branding-page";
+@import "./components/statistics_page";
+
+
+@import "./components/list"; // used with Embedder, though really BIG
+@import "./components/embedder/embedder";
+// @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width

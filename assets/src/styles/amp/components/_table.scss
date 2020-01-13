@@ -1,0 +1,39 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  th {
+    text-align: left;
+    font-weight: var(--table-header-font-weight);
+  }
+  
+  th,
+  td {
+    padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+    line-height: inherit;
+  }
+  
+  th { vertical-align: bottom }
+  td { vertical-align: top }
+
+//   custom
+table{
+    border-collapse: collapse;
+    border-spacing: 2px;
+    font-family: $font-system;
+}
+tbody {
+    vertical-align: middle;
+}
+  td, th {
+  height: 52px;
+  vertical-align:inherit;
+}
+tr {
+    border-top-color: rgba(0,0,0,.12);
+    border-top-width: 1px;
+    border-top-style: solid;
+}

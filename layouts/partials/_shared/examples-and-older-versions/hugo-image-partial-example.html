@@ -1,0 +1,64 @@
+<!-- https://gist.github.com/randallmlough/98c9c949b25f2a41259029e03dd037f3
+
+    https://github.com/randallmlough/hugo-srcset-help
+-->
+
+{{ $image := .Params.image}}
+{{ $media := (.Site.GetPage "page" "media").Resources }}
+{{ $original := index ($media.Match (printf "%s" $image)) 0 }}
+{{ $width := $original.Width}}
+{{ $intWidth := int $width }}
+{{ $sizes := .Params.sizes}}
+{{ $options := .Params.options}}
+
+{{ if le (len $sizes) 1 }}
+  {{ $oneSize := index $sizes 0}}
+
+  {{- if ge $oneSize 10 -}}
+    {{- $img := ($original.Resize (printf "%sx %s" $oneSize $options)) -}}
+    {{ $.Scratch.Add "src" $img.RelPermalink }}
+  {{- else -}}
+    {{- $floatSize := float $oneSize -}}
+    {{- $newSize := (mul $intWidth $floatSize) -}}
+    {{- $int2string := string (math.Round $newSize) -}}
+    {{- $img := ($original.Resize (printf "%sx %s" $int2string $options)) -}}
+    {{ $.Scratch.Add "src" $img.RelPermalink }}
+  {{- end -}}
+
+  <img
+  {{with .Params.class}}class="{{.}}"{{end}}
+  src="{{ .Scratch.Get "src" }}"
+  {{with .Params.alt | default $original.Title}}alt="{{.}}"{{end}}>
+{{else}}
+  {{ range $i, $sort := (seq (len $sizes)) }}
+    {{- if ge (index $sizes $i) 10 -}}
+      {{ $.Scratch.Add "sort" (slice (index $sizes $i)) }}
+    {{ else }}
+      {{- $floatSize := float (index $sizes $i) -}}
+      {{- $newSize := (math.Round (mul $intWidth $floatSize)) -}}
+      {{- $int2string := string $newSize -}}
+      {{ $.Scratch.Add "sort" (slice $int2string) }}
+    {{ end }}
+  {{ end }}
+  {{ $sort := sort (.Scratch.Get "sort") }}
+
+  {{- range $i, $num := (seq (len $sort )) -}}
+    {{- $imgSize := index $sort $i -}}
+    {{- $img := ($original.Resize (printf "%sx %s" $imgSize $options)) -}}
+    {{ $.Scratch.Add "sizes" (slice $img.Width) }}
+    {{- $int2string := string $img.Width -}}
+    {{ $.Scratch.Add "string" (slice (printf "%s %sw" $img.RelPermalink $int2string)) }}
+  {{- end -}}
+
+  <img
+  {{with .Params.class}}class="{{.}}"{{end}}
+  src="{{ $original.RelPermalink }}"
+  srcset="{{delimit (.Scratch.Get "string") ", " }}"
+  sizes="
+    {{- $last := sub (len (.Scratch.Get "sizes")) 1 -}}
+    {{- range first $last (.Scratch.Get "sizes") -}}
+    (max-width: {{ . }}px) {{ sub . 40 }}px,
+    {{end}}
+    {{- index (.Scratch.Get "sizes") (sub (len (.Scratch.Get "sizes")) 1) -}}px"
+  {{with .Params.alt | default $original.Title}}alt="{{.}}"{{end}}>
+{{end}}

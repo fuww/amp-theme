@@ -1,0 +1,160 @@
+{{ with .Site.GetPage "section" "developers" }}
+{{ $image := (.Resources.ByType "image").GetMatch "*header.jpg" }}
+{{ $placeholder := (.Resources.ByType "image").GetMatch "*placeholder.svg" }}
+
+{{/*  Using variable, otherwise Hugo might resize the same image twice.  */}}
+{{ $resized2560 := $image.Fill "2560x526 smart" }}
+{{/*{{ $resized5120 := $image.Fill "5120x1051 smart" }} */}}
+{{/*  {{ $resized2560 := $image.Resize "2560x" }}  */}}
+{{/*  use with: {{ $resized2560.RelPermalink }} 2560w, in HTML  */}}
+{{/*  {{ $resized2048 := $image.Resize "2048x" }}  */}}
+{{/*  {{ $resized1366 := $image.Resize "1366x" }}  */}}
+{{/*  {{ $resized768 := $image.Resize "768x" }}  */}}
+{{/*  {{ $resized375 := $image.Resize "375x" }}   */}}
+
+
+{{/*
+    375x77
+    768x158
+    1366x281
+    2048x421
+
+    Nice to have (if image quality allows it)
+    2560x526
+    5120x1051
+  */}}
+
+<figure class="m0">
+<amp-img
+    src="{{ $resized2560.RelPermalink }}"
+    srcset="
+    {{ $resized2560.RelPermalink }} 2560w,
+    {{ ($image.Fill "2048x421 smart").RelPermalink }} 2048w, 
+    {{ ($image.Fill "1366x281 smart").RelPermalink }} 1366w, 
+    {{ ($image.Fill "768x158 smart").RelPermalink }} 768w, 
+    {{ ($image.Fill "375x77 smart").RelPermalink }} 375w
+    "
+    alt="{{ .Title }}"
+    layout="responsive"
+    {{/*  You can use aspect ratio in amp-img  */}}
+    width="{{ if isset .Params "width" }}{{ .Params.width }}{{ else }}4.869269949{{ end }}" 
+    height="{{ if isset .Params "height" }}{{ .Params.height }}{{ else }}1{{ end }}"
+    class="header-hero--image ">
+    {{/*  class="{{ .class }}" >  */}}
+    
+    <amp-img placeholder
+    src="{{ ($placeholder).RelPermalink }}"
+        layout="fill">
+    </amp-img>
+</amp-img>
+{{ if isset .Params "figcaption" }}<figcaption class="pl2 mt1 z1 imageCaption">{{ .Params.figcaption }}</figcaption>{{ end }}
+</figure>
+
+{{ end }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{/*  {{ if isset .Params "height" }}{{ .Params.height }}{{ else }}1{{ end }}  */}}
+{{/*  {{ with .attribution }}attribution="{{ range (split . " ") }}{{ . }} {{ end }}"{{ end }}
+<amp-img
+        {{ with .src }}src="{{ . }}"{{ end }}
+        {{ with .attribute }}{{ . }}{{ end }}
+    {{ with .alt }}alt="{{ range (split . " ") }}{{ . }} {{ end }}"{{ end }}
+    {{ with .attribution }}attribution="{{ range (split . " ") }}{{ . }} {{ end }}"{{ end }}
+    {{ with .srcset }}srcset="{{ range (split . " ") }}{{ . }} {{ end }}"{{ end }}
+    {{ with .tabindex }}tabindex="{{ . }}"{{ end }}
+    {{ with .onTap }}on="tap:{{- . -}}"{{ end }}
+    {{ with .role }}role="{{ . }}"{{ end }}
+    {{ with .width }}width="{{ . }}"{{ end }}
+    {{ with .height }}height="{{ . }}"{{ end }}
+    {{ with .layout }}layout="{{ . }}"{{ end }}>
+</amp-img>  */}}
+
+
+{{/*  <amp-img placeholder
+    src="{{ if isset .Params "placeholder" }}{{ .Params.placeholder }}{{ else }}/landing/theme/images/unit_denis_koval_174-2868x589-placeholder.svg{{ end }}"
+        layout="fill">
+    </amp-img>  */}}
+
+
+{{/*  Print some imagedata. Naming is crucial, it can break things!
+  {{ $image.ResourceType }}
+{{ $image }}{{ $image.Width }}x{{ $image.Height }}{{ $image.RelPermalink }} */}}
+{{/*  Print SVG placeholder data (wihdth, Height don't work with SVG */}}
+{{/*  {{ $placeholder.ResourceType }}
+{{ $placeholder }}
+{{ $placeholder.RelPermalink }}   */}}
+
+{{/*  {{ end }}  */}}
+
+{{/* 
+
+  <figure class="progressive_figure {{$classes}}" data-imgset="{{ (.Resize "640x").RelPermalink }} 320w,
+  {{ (.Resize "1024x").RelPermalink }} 600w,
+  {{ (.Resize "1600x").RelPermalink }} 2x"
+  data-src="{{ (.Resize "1600x").RelPermalink}}" >
+  <div class="placeholder">
+    <img class="img-small" src="{{ $placeholder.RelPermalink }}" alt="{{$altText}}" />
+  </div>
+  <figcaption>{{ $caption }}</figcaption>
+</figure>
+{{ else }}
+could not find image
+{{ end }}
+
+  
+   layout= intrinsic responsive */}}
+{{/*  {{ if (not (isset .Params "disableheaderimage"))}}
+
+{{ end }}  */}}
+
+{{/*  layout= intrinsic responsive */}}
+{{/* 
+{{ $image := (.Site.Home.Resources.ByType "image").GetMatch "header*" }}
+
+
+
+{{ range .Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+<figure>
+    <a href="{{.RelPermalink}}">
+      <img
+        srcset="
+          {{ (.Resize "320x").RelPermalink }} 320w,
+          {{ (.Resize "600x").RelPermalink }} 600w,
+          {{ (.Resize "1200x").RelPermalink }} 2x"
+        src="{{ (.Resize "600x").RelPermalink }}" />
+    </a>
+  </figure>
+{{ end }}
+
+
+{{ range .Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }} {{ . }}</a></li>
+{{ end }}
+
+{{ if isset .Params "testheader"}}
+
+{{ $image := (.Resources.ByType "image").GetMatch "header*" }}
+{{ $resized2048 := $image.Resize "2048x" }}
+{{ $resized1366 := $image.Resize "1366x" }}
+{{ $resized768 := $image.Resize "768x" }}
+{{ $resized375 := $image.Resize "375x" }}
+
+{{ ($image.Resize "2048x").RelPermalink }}
+        <img src="{{ $resized2048.RelPermalink }}" alt="{{ with $.Page.Params.title }}{{ . }}{{ end }}">
+{{ end }}
+
+*/}}

@@ -1,0 +1,27 @@
+{{ define "hero"}}
+    <header class="header-hero mb4">
+        {{ if isset .Params "headerimage"}}
+            {{ partial "_shared/hero-image-srcset" . }}
+        {{ end }}
+    </header>
+{{ end }}
+{{ define "title"}}<div></div>{{/* Disable the regular title */}}{{ end }}
+{{ define "main"}}
+<div class="grid-content">
+    {{if isset .Params "logo"}}
+    <div class="ebp-logo px4 py2 z1 bg-white">
+    {{/*  <figure >  */}}
+        <amp-img class="img-responsive" alt="{{ .Params.brandname }}"
+            src="{{ .Params.logo }}"
+            width="1024"
+            height="400"
+            layout="responsive">
+            </amp-img>
+    {{/*  </figure>  */}}
+</div>
+{{end}}
+<div class="ebp{{ if isset .Params "brand" }} ebp-{{ .Params.brand }}{{ end }}">
+{{ .Content }}
+</div>
+</div>
+{{ end }}

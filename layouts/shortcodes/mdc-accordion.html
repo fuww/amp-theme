@@ -1,0 +1,11 @@
+<div class="accordion">
+    <div class="mdc-list" tabindex="0">
+      <div class="header mdc-list-item">
+        <a class="mdc-list-item__text">{{ .Get "title" }}</a>
+        <i class="material-icons">expand_more</i>
+      </div>
+      <div class="panel {{ .Get "class" }}">
+        {{ .Inner }}
+      </div>
+    </div>
+</div>

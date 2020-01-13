@@ -1,0 +1,4 @@
+<amp-carousel autoplay loop {{ with .Get "class" }}class="{{ . }}"{{end}} height="{{ .Get "height" }}" {{ if .Get "width" }}width="{{ .Get "width" }}"{{end}}
+  layout="{{if .Get "layout" }}{{ .Get "layout" }}{{else}}fixed-height{{end}}" type="{{ .Get "type" }}">
+  {{ .Inner }}
+</amp-carousel>

@@ -1,0 +1,9 @@
+<header class="fu-branding-hero-image elevation--z12">
+    <div class="fu-branding--max-width">
+        {{if isset .Params "logo"}}
+        <figure class="fu-branding-logo">
+            <img class="img-responsive" src="{{ .Params.logo }}" alt="{{ .Params.logo_alt }}">
+        </figure>
+        {{end}}
+    </div>
+</header>

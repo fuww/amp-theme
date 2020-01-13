@@ -1,0 +1,6 @@
+<h1 id="Authors">Authors</h1>
+<ul>
+{{ range .Data.Pages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></li>
+{{ end }}
+</ul>

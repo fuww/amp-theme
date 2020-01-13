@@ -1,0 +1,18 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+      {{ range .Pages }}
+      <div class="mdc-layout-grid__cell mdc-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone fu-card"
+          tabindex="0">
+          <a href="{{.RelPermalink }}" target="_self" class="mdc-card__primary-action">
+              <div class="mdc-card__media mdc-card__media--square">
+                  <div class="fu-card___logo mdc-card__media-content"><img src="{{ .Params.logo }}" alt="{{.Title}}"></div>
+              </div>
+              <div class="fu-card___primary">
+                  <h2 class="fu-card-title fu-card__title mdc-typography--headline6">{{.Title}}</h2>
+                  <p class="mdc-typography--body1">{{.Description}}</p>
+              </div>
+          </a>
+      </div>
+      {{ end }}
+  </div>
+</div>

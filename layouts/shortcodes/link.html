@@ -1,0 +1,3 @@
+<a href="{{.Get `href` }}" {{if .Get "class"}}class="{{.Get "class"}}"{{end}} target="{{.Get `target` }}" {{if .Get "role"}}role="{{.Get "role"}}"{{end}} {{if .Get "rel"}}rel="{{.Get "rel"}}"{{end}}>
+{{ .Inner }}
+</a>

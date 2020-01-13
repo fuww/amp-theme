@@ -1,0 +1,34 @@
+/* Basscss Hide v8 adjusted to remove important (not allowed with AMP) */
+
+.hide {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  
+  @media (--breakpoint-xs) {
+    .xs-hide { display: none }
+  }
+  
+  @media (--breakpoint-sm-md) {
+    .sm-hide { display: none }
+  }
+  
+  @media (--breakpoint-md-lg) {
+    .md-hide { display: none }
+  }
+  
+  @media (--breakpoint-lg) {
+    .lg-hide { display: none }
+  }
+  
+  .display-none { display: none }
+  
+  @custom-media --breakpoint-xs (max-width: 40em);
+  @custom-media --breakpoint-sm-md (min-width: 40em) and (max-width: 52em);
+  @custom-media --breakpoint-md-lg (min-width: 52em) and (max-width: 64em);
+  @custom-media --breakpoint-lg (min-width: 64em);
+  
+  

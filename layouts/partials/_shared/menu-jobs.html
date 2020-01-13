@@ -1,0 +1,11 @@
+<div class="aside-nav">
+    <ul class="list-reset">
+        {{/*  {{ range where .Paginator.Pages "Params.hidden" "ne" true }}  */}}
+        {{ range where .Pages "Params.hidden" "ne" true }}
+        <li>
+            <a href="{{.RelPermalink}}" class="text-decoration-none">{{ if isset .Params "brandname"}}{{ .Params.brandname }}{{ else }}{{.Title }}{{ end }}</a> 
+            {{/*   | truncate 76   */}}
+        </li>
+        {{ end }}
+    </ul>
+</div>

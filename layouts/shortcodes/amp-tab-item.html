@@ -1,0 +1,2 @@
+<div class="mdc-tab" id="{{ .Get "id" }}" role="tab" aria-controls="{{ .Get "panelid" }}" option {{ if .Get "param" }}{{ .Get "param" }}{{end}} {{ if .Get "style" }} style="{{ .Get "style" }}"{{end}}>{{ .Get "title" }}</div>
+<div class="{{ .Get "class" }}" id="{{ .Get "panelid" }}" role="tabpanel" aria-labelledby="{{ .Get "id" }}">{{ .Inner}}</div>

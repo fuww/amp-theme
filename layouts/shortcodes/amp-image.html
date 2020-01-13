@@ -1,0 +1,7 @@
+{{/*  Not using partial because it breaks in EBP tabs  */}}
+<amp-img src="{{ .Get "src" }}"
+    width="{{ .Get "width" }}"
+    height="{{ .Get "height" }}"
+    layout="{{if .Get "layout" }}{{ .Get "layout" }}{{else}}responsive{{end}}"
+    alt="{{ .Get "alt" }}"
+    class="item {{ .Get "class" }}"></amp-img>

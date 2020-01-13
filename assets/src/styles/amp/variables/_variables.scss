@@ -1,0 +1,170 @@
+$font-system: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+/* Color */
+$theme-primary: #000; // #0022ff blue FF5719 orange (#F37022 = Hermes orange)
+$theme-on-primary: #ffffff;
+$theme-secondary: #000040;
+$theme-on-secondary: #ffffff;
+$theme-background: #ffffff;
+$theme-surface: #ededee;
+$theme-on-surface: rgba(0, 0, 0, .87);
+$theme-error: #b00020;
+$theme-on-error: #ffffff;
+
+$black: #000;
+$white: #fff;
+
+$navbar-height: 3.5rem;
+$navbar-bg-color: $theme-background;
+$navbar-border-bottom-color: $theme-secondary;
+
+$black-high: rgba(0, 0, 0, .87); // High emphasis
+$black-medium: rgba(0, 0, 0, .60);
+$black-inactive: rgba(0, 0, 0, 0.54);
+$black-disabled: rgba(0, 0, 0, .38);
+
+$body2: 1rem;
+
+$line-height: 1.5;
+$body-font-size: 1rem;
+
+// Basscss default breakpoints:
+// Prefix	Description
+// (no prefix)	Not scoped to a breakpoint
+$breakpoint-sm: 480px;
+$breakpoint-md: 600px;
+$breakpoint-lg: 840px;
+
+/* Shape */
+$shape-small-component-radius: 0px;
+$shape-medium-component-radius: 0px;
+$shape-large-component-radius: 0px;
+
+$h1: 3.052rem;    /* 41px */
+$h2: 2.441rem;    /* 36px */
+$h3: 1.953rem;    /* 29px */
+$h4: 1.563rem;    /* 25px */
+$h5: 1.25rem;    /* 16px */
+$h6: 1rem;    /* 22px */
+
+//new functions, move to seperate file later
+.upper {
+text-transform: uppercase;
+}
+
+.theme-primary {color:$theme-primary;}
+.bg-theme-primary {background-color:$theme-primary;}
+.theme-on-primary{color:$theme-on-primary;}
+.theme-secondary {color:$theme-secondary;}
+.bg-theme-secondary {background-color:$theme-secondary;}
+.theme-background {background-color:$theme-background;}
+.theme-surface {background-color:$theme-surface;}
+.theme-on-surface{color:$theme-on-surface;}
+.theme-error {background-color:$theme-error;}
+.theme-on-error{color:$theme-on-error;}
+
+.black-high {color:$black-high;}
+
+:root {
+    // Basscss Variables (set to match Material.io)
+    /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
+    --breakpoint-sm: #{$breakpoint-sm};
+    --breakpoint-md: #{$breakpoint-md};
+    --breakpoint-lg: #{$breakpoint-lg};
+
+    // Basscss typography variables
+    // https://basscss.com/v7/docs/base-typography/
+    // body {
+    --font-family: Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
+    --line-height: #{$line-height};
+    --body-font-size: #{$body-font-size};
+
+    // h1, h2, h3, h4, h5, h6 {
+    --heading-font-family: 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    // --heading-font-weight:;
+    // --heading-line-height:;
+    // --heading-margin-top;
+    // --heading-margin-bottom;
+
+    // p {
+    --paragraph-margin-top: 1em;
+    --paragraph-margin-bottom: 1rem;
+
+    // dl, ol, ul {
+    //   margin-top: var(--list-margin-top);
+    //   margin-bottom: var(--list-margin-bottom);
+    // }
+
+    // pre, code, samp {
+    //   font-family: var(--monospace-font-family);
+    //   font-size: var(--pre-font-size);
+    // }
+
+    // pre {
+    //   margin-top: var(--pre-margin-top);
+    //   margin-bottom: var(--pre-margin-bottom);
+    //   overflow-x: scroll;
+    // }
+
+    // https://basscss.com/v7/docs/type-scale/
+    --h1: #{h1};    /* 41px */
+    --h2: #{h2};    /* 36px */
+    --h3: #{h3};    /* 29px */
+    --h4: #{h4};    /* 25px */
+    --h5: #{h5};    /* 16px */
+    --h6: #{h6};    /* 22px */
+
+    // from basscss v7
+    --table-header-font-weight: bold;
+    --table-cell-padding-y: 0;
+    --table-cell-padding-x: 16px;
+
+    //------------------------------------
+    // Start Custom vars, not in Basscss Joost
+    //              #{$}
+    --theme-primary: #{$theme-primary};
+    --theme-secondary: #{$theme-secondary};
+    --font-system: #{$font-system};
+    --font-navigation: var(--heading-font-family);
+
+    --black-high: #{$black-high}; // High emphasis
+    --black-medium: #{$black-medium};
+    --black-inactive: #{$black-inactive};
+    --black-disabled: #{$black-disabled};
+
+    --black: #{$black};
+    --white: #{$white};
+
+    --navbar-bg-color: #{$navbar-bg-color};
+    --navbar-border-bottom-color: #{$navbar-border-bottom-color};
+
+    --body2: #{$body2};
+    // END Custom vars
+    //------------------------------------
+    
+    --navbar-height: #{$navbar-height};
+
+    // Baseline rhythm (as seen on Medium.com)
+    // https://pilot.co/blog/implementing-baseline-rhythm-in-css/
+    // //for hr tag   
+    // --x-height-multiplier: 0.342;
+    // --baseline-multiplier: 0.22;
+    // // for p tag
+    // --x-height-multiplier: 0.375;
+    // --baseline-multiplier: 0.17;
+    // // imagecaption
+    // --x-height-multiplier: 0.342;
+    // --baseline-multiplier: 0.22;
+}
+
+.black {
+    color: var(--white)
+}
+
+.white {
+    color: var(--white)
+}
+
+.border-width2 {
+    border-width: 2px;
+}

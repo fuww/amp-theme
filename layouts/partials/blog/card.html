@@ -1,0 +1,21 @@
+<!-- This card does not have margin and can be used in a bloglist -->
+<div class="card outer-glow overflow-hidden bg-white border-gray mb3">
+  <div class="card__primary-action">
+    <a href="{{ .RelPermalink }}" alt="{{ .Title }}" >
+      <div class="card__media card__media--square">
+          {{/*  <img class="img-fluid" src="{{ .RelPermalink }}{{ .Params.image }}" alt="{{ .Title }}">  */}}
+          {{ if isset .Params "headerimage"}}
+          {{ partial "_shared/card-image-srcset" . }}
+          {{ end }}
+      </div>
+      <div class="card___primary p2">
+        <h2 class="card___title m0">{{ .Title }}</h2>
+        <h3 class="card__subtitle m0">{{ .Site.Params.author.name }}</h3>
+      </div>
+      <div class="card___secondary p2 bg-white">
+        <p class="body2 text-decoration-none">{{ .Summary }}</p>
+        <span class="post-date">{{ dateFormat "Jan 2, 2006" .PublishDate }} - {{ .ReadingTime }} min read </span>
+      </div>
+    </a>
+  </div>
+</div>

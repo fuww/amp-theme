@@ -1,0 +1,26 @@
+{{ $page := . }}      
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
+{{ $placeholder := $imageSrc.Resize "48x24 smart q20" }}  
+
+{{ $resized1366 := $imageSrc.Fill "1366x685 smart" }}
+
+<figure class="m0">
+<amp-img
+    src="{{ $resized1366.RelPermalink }}"
+    srcset="
+    {{ $resized1366.RelPermalink }} 1366w,
+    {{ ($imageSrc.Fill "768x385 smart").RelPermalink }} 768w, 
+    {{ ($imageSrc.Fill "375x188 smart").RelPermalink }} 375w
+    "
+    alt="{{ .Title }}"
+    layout="responsive"
+    {{/*  You can use aspect ratio in amp-img  */}}
+    width="375" 
+    height="188"
+    >
+    <amp-img placeholder
+    src="{{ $placeholder.RelPermalink }}"
+        layout="fill">
+    </amp-img>
+</amp-img>
+</figure>

@@ -1,0 +1,18 @@
+{{ define "sidebarmenu"}}
+        <div class="main-nav left-bar">    
+                {{ if (not (isset .Params "disablemenu")) }}
+                {{- partial "_shared/menu-company.html" . -}}                
+                {{ end }}
+        </div>
+{{ end }}
+{{ define "title" }}<span></span>{{ end }}
+{{ define "main" }}
+<div class=" grid-article___inner">
+<article class="grid-content">
+        {{- partial "_shared/title" . -}}
+        {{ .Content }}
+        {{- partial "_shared/after-post-tags" . }}
+</article>
+</div>
+{{ end }}
+

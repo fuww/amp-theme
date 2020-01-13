@@ -1,0 +1,10 @@
+<a class="mdc-tab job-tab{{ with .Get "class"}} {{.}}{{ end }}" role="tab">
+<span class="mdc-tab__content">
+        <span class="mdc-tab__text-label">{{ .Get "name" }}</span>
+    </span>
+<span class="mdc-tab-indicator {{ with .Get "class-indicator"}}{{.}}{{ end }}">
+<span class="mdc-tab-indicator__content"></span>
+</span>
+<span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+</a>
+{{ .Inner }}

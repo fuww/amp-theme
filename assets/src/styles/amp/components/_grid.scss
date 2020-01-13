@@ -1,0 +1,140 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+.grid-container-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    .logo img {
+        max-height: 50px;
+        max-width: 119px;
+    }
+}
+
+.grid-container-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+    column-gap: 4rem; //10px;
+    row-gap: 4rem;
+
+    .logo img {
+        max-height: 56px;
+    }
+
+    .logo-media {
+        min-height: 100%;
+    }
+}
+
+.grid-head {
+    grid-area: header;
+}
+
+.grid-content {
+    grid-area: content;
+}
+
+.grid-nav {
+    grid-area: nav;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+}
+
+.grid-breadcrumbs {
+    grid-area: breadcrumbs;
+}
+
+.grid-ad {
+    grid-area: ad;
+}
+
+.grid-footer {
+    grid-area: footer;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas:
+        "breadcrumbs"
+        "header"
+        "nav"
+        "content"
+        "sidebar"
+        "ad"
+        "footer";
+}
+
+@media (min-width: 480px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "breadcrumbs  breadcrumbs"
+            ".       header"
+            "nav     content"
+            "sidebar content"
+            "ad      footer";
+    }
+
+    .main-nav nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.grid-article___inner {
+
+    grid-area: content;
+
+    article {
+        display: grid;
+        grid-template-columns: [full-start] minmax(32px, 1fr) [main-start] minmax(auto, 73ch) [main-end] minmax(32px, 1fr) [full-end];
+
+        > p,
+        > a,
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6,
+        > li,
+        > ul,
+        > ol,
+        > pre,
+        > code,
+        > hr,
+        > div,
+        > figure,
+        > amp-img,
+        > amp-accordion,
+        > amp-selector,
+        > blockquote,
+        > table {
+            grid-column: main;
+        }
+        figure {
+            margin: 0;
+        }
+}
+}
+
+@media (min-width: 841px) {
+
+}
+
+@media (min-width: 840px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+            "breadcrumbs breadcrumbs  breadcrumbs"
+            ".      header  header"
+            "nav    content sidebar"
+            "nav    content ad"
+            "footer footer  footer"
+    }
+
+    .main-nav nav ul {
+        flex-direction: column;
+    }
+}

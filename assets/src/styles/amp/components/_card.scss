@@ -1,0 +1,29 @@
+.card {
+    &__media {
+        border-color: var(--theme-secondary);
+    }
+    &__media--16-9:before {
+        margin-top: 56.25%;
+    }
+    &___primary {
+        .logo-media-fixed-container {
+            position: relative;
+            // width: 100%;
+            width: 124px;
+            height: 60px;
+            margin: 10px auto;
+        }
+
+        .logo-media{
+            height: 60px;
+            width: 160px;
+        }
+        .logo{
+            height: 60px;
+            width: 160px;
+        }
+    }
+}
+    amp-img.contain img {
+        object-fit: contain;
+      }

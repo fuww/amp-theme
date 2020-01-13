@@ -1,0 +1,16 @@
+{{ define "hero"}}
+<header class="header-hero">
+{{ partial "_shared/hero-developers" . }}
+</header>
+{{ end }}
+{{ define "sidebarmenu" }}
+{{- partial "_shared/menu-developers.html" . -}}
+{{ end}}
+{{ define "main" }}
+<div class="grid-content">
+    <article>
+            {{ .Content }}
+        </article>
+        {{- partial "_shared/after-post-tags" . }}
+</div>          
+{{ end }}

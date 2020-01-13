@@ -1,0 +1,37 @@
+<div class="card m2 outer-glow overflow-hidden bg-white border-gray mb3">
+  <div class="card__primary-action">
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+      <div class="card__media card__media--16-9 border-bottom border-width2">
+        {{ if isset .Params "image"}}
+        {{ partial "_shared/card-image-srcset" . }}
+        {{ else if isset .Params "logo"}}
+        <div class="m2 p3 logo">
+          <div class="logo-media flex justify-center">
+            <img class="self-center" src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}"
+              alt="{{.Title}}">
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="card___primary px2 pt2">
+        <h2 class="card___title h6">{{.Title}}</h2>
+        {{ if isset .Params "image" }} {{/* Show logo below headerimage */}}
+        {{ if isset .Params "logo" }}
+        <div class="logo-media-fixed-container">
+          <amp-img alt="{{.Title}}" layout="fill" class="contain"
+            src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}">
+          </amp-img>
+        </div>
+        {{ end }}
+        {{ end }}
+
+
+      </div>
+      <div class="card___secondary p2 bg-white">
+        <p class="body2">
+          {{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}
+        </p> {{/* No more then 3 lines  */}}
+      </div>
+    </a>
+  </div>
+</div>

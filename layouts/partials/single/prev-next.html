@@ -1,0 +1,9 @@
+<div class="flex flex-justify">
+            {{with .NextPage}} 
+            <div class ="p1"><a class="" href="{{.URL}}"> &laquo; {{.Title}}</a></div>
+            {{end}}
+            <div class="flex-auto"></div>
+            {{with .PrevPage}}
+            <div class="p1"><a class="" href="{{.URL}}">{{.Title}} &raquo;</a></div>
+            {{end}}
+    </div>

@@ -1,0 +1,92 @@
+{{/*  {{ if isset .Params "image" }}  */}}
+{{ if or (isset .Params "image") (isset .Params "hero_image") }}
+{{ $page := . }} 
+
+{{ if isset .Params "hero_image" }}
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.hero_image }}
+{{ end }}
+
+{{ if isset .Params "image" }}
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
+{{ end }}
+
+{{/*  {{- $images := $.Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- with $featured -}}
+<meta itemprop="image" content="{{ $featured.Permalink }}">
+{{ else -}}
+{{- with $.Site.Params.images -}}
+<meta itemprop="image" content="{{ index . 0 | absURL }}"/>
+{{ end }}{{ end }}{{ end }}  */}}
+     
+
+{{ $page := . }}      
+{{/*  {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.hero_image }}  */}}
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
+{{ $placeholder := $imageSrc.Resize "36x24 smart q20" }}  
+{{ $placeholder_lg := $imageSrc.Resize "58x12 smart q20" }}  
+
+
+{{ $placeholder := $imageSrc.Resize "36x24 smart q20" }}  
+{{ $placeholder_lg := $imageSrc.Resize "58x12 smart q20" }}  
+
+{{/*  Using variable, otherwise Hugo might resize the same image twice.  */}}
+{{/*  Samsung galaxy S6 360x640 > 1440x2560 4.0 xxxhdpi  */}}
+{{ $resized360 := $imageSrc.Fill "360x240 smart" }}
+{{ $resized375 := $imageSrc.Fill "375x230 smart" }}
+{{ $resized720 := $imageSrc.Fill "720x480 smart" }}
+{{ $resized1440 := $imageSrc.Fill "1440x960 smart" }}
+
+{{ $resized2560 := $imageSrc.Fill "2560x421 smart" }}
+
+<figure class="m0">
+    <div {{ if ne .Params.headerShadow false }}class="elevation--z12"{{ end }}>
+        <amp-img
+        src="{{ $resized375.RelPermalink }}"
+        srcset="
+        {{ $resized1440.RelPermalink }} 1440w, 
+        {{ $resized720.RelPermalink }} 720w, 
+        {{ $resized375.RelPermalink }} 375w,
+        {{ $resized360.RelPermalink }} 360w
+        "
+        alt="{{ .Title }}"
+        layout="responsive"
+        {{/*  You can use aspect ratio in amp-img  */}}
+        width="{{ if isset .Params "width" }}{{ .Params.width }}{{ else }}3{{ end }}" 
+        height="{{ if isset .Params "height" }}{{ .Params.height }}{{ else }}2{{ end }}"
+        class="header-hero--image md-hide lg-hide">
+        {{/*  class="{{ .class }}" >  */}}
+        
+        <amp-img placeholder
+        src="{{ ($placeholder).RelPermalink }}"
+            layout="fill">
+        </amp-img>
+    </amp-img>
+
+<amp-img
+    src="{{ $resized2560.RelPermalink }}"
+    srcset="
+    {{ $resized2560.RelPermalink }} 2560w,
+    {{ ($imageSrc.Fill "2048x421 smart").RelPermalink }} 2048w, 
+    {{ ($imageSrc.Fill "1366x281 smart").RelPermalink }} 1366w, 
+    {{ ($imageSrc.Fill "768x158 smart").RelPermalink }} 768w, 
+    {{ ($imageSrc.Fill "375x77 smart").RelPermalink }} 375w
+    "
+    alt="{{ .Title }}"
+    layout="responsive"
+    {{/*  You can use aspect ratio in amp-img  */}}
+    width="{{ if isset .Params "width" }}{{ .Params.width }}{{ else }}4.869269949{{ end }}" 
+    height="{{ if isset .Params "height" }}{{ .Params.height }}{{ else }}1{{ end }}"
+    class="header-hero--image xs-hide sm-hide">
+    {{/*  class="{{ .class }}" >  */}}
+    
+    <amp-img placeholder
+    src="{{ ($placeholder_lg).RelPermalink }}"
+        layout="fill">
+    </amp-img>
+</amp-img>
+</div>
+{{ if isset .Params "figcaption" }}<figcaption class="pl2 mt1 z1 imageCaption">{{ .Params.figcaption }}</figcaption>{{ end }}
+</figure>
+{{ end }}

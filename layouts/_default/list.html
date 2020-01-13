@@ -1,0 +1,21 @@
+{{ define "header"}}
+{{- partial "_shared/navigation" . -}}
+{{ end }}
+
+{{ define "main" }}
+
+<section class="grid-content recent-posts">
+    <div class="section-title">
+    </div>
+    <div class="row listrecent">
+        <div class="grid-container-cards shuffle" id="shuffle">
+            {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+            {{- partial "list/card" . -}}
+            {{ end }}
+        </div>
+    </div>
+    {{ .Content }}
+</section>
+{{ end }}
+{{ define "footer"}}
+{{ end }}

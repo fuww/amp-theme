@@ -1,0 +1,26 @@
+{{ $page := . }}      
+{{ $image := (.Resources.ByType "image").GetMatch $page.Params.logo_test_local }}
+{{ $placeholder := $image.Resize "48x24 smart q20" }}  
+
+{{ $resized375 := $image.Fill "375x188 smart" }}
+
+
+
+<!-- <figure class="m0"> -->
+<amp-img
+    src="{{ $resized375.RelPermalink }}"
+    srcset="
+    {{ $resized375.RelPermalink }} 375w,
+    {{ ($image.Fill "164x82 smart").RelPermalink }} 164w
+    "
+    alt="{{ .Title }}"
+    layout="responsive"
+    width="{{ $image.Width }}" 
+    height="{{ $image.Height }}"
+    >
+    <amp-img placeholder
+    src="{{ $placeholder.RelPermalink }}"
+        layout="fill">
+    </amp-img>
+</amp-img>
+<!-- </figure> -->

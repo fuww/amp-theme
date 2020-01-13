@@ -1,0 +1,19 @@
+{{ $siteUrl := replace .RelPermalink ( printf "%s" .Site.BaseURL) "" }}
+{{ $.Scratch.Add "sitePath" .Site.BaseURL }}
+
+{{ $.Scratch.Add "siteBreadcrumbs" (slice (dict "url" .Site.BaseURL "name" "home" "position" 1 )) }}
+{{ range $index, $element := split $siteUrl "/" }}
+{{ $.Scratch.Add "sitePath" $element }}
+{{ $.Scratch.Add "sitePath" "/" }}
+{{ if ne $element "" }}
+{{ $.Scratch.Add "siteBreadcrumbs" (slice (dict "url" ($.Scratch.Get "sitePath") "name" . "position" (add $index 2))) }}
+{{ end }}
+{{ end }}
+
+<nav class="breadcrumbs p0 {{if isset .Params "logo"}}pt4{{else}}pt0{{end}}">
+    <ul class="list-reset p0 m0">
+        {{ range $.Scratch.Get "siteBreadcrumbs" }}
+        <li class="inline-block"><a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>

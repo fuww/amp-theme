@@ -1,0 +1,16 @@
+{{ if ne .Params.amp.enable false }}
+{{/*  {{ partial "amp/google-analytics" . }}  */}}
+{{ partial "amp/googleTagManager" . }}
+
+{{ if isset .Params "embedder" }}
+{{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:8080/" }}
+<script src="https://fashionunited.com/embed.js" async=""></script>
+{{ else }}
+<script src="/embed.js" async=""></script>
+{{ end }}
+{{ end }} {{/*  this makes the amp invalid as custom js is not allowed */}}
+{{ else }}
+{{ partial "structure/foot.no-amp" . }}
+{{ end }}
+</body>
+</html>

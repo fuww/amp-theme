@@ -1,0 +1,128 @@
+<!-- https://gist.github.com/randallmlough/c39c25f16dc2e71d2a928badea9923e4 -->
+
+<style>
+        img {
+          max-width: 100%;
+        }
+      </style>
+      
+      <h1>Creating a srcset loop based on Resources</h1>
+      
+      <!-- 
+      NOTE: This requires Hugo 0.32 
+      sizes can be any poisitive number. 
+      Sizes less than 10 will multiple on the original width of the image given.
+      This is meant for quick resizing e.g 2x the image or 0.5 the image.
+      -->
+      
+      {{ $image := .Params.image}}
+      <!-- 
+        I've setup my own headless media folder in the content directory so you may need to change to fit your project
+      -->
+      
+      {{/* {{ $media := (.Site.GetPage "page" "media").Resources }} */}}
+      {{ $media := .Resources }}
+      {{ $original := index ($media.Match (printf "%s" $image)) 0 }}
+      
+      <!-- END Resources -->
+      
+      {{ $width := $original.Width}}
+      {{ $sizes := .Params.sizes}}
+      
+      <!-- For testing and visualization of the concept -->
+      <!-- This can be deleted -->
+      <div id="can-delete">
+        <h3>Testing variables n stuff</h3>
+        <p>Image: {{ $image }}</p>
+        <p>Image Path: {{ $original.RelPermalink }}</p>
+        <p>Original Size: {{$width}}</p>
+        <!-- Using scratch for testing purposes .Params.sizes -->
+        {{ $scratch_sizes := "200w" "600w"}}
+        <p>Sizes array: {{$scratch_sizes}}</p>
+        {{$first_size := index $scratch_sizes 0}}
+        <p>First Size in Array (decimal): {{$first_size}}</p>
+      
+        {{ $convertDecimal := float $first_size }}
+        {{ $convertWidth := int $width}}
+        {{$test_size := (mul $convertWidth $convertDecimal) }}
+        <p>Multiply width by first index: {{$test_size}}</p>
+        <p>Round that number: {{math.Round $test_size}}</p>
+      
+        <p>Now use that width as a resource option and add to an IMG element:</p>
+        <!-- Now try and make this an image -->
+        <!-- Need to convert this int back to a string to be used as a resource -->
+        {{ $back2string := string (math.Round $test_size)}}
+        {{ $testing_img := ($original.Resize (printf "%sx Lanczos" $back2string) )}}
+        <img src="{{$testing_img.RelPermalink}}" alt="">
+        <p>Create srcset string: {{$image}}/{{math.Round $test_size }} {{ $back2string }}x,</p>
+      
+        <h3>Create a simple img loop</h3>
+        <!-- SIZE LOOP -->
+        {{ range $i, $num := (seq (len $sizes)) }}
+          {{ $imgSize := index $sizes $i }}
+          {{ $intWidth := int $width}}
+          <div>
+            <!-- If any number in the array is larger than 10 then have that be the size -->
+            <!-- Example: Resize the image to 1200 -->
+            {{if ge (index $sizes $i) 10}}
+              <!-- This method works -->
+              {{ $img := ($original.Resize (printf "%sx Lanczos" $imgSize) )}}
+              <img src="{{$img.RelPermalink}}" alt="" width=""> {{ index $sizes $i }}w
+      
+            {{else}}
+              <!-- If any number in the array is less than 10 then multiple by the width of original image -->
+              <!-- This is intended for quick sizing, eg. 0.5 will be half the size of the original -->
+      
+              <!-- Convert image size and the original width to an integer and then multiple them -->
+              {{ $floatSize := float $imgSize }}
+              {{ $newSize := (mul $intWidth $floatSize) }}
+              <!-- Now need to convert back to a string to use as a resource option -->
+              {{ $int2string := string (math.Round $newSize)}}
+              {{ $img := ($original.Resize (printf "%sx Lanczos" $int2string) )}}
+              <img src="{{$img.RelPermalink}}" alt=""> {{ $int2string }}w
+      
+            {{end}}
+          </div>
+        {{ end }}
+        <h3>Now create the srcset</h3>
+      </div>
+      <!-- END DELETE -->
+      
+      <!-- The actual srcset partial -->
+      <!-- Ranging to create the image sizes and strings -->
+      {{- range $i, $num := (seq (len $sizes)) -}}
+        {{- $imgSize := index $sizes $i -}}
+        {{- $intWidth := int $width -}}
+      
+          {{- if ge (index $sizes $i) 10 -}}
+            {{- $img := ($original.Resize (printf "%sx Lanczos" $imgSize)) -}}
+      
+            {{ $.Scratch.Add "imgs" (slice $img.RelPermalink) }}
+            {{ $.Scratch.Add "sizes" (slice $img.Width) }}
+            {{- $int2string := string $img.Width -}}
+            {{ $.Scratch.Add "string" (slice (printf "%s %sw" $img.RelPermalink $int2string)) }}
+      
+          {{- else -}}
+            {{- $floatSize := float $imgSize -}}
+            {{- $newSize := (mul $intWidth $floatSize) -}}
+            {{- $int2string := string (math.Round $newSize) -}}
+            {{- $img := ($original.Resize (printf "%sx Lanczos" $int2string)) -}}
+      
+            {{ $.Scratch.Add "imgs" (slice $img.RelPermalink) }}
+            {{ $.Scratch.Add "sizes" (slice $img.Width) }}
+            {{- $int2string := string $img.Width -}}
+            {{ $.Scratch.Add "string" (slice (printf "%s %sw" $img.RelPermalink $int2string)) }}
+          {{- end -}}
+      {{- end -}}
+      
+      <img class=""
+      src="{{ $original.RelPermalink }}"
+      srcset="{{delimit (.Scratch.Get "string") ", " }}"
+      sizes="
+        {{- $last := sub (len (.Scratch.Get "sizes")) 1 -}}
+        {{- range first $last (.Scratch.Get "sizes") -}}
+        (max-width: {{ . }}px) {{ sub . 40 }}px,
+        {{end}}
+        <!-- This can also be 100vw -->
+        {{- index (.Scratch.Get "sizes") (sub (len (.Scratch.Get "sizes")) 1) -}}px"
+      alt="">

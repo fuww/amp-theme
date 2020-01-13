@@ -1,0 +1,45 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "{{ if isset .Params "author.name"}}{{ .Params.author.name }}{{end}}"
+  },
+  "headline": "{{ .Title }}",
+  "description": "{{ .Params.description }}",
+  "wordCount": {{ .WordCount }},
+  "datePublished" : "{{ .PublishDate.Format "2006-01-02T15:04:05" }}",
+  "dateModified" : "{{ .Date.Format "2006-01-02T15:04:05"  }}",
+  "image" : {
+    "@context": "http://schema.org",
+    "@type": "ImageObject",
+    "author": "{{ .Site.Params.author.name }}",
+    {{- $images := $.Resources.ByType "image" -}}
+    {{- $featured := $images.GetMatch "*feature*" -}}
+    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{- with $featured -}}
+    "url": "{{ $featured.Permalink }}",
+    "height" : {{ $featured.Height }},
+    "width" : {{ $featured.Width }},
+    {{ else -}}
+    {{- with $.Site.Params.images -}}
+    "url": "{{ index . 0 | absURL }}
+    {{ end }}{{ end }}
+    "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05" }}",
+    "name": "{{ .Title }}"
+    {{/*  "license" : "{{ .Params.image.license_link }}",
+    "isBasedOn" : "{{ .Params.image.link }}"  */}}
+  },
+  "mainEntityOfPage" : "{{ .RelPermalink }}",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "{{ $.Site.Params.publisherName }}",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "{{ $.Site.Params.publisherLogo }}",
+        "height" : {{ $.Site.Params.publisherLogoHeight }},
+        "width" : {{ $.Site.Params.publisherLogoWidth }}
+    }
+  }
+}
+</script>

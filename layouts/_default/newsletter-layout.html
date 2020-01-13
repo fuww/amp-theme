@@ -1,0 +1,35 @@
+{{ define "title"}}
+<div></div>
+{{ end }}
+{{ define "main"}}
+<div class="grid-content layout-newsletter mdl-grid mdl-grid--no-spacing">
+<h1>{{ .Params.header_title }}</h1>
+<div class="md-px3 pt2 pb4 sm-col sm-col-6 md-col-6 lg-col-6">
+        <p class="fu-main-section__text"> {{ .Params.text1 }} </p>
+        <blockquote class="fu-main-section__text--diff"> <strong>{{ .Params.text2bold }}</strong> {{ .Params.text2regular }}
+        <span class="bold italic">{{ .Params.text2bolditalic }}</span> </blockquote>
+        <p class="fu-main-section__text"> {{ .Params.text3 }} </p>
+        <div class="arrow-right"></div>
+</div>
+<div class="bg-aqua md-px3 pt2 pb4 sm-col sm-col-6 md-col-6 lg-col-6">
+        <div id="mc_embed_signup">
+                <div class="page-form center"> 
+                        {{/*  mailchimp_user: f9c546df23ea10a6fc72d2f2a  */}}
+                        <form action="//fashionunited.us3.list-manage.com/subscribe/post?u=f9c546df23ea10a6fc72d2f2a&amp;id={{ .Params.mailchimp_list }}" class="" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank" rel="noopener">
+                                <label class="h3 mb1 col-12 block" for="mce-EMAIL">E-mail address</label>
+                                <input class="mb4 p1 field validate" id="mce-EMAIL" name="EMAIL" required="" type="email" value="" />
+                                <div style="position: absolute; left: -5000px;">
+                                  <input name="b_f9c546df23ea10a6fc72d2f2a_{{ .Params.mailchimp_list }}" tabindex="-1" type="text" value="" />
+                                </div>
+                              <div class="mb4 center">
+                                  <input class="btn btn-outline center mt0 mb3" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Yes, keep me up to date"/>
+                              </div>
+                            </form>
+                        {{ .Content }} </div>
+        </div>
+<div class="block col-12 h6 tiny">
+<em class="">{{ .Params.privacypolicy_em }}: </em>
+{{ .Params.privacypolicy }} <a class="bold underline" href='https://fashionunited.info/privacy'>{{ .Params.privacypolicy_url }}</a>. </div>
+</div>
+</div>
+{{ end }}
