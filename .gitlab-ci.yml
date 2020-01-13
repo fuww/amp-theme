@@ -1,0 +1,38 @@
+.retry: &retry
+  retry:
+    max: 2
+    when:
+      - unknown_failure
+      - api_failure
+      - runner_system_failure
+      - missing_dependency_failure
+      - runner_unsupported
+
+.only-changes: &only-changes
+  only:
+    refs:
+      - master
+      - merge_requests
+    changes:
+      - packages/amp-theme/**/*
+
+stylesheet.html:
+  variables:
+    GIT_SUBMODULE_STRATEGY: none
+  stage: test
+  image: eu.gcr.io/kubernetes-164514/github.com/fashionunited/dockerfiles/hugo:v0.62.2-extended
+  cache:
+    key: "$CI_JOB_NAME"
+    paths:
+      - packages/amp-theme/node_modules/
+  before_script:
+    - cd packages/amp-theme
+    - time npm install
+  script:
+    - time npm run build
+  artifacts:
+    paths:
+      - packages/amp-theme/layouts/partials/stylesheet.html
+    expire_in: 1 week
+  <<: *retry
+  <<: *only-changes
