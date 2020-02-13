@@ -1,26 +1,39 @@
-{{ $page := . }}      
-{{ $image := (.Resources.ByType "image").GetMatch $page.Params.logo_test_local }}
-{{ $placeholder := $image.Resize "48x24 smart q20" }}  
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ $title := .Get 3 }}
+{{ if eq $command "Fit"}}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ else if eq $command "Resize"}}
+{{ .Scratch.Set "image" ($original.Resize $options) }}
+{{ else if eq $command "Fill"}}
+{{ .Scratch.Set "image" ($original.Fill $options) }}
+{{ else }}
+{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ end }}
+{{ $image := .Scratch.Get "image" }}
+{{/*  Create placeholder and blur it  */}}
+{{ $placeholder := $image.Resize "48x smart q20" }}  
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
 
-{{ $resized375 := $image.Fill "375x188 smart" }}
+{{ $resized412 := $image.Resize "412x smart" }}
 
-
-
-<!-- <figure class="m0"> -->
-<amp-img
-    src="{{ $resized375.RelPermalink }}"
+<figure>
+    <amp-img src="{{ $image.RelPermalink }}"
     srcset="
-    {{ $resized375.RelPermalink }} 375w,
-    {{ ($image.Fill "164x82 smart").RelPermalink }} 164w
+    {{ $image.RelPermalink }} {{ $image.Width }}w,
+    {{ ($image.Resize "768x smart").RelPermalink }} 768w, 
+    {{ ($image.Resize "412x smart").RelPermalink }} 412w
     "
-    alt="{{ .Title }}"
-    layout="responsive"
-    width="{{ $image.Width }}" 
-    height="{{ $image.Height }}"
-    >
-    <amp-img placeholder
-    src="{{ $placeholder.RelPermalink }}"
-        layout="fill">
+    alt="{{ $title }}"
+     width="{{ $image.Width }}" height="{{ $image.Height }}" layout="responsive">
+        <amp-img placeholder
+            src="{{ $placeholder.RelPermalink }}"
+            layout="fill">
+        </amp-img>
     </amp-img>
-</amp-img>
-<!-- </figure> -->
+{{- if $title -}}
+<figcaption>
+    <h4 class="center">{{ $title }} </h4>
+</figcaption>
+{{- end }}    
