@@ -1,26 +1,21 @@
 {{ define "header"}}
 {{- partial "_shared/navigation" . -}}
 {{ end }}
+
 {{ define "main" }}
-<div class="grid-nav">
-    {{- partial "_shared/menu-jobs.html" . -}}
-</div>
+
 <section class="grid-content recent-posts">
     <div class="section-title">
     </div>
     <div class="row listrecent">
         <div class="grid-container-cards shuffle" id="shuffle">
             {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
-            {{- partial "list/card-notitle" . -}}
+            {{- partial "list/card" . -}}
             {{ end }}
         </div>
     </div>
     {{ .Content }}
 </section>
-</div>
-<div class="p4 my4">
-    {{- partial "amp/work-for-brands" . -}}
-</div>
 {{ end }}
 {{ define "footer"}}
 {{ end }}
