@@ -1,0 +1,9 @@
+.grid-container-cards-custom {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(290px,1fr));
+
+    .card___title {
+        font-size: 24px;
+        text-align: center;
+    }
+}
