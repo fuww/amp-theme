@@ -37,11 +37,13 @@
     <div class="mx-auto"></div>
     <nav class="nx-headerbar-nav nx-nav xs-hide sm-hide">
         <ul class="list-reset center m0 p0 flex justify-center nowrap">
-            <li class="nx-nav-item my2 upper"><a href="" class="text-decoration-none block">Marketplace</a></li>
-            <li class="nx-nav-item my2 upper"><a href="" class="text-decoration-none block">Trends</a></li>
-            <li class="nx-nav-item my2 upper"><a href="" class="text-decoration-none block">Buyer</a></li>
-            <li class="nx-nav-item my2 upper"><a href="" class="text-decoration-none block">Brand</a></li>
-            <li class="nx-nav-item my2 upper"><a href="" class="text-decoration-none block">About</a></li>
+            {{- $currentPage := . -}}
+            {{ range .Site.Menus.marketplace -}}
+            <li class="nx-nav-item my2 upper {{ if $currentPage.IsMenuCurrent "marketplace" . }}active{{ end }}">
+                <a class="{{ if $currentPage.IsMenuCurrent "marketplace" . }}active theme-primary{{else}}black-high{{ end }}"
+                    href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            </li>
+            {{- end }}
         </ul>
     </nav>
     <div class="nx-headerbar-fixed center m0 p0 flex justify-center nowrap ">
@@ -57,39 +59,14 @@
     </div>
     <nav class="nx-sidebar-nav nx-nav">
         <ul class="list-reset m0 p0 nx-label">
-            <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-                    class="nx-nav-link pl1 pr4 py2 inline-block" href="">Marketplace</a>
+            {{- $currentPage := . -}}
+            {{ range .Site.Menus.marketplace -}}
+            <li
+                class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm {{ if $currentPage.IsMenuCurrent "marketplace" . }}active{{ end }}">
+                <a class="nx-nav-link pl1 pr4 py2 inline-block {{ if $currentPage.IsMenuCurrent "marketplace" . }}active black-high{{else}}{{ end }}"
+                    href="{{ .URL | absLangURL }}">{{ .Name }}</a>
             </li>
-            <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-                    class="nx-nav-link pl1 pr4 py2 inline-block" href="">Trends</a>
-            </li>
-            <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-                    class="nx-nav-link pl1 pr4 py2 inline-block" href="">Buyer</a>
-            </li>
-            <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-                    class="nx-nav-link pl1 pr4 py2 inline-block" href="">Brand</a>
-            </li>
-            <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-                    class="nx-nav-link pl1 pr4 py2 inline-block" href="">About</a>
-            </li>
+            {{- end }}
         </ul>
     </nav>
 </amp-sidebar>
-
-
-{{/*  
-
-<ul class="list-reset mxn1 mb0">
-    <li class="inline-block">
-        <a href="#!" class="btn button-narrow">Burgers</a>
-    </li>
-    <li class="inline-block">
-        <a href="#!" class="btn button-narrow">Fries</a>
-    </li>
-    <li class="inline-block">
-        <a href="#!" class="btn button-narrow">Shakes</a>
-    </li>
-    <li class="inline-block">
-        <a href="#!" class="btn button-narrow">Onion Rings</a>
-    </li>
-</ul>  */}}
