@@ -2,28 +2,36 @@
 {{/* 16:9 Lighthouse mobile test uses Nexus 5X 412px */}}
 {{/*  You can use aspect ratio in amp-img width and height*/}}
 
+{{/* 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 1280:263 */}}
 
-{{/* 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 */}}
-
-{{/* 5260x526 */}}
+{{/* 2560x526 */}}
 
 {{ $imageSrc := .featured }}
 {{/*  {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }} */}}
 {{ $placeholder := $imageSrc.Resize "48x32 smart q20" }}
 {{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
 
-{{ $resized1200 := $imageSrc.Fill "1200x800 smart" }}
-{{ $resized720 := $imageSrc.Fill "600x400 smart" }}
+{{ $resized1200 := $imageSrc.Fill "1200x247 smart" }}
+{{ $resized720 := $imageSrc.Fill "600x123 smart" }}
 
-<figure class="m0 sm-m0 md-m3 lg-m4">
-    <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+{{ $figcaption := .Params.figcaption }}
+
+<figure class="m0">
+    <div {{ if ne .Params.headerShadow false }}class="elevation--z12" {{ end }}>
+        <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
     {{ $resized1200.RelPermalink }} 1200w,
     {{ $resized720.RelPermalink }} 720w,
     {{ ($imageSrc.Fill "300x200 smart").RelPermalink }} 300w
-    " alt="{{ .Title }}" layout="responsive" width="3" height="2">
-        <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+    " alt="{{ .Title }}" layout="responsive" width="1280" height="263">
+            <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+            </amp-img>
         </amp-img>
-    </amp-img>
+    </div>
+    {{/* {{ if isset .Params "figcaption" }}
+    <figcaption class="pl2 mt1 z1 imageCaption">
+        {{ .Params.caption }} {{$figcaption}}
+    </figcaption>
+    {{ end }} */}}
 </figure>
 
 
