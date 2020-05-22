@@ -1,0 +1,23 @@
+{{ $imageSrc := .featured }}
+{{ $placeholder := $imageSrc.Resize "32x18 smart q20" }}
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
+
+{{ $412x232 := $imageSrc.Fill "412x232 smart" }}
+{{ $768x432 := $imageSrc.Fill "768x432 smart" }}
+{{ $1280x720 := $imageSrc.Fill "1280x720 smart" }}
+
+<figure class="m0">
+    <div>
+        <amp-img src="{{ $768x432.RelPermalink }}" srcset="
+        {{ $1280x720.RelPermalink }} 720w, 
+        {{ $768x432.RelPermalink }} 375w,
+        {{ $412x232.RelPermalink }} 360w
+        " alt="{{ .Title }}" layout="responsive" width="{{ $412x232.Width }}" height="{{ $412x232.Height }}" class="">
+            <amp-img placeholder src="{{ ($placeholder).RelPermalink }}" layout="fill">
+            </amp-img>
+        </amp-img>
+    </div>
+    {{ with .Page.Params.figcaption }}
+    <figcaption class="pl2 mt1 z1 imageCaption">{{ . }}</figcaption>
+    {{ end }}
+</figure>

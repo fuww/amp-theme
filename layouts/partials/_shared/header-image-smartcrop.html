@@ -1,0 +1,112 @@
+{{/* Using variable, otherwise Hugo might resize the same image twice.  */}}
+{{/* 16:9 Lighthouse mobile test uses Nexus 5X 412px */}}
+{{/*  You can use aspect ratio in amp-img width and height*/}}
+
+
+{{/* 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 228x263 */}}
+
+{{/* 5260x526 */}}
+
+{{ $imageSrc := .featured }}
+{{/*  {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }} */}}
+{{ $placeholder := $imageSrc.Resize "48x32 smart q20" }}
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
+
+{{ $resized1200 := $imageSrc.Fill "1200x800 smart" }}
+{{ $resized720 := $imageSrc.Fill "600x400 smart" }}
+
+<figure class="m0 sm-m0 md-m3 lg-m4">
+    <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+    {{ $resized1200.RelPermalink }} 1200w,
+    {{ $resized720.RelPermalink }} 720w,
+    {{ ($imageSrc.Fill "300x200 smart").RelPermalink }} 300w
+    " alt="{{ .Title }}" layout="responsive" width="3" height="2">
+        <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+        </amp-img>
+    </amp-img>
+</figure>
+
+
+
+{{/* 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 */}}
+
+<!-- {{ $imageSrc := .featured }}
+{{/*  {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }} */}}
+{{ $placeholder := $imageSrc.Resize "48x32 smart q20" }}
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
+
+{{ $resized1200 := $imageSrc.Fill "1200x800 smart" }}
+{{ $resized720 := $imageSrc.Fill "600x400 smart" }}
+
+<figure class="m0 sm-m0 md-m3 lg-m4">
+    <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+    {{ $resized1200.RelPermalink }} 1200w,
+    {{ $resized720.RelPermalink }} 720w,
+    {{ ($imageSrc.Fill "300x200 smart").RelPermalink }} 300w
+    " alt="{{ .Title }}" layout="responsive" width="3" height="2">
+        <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+        </amp-img>
+    </amp-img>
+</figure> -->
+
+
+
+
+
+{{/* 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 */}}
+
+{{/* 
+{{ if isset .Params "image" }}
+
+{{ $page := . }}
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
+{{ $placeholder := $imageSrc.Resize "48x48 smart q20" }}
+
+{{ $resized1200 := $imageSrc.Fill "1200x1200 smart" }}
+{{ $resized720 := $imageSrc.Fill "720x720 smart" }}
+
+<div class="header-image">
+    <figure class="grid-column-full">
+        <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+    {{ $resized1200.RelPermalink }} 1200w,
+    {{ $resized720.RelPermalink }} 720w,
+    {{ ($imageSrc.Fill "412x412 smart").RelPermalink }} 412w,
+    {{ ($imageSrc.Fill "368x368 smart").RelPermalink }} 368w
+    " alt="{{ .Title }}" layout="responsive" width="1" height="1">
+            <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+            </amp-img>
+        </amp-img>
+        {{ if isset .Params "caption" }}
+        <figcaption class="imageCaption">{{ $page.Params.caption}}</figcaption>
+        {{ end }}
+    </figure>
+</div>
+{{ end }}
+
+
+{{/* 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 */}}
+{{/* 
+{{ if isset .Params "image" }}
+
+{{ $page := . }}
+{{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
+{{ $placeholder := $imageSrc.Resize "48x48 smart q20" }}
+
+{{ $resized1200 := $imageSrc.Fill "1200x675 smart" }}
+{{ $resized720 := $imageSrc.Fill "720x405 smart" }}
+
+<div class="header-image">
+    <figure class="grid-column-full">
+        <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+    {{ $resized1200.RelPermalink }} 1200w,
+    {{ $resized720.RelPermalink }} 720w,
+    {{ ($imageSrc.Fill "412x232 smart").RelPermalink }} 412w,
+    {{ ($imageSrc.Fill "368x207 smart").RelPermalink }} 368w
+    " alt="{{ .Title }}" layout="responsive" width="16" height="9">
+            <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+            </amp-img>
+        </amp-img>
+    </figure>
+</div>
+{{ end }}
+*/}}
