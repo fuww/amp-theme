@@ -1,4 +1,7 @@
 .card {
+    &__l {
+        max-width: 344px;
+    }
     &__media {
         border-color: var(--theme-secondary);
     }
