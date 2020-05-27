@@ -2,7 +2,7 @@
 {{- partial "_shared/navigation" . -}}
 {{ end }}
 {{ define "main" }}
-<div class="grid-nav">
+<div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
     {{- partial "_shared/menu-jobs.html" . -}}
 </div>
 <section class="grid-content recent-posts">
@@ -15,7 +15,9 @@
             {{ end }}
         </div>
     </div>
-    {{ .Content }}
+    <div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
+        {{ .Content }}
+    </div>
 </section>
 </div>
 <div class="p4 my4">

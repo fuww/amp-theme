@@ -7,26 +7,21 @@
 {{ end }}
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">
-    <div class="grid mx-auto">
-        <div class="mr2 ml2 mb4 mt3">
-            <div class="grid-wrapper">
-                {{/* {{ block "breadcrumbs" . }}
-                <div class="grid-breadcrumbs">
-                    {{ partial "navigation/breadcrumbs" . }}
-                </div>
-                {{ end }} */}}
-                {{ block "title" . }}
-                <div class="grid-head mt3 mb2 ">
-                    {{- partial "_shared/title" . -}}
-                </div>
-                {{ end }}
-                <div class="grid-nav">
-                    {{ if (not (isset .Params "disablemenu")) }}
-                    {{ block "sidebarmenu" . }}{{ end }}
-                    {{ end }}
-                </div>
-                {{ block "main" . }}{{ end }}
-            </div>
+    <div class="grid-wrapper">
+
+        {{ block "title" . }}
+        <div class="grid-head pt2 pb1 md-pt3 md-pb2 px2">
+            {{- partial "_shared/title" . -}}
+        </div>
+        {{ end }}
+
+        {{ block "article" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
+
+        <div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
+            {{ if (not (isset .Params "disablemenu")) }}
+            {{ block "sidebarmenu" . }}{{ end }}
+            {{ end }}
         </div>
     </div>
 </main>

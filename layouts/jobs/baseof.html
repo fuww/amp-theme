@@ -14,21 +14,21 @@
 {{ end }}
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">
-    <div class="grid mx-auto">
-        <div class="p2">
-            <div class="grid-wrapper">
-                {{ block "title" . }}
-                <div class="grid-head">
-                    {{- partial "_shared/title" . -}}
-                </div>
-                {{ end }}
-                {{/*  {{ block "breadcrumbs" . }}{{ end }} */}}
-                {{ if (not (isset .Params "disablemenu")) }}
-                {{ block "sidebarmenu" . }}{{ end }}
-                {{ end }}
-                {{ block "main" . }}{{ end }}
-            </div>
+    <div class="grid-wrapper">
+
+        {{ block "title" . }}
+
+        <div class="grid-head pt2 pb1 md-pt3 md-pb2 px2">
+            {{- partial "_shared/title" . -}}
         </div>
+        {{ end }}
+        {{/*  {{ block "breadcrumbs" . }}{{ end }} */}}
+
+        {{ if (not (isset .Params "disablemenu")) }}
+        {{ block "sidebarmenu" . }}{{ end }}
+        {{ end }}
+
+        {{ block "main" . }}{{ end }}
     </div>
 </main>
 {{ if .Params.stand_alone_footer }}

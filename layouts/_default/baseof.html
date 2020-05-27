@@ -12,13 +12,13 @@
     <div class="grid-wrapper">
 
         {{ block "title" . }}
-        <div class="grid-head">
+        <div class="grid-head pt2 pb1 md-pt3 md-pb2 px2">
             {{- partial "_shared/title" . -}}
         </div>
         {{ end }}
 
         {{ if (not (isset .Params "disablemenu")) }}
-        <div class="grid-nav">
+        <div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
             {{ block "sidebarmenu" . }}{{ end }}
         </div>
         {{ end }}
