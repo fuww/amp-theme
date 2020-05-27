@@ -2,35 +2,28 @@
 <div></div>
 {{ block "hero" . }}
 <header class="hero header-hero">
-    {{ if isset .Params "headerimage"}}
-    {{ partial "_shared/hero-image-srcset" . }}
-    {{ end }}
-    {{ partial "_shared/header-image" . }}
+    {{ partial "_shared/hero" . }}
 </header>
 {{ end }}
+</div>
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">
-    <div class="grid mx-auto">
-        <div class="m2">
-            <div class="grid-wrapper">
-                {{/* {{ block "breadcrumbs" . }}
-                <div class="grid-breadcrumbs">
-                    {{ partial "navigation/breadcrumbs" . }}
-                </div>
-                {{ end }} */}}
-                {{ block "title" . }}
-                <div class="grid-head">
-                    {{- partial "_shared/title" . -}}
-                </div>
-                {{ end }}
-                <div class="grid-nav">
-                    {{ if (not (isset .Params "disablemenu")) }}
-                    {{ block "sidebarmenu" . }}{{ end }}
-                    {{ end }}
-                </div>
-                {{ block "main" . }}{{ end }}
-            </div>
+    {{/* <div class="grid mx-auto"> */}}
+    <div class="grid-wrapper">
+
+        {{ block "title" . }}
+        <div class="grid-head">
+            {{- partial "_shared/title" . -}}
         </div>
+        {{ end }}
+
+        {{ if (not (isset .Params "disablemenu")) }}
+        <div class="grid-nav">
+            {{ block "sidebarmenu" . }}{{ end }}
+        </div>
+        {{ end }}
+
+        {{ block "main" . }}{{ end }}
     </div>
 </main>
 {{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}

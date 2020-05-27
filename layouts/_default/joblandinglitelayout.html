@@ -1,9 +1,9 @@
 {{ define "main"}}
 <div class="grid-content">
-    {{/* {{ partial "ads-top" . }} */}}
+  {{/* {{ partial "ads-top" . }} */}}
   <h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>
-{{ .Content }}
-{{ partial "job-list" . }}
-{{ partial "wfb-container" . }}
+  {{ .Content }}
+  {{ partial "job-list" . }}
+  {{ partial "wfb-container" . }}
 </div>
 {{ end }}

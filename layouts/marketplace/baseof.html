@@ -2,10 +2,7 @@
 <div></div>
 {{ block "hero" . }}
 <header class="hero header-hero">
-    {{ if isset .Params "headerimage"}}
-    {{ partial "_shared/hero-image-srcset" . }}
-    {{ end }}
-    {{ partial "_shared/header-image" . }}
+    {{ partial "_shared/hero" . }}
 </header>
 {{ end }}
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}

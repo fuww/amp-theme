@@ -4,12 +4,13 @@
 {{ end }}
 <div></div>
 {{ block "hero" . }}
-<header>
-    <div class="header-hero">
-        {{ if isset .Params "headerimage"}}
-        {{ partial "_shared/hero-image-srcset" . }}
-        {{ end }}
-</header>
+<div class="grid-content header-hero">
+    {{ if isset .Params "headerimage"}}
+    {{ partial "_shared/hero-image-srcset" . }}
+    {{ else }}
+    {{ partial "_shared/hero" . }}
+    {{ end }}
+</div>
 {{ end }}
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">

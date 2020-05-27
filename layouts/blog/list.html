@@ -3,18 +3,18 @@
 {{ end }}
 {{ define "main" }}
 <div class="grid-content">
-        <section class="blog recent-posts">            
-                <div class="section-title">                
-                    <h2><span>All Posts</span></h2>                
-                </div>            
-                <div class="row listrecent">
-                    <div class="grid-container-cards">
-                        {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
-                        {{ range $post_paginator.Pages }}
-                        {{- partial "list/card" . -}}
-                    {{end}}
-                    </div>
-                </div>
-            </section>
+    <section class="blog recent-posts">
+        <div class="section-title">
+            <h2><span>All Posts</span></h2>
         </div>
+        <div class="row listrecent">
+            <div class="grid-container-cards">
+                {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
+                {{ range $post_paginator.Pages }}
+                {{- partial "list/card" . -}}
+                {{end}}
+            </div>
+        </div>
+    </section>
+</div>
 {{ end }}

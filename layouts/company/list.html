@@ -2,17 +2,17 @@
 {{- partial "_shared/menu-company.html" . -}}
 {{ end }}
 {{ define "main" }}
-    <section class="grid-content recent-posts">
-{{ .Content }}
-        <div class="section-title">                                
-        </div>            
-        <div class="row listrecent">
-                <div class="grid-container-cards">
-                {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
-                {{- partial "list/card" . -}}
-                {{ end }}
-                </div>
+<section class="grid-content recent-posts">
+    {{ .Content }}
+    <div class="section-title">
+    </div>
+    <div class="row listrecent">
+        <div class="grid-container-cards">
+            {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+            {{- partial "list/card" . -}}
+            {{ end }}
         </div>
-        </div>
-    </section>
+    </div>
+    </div>
+</section>
 {{ end }}

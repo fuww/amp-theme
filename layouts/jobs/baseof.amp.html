@@ -4,31 +4,33 @@
 {{ end }}
 <div></div>
 {{ block "hero" . }}
-    <header>
-        <div class="header-hero">
-            {{ if isset .Params "headerimage"}}
-            {{ partial "_shared/hero-image-srcset" . }}
-            {{ end }}
-    </header>
+<header>
+    <div class="header-hero">
+        {{ if isset .Params "headerimage"}}
+        {{ partial "_shared/hero-image-srcset" . }}
+        {{ else }}
+        {{ partial "_shared/hero" . }}
+        {{ end }}
+</header>
 {{ end }}
-    {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">
     <div class="grid mx-auto">
         <div class="m2">
             <div class="grid-wrapper">
                 {{ block "title" . }}
-                    <div class="grid-head">
-                        {{- partial "_shared/title" . -}}
-                    </div>
+                <div class="grid-head">
+                    {{- partial "_shared/title" . -}}
+                </div>
                 {{ end }}
-            {{/*  {{ block "breadcrumbs" . }}{{ end }}  */}}
-            {{ if (not (isset .Params "disablemenu")) }}
-            {{ block "sidebarmenu" . }}{{ end }}
-            {{ end }}
-            {{ block "main" . }}{{ end }}
+                {{/*  {{ block "breadcrumbs" . }}{{ end }} */}}
+                {{ if (not (isset .Params "disablemenu")) }}
+                {{ block "sidebarmenu" . }}{{ end }}
+                {{ end }}
+                {{ block "main" . }}{{ end }}
+            </div>
         </div>
     </div>
-</div>
 </main>
 {{ if .Params.stand_alone_footer }}
 {{ partial "structure/footer-stand-alone-page" . }}
