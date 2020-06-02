@@ -1,6 +1,6 @@
 <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-  <li class="list-item flex">
-    <span class="list-item__graphic px0 py2 border bg-red">
+  <li class="list-item flex py1 px0 m0 line-height-4">
+    <span class="list-item__graphic px0 py2">
       <div class="list__media list__media--16-9 border-bottom border-width2">
         {{ if isset .Params "images"}}
         {{ partial "_shared/list-image" . }}
@@ -14,11 +14,15 @@
         {{ end }}
       </div>
     </span>
-    <span class="list-item__text p1 border">
-      <span class="list-item__primary-text h6">{{.Title}}</span>
+    <span class="list-item__text">
+      <span class="list-item__primary-text h5">{{.Title}}</span>
       <span class="list-item__secondary-text bg-white body2">
         {{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}
       </span>
     </span>
+    <span aria-hidden="true" class="list-item__meta">
+      <!---->Meta
+      <!----></span>
   </li>
+  <li role="separator" class="list-divider list-divider--inset"></li>
 </a>

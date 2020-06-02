@@ -18,7 +18,7 @@
 
         <div class="section-content post">
 
-            <ul class="list list--two-line">
+            <ul class="list list--two-line list-reset">
                 {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
                 {{ range $post_paginator.Pages }}
                 {{- partial "list/twoline" . -}}

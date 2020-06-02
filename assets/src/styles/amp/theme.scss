@@ -85,7 +85,7 @@
 @import "./components/statistics_page";
 
 
-@import "./components/list"; // used with Embedder, though really BIG
+@import "./components/list";
+@import "./components/mdc-list-embedders"; // used with Embedder, though really BIG
 @import "./components/embedder/embedder";
-@import "./components/custom/marketplace/home-page";
 // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width

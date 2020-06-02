@@ -8,7 +8,7 @@
     <div class="section-title">
     </div>
     <div class="row listrecent">
-        <div class="grid--cards shuffle" id="shuffle">
+        <div class="grid__cards shuffle" id="shuffle">
             {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
             {{- partial "list/card" . -}}
             {{ end }}
