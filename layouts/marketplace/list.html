@@ -6,7 +6,7 @@
 
 <section class="grid-content recent-posts">
     <div class="row listrecent">
-        <div class="grid-container-cards-marketplace">
+        <div class="grid--cards-marketplace">
             {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
             {{- partial "list/card" . -}}
             {{ end }}

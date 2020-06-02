@@ -8,12 +8,37 @@
 </div>
 {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 <main class="main-content" id="main-content">
-    {{/* <div class="grid mx-auto"> */}}
+
+    {{/*  {{ block "title" . }} */}}
+    {{/*  <div class="center pt2 pb1 md-pt3 md-pb2">
+        {{- partial "_shared/title" . -}}
+    </div> */}}
+    {{/*  <div class="grid-wrapper">
+        <div class="grid-content">
+            <div class="pt2 pb1 md-pt3 md-pb2">
+                {{- partial "_shared/title" . -}}
+    </div>
+    </div>
+    </div> */}}
+    {{/*  <div class="grid-wrapper">
+        <div class="grid-content">
+            <div class="post">
+                <div class="grid-title pt2 pb1 md-pt3 md-pb2">
+                    {{- partial "_shared/title" . -}}
+    </div>
+    </div>
+    </div>
+    </div> */}}
+    {{/*  {{ end }} */}}
+
+
     <div class="grid-wrapper">
 
         {{ block "title" . }}
-        <div class="grid-head pt2 pb1 md-pt3 md-pb2 px2">
-            {{- partial "_shared/title" . -}}
+        <div class="grid-header">
+            <div class="pt2 pb1 md-pt3 md-pb2">
+                {{- partial "_shared/title" . -}}
+            </div>
         </div>
         {{ end }}
 
