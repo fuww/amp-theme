@@ -1,3 +1,113 @@
+.list-item {
+  font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.009375em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    /* @alternate */
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 8px 0;
+    list-style-type: none;
+    color: rgba(0, 0, 0, 0.87);
+    /* @alternate */
+    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+
+  &__graphic {
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  &__secondary-text {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.0178571429em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    margin-top: 0;
+    /* @alternate */
+    line-height: normal;
+    display: block;
+
+    &::before {
+      display: inline-block;
+      width: 0;
+      height: 20px;
+      content: "";
+      vertical-align: 0;
+    }
+  }
+
+
+  &__graphic {
+    /* @noflip */
+    margin-left: 0;
+    /* @noflip */
+    margin-right: 28px;
+    width: 100px;
+    height: 56px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    fill: currentColor;
+  }
+
+  &_primary-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    margin-top: 0;
+    /* @alternate */
+    line-height: normal;
+    margin-bottom: -20px;
+    display: block;
+  
+    &::before {
+      display: inline-block;
+      width: 0;
+      height: 32px;
+      content: "";
+      vertical-align: 0;
+    }
+    &::after {
+      display: inline-block;
+      width: 0;
+      height: 20px;
+      content: "";
+      vertical-align: -20px;
+    }
+  }
+  
+  &__secondary-text,
+  &__text {
+      white-space: initial;
+  }
+  &__meta {
+    /* @noflip */
+    margin-left: auto;
+    /* @noflip */
+    margin-right: 0;
+  }
+  &__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+}
+
 li {
   font-size: 1rem;
   line-height: 1.5rem;

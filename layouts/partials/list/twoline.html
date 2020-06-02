@@ -1,0 +1,24 @@
+<a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+  <li class="list-item flex">
+    <span class="list-item__graphic px0 py2 border bg-red">
+      <div class="list__media list__media--16-9 border-bottom border-width2">
+        {{ if isset .Params "images"}}
+        {{ partial "_shared/list-image" . }}
+        {{ else if isset .Params "logo"}}
+        <div class="m2 p3 logo">
+          <div class="logo-media flex justify-center">
+            <img class="self-center" src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}"
+              alt="{{.Title}}">
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </span>
+    <span class="list-item__text p1 border">
+      <span class="list-item__primary-text h6">{{.Title}}</span>
+      <span class="list-item__secondary-text bg-white body2">
+        {{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}
+      </span>
+    </span>
+  </li>
+</a>
