@@ -9,9 +9,15 @@
 {{ define "main" }}
 <div class=" grid-article___inner">
         <article class="grid-content">
-                {{- partial "_shared/title" . -}}
-                {{ .Content }}
-                {{- partial "_shared/after-post-tags" . }}
+                <div class="post">
+                        {{- partial "_shared/title" . -}}
+                </div>
+                <div class="post">
+                        {{ .Content }}
+                </div>
+                <div class="post">
+                        {{- partial "_shared/after-post-tags" . }}
+                </div>
         </article>
 </div>
 {{ end }}

@@ -5,8 +5,6 @@
 {{ define "main" }}
 
 <section class="grid-content recent-posts">
-    <div class="section-title">
-    </div>
     <div class="row listrecent">
         <div class="grid-container-cards-marketplace">
             {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
@@ -14,7 +12,9 @@
             {{ end }}
         </div>
     </div>
-    {{ .Content }}
+    <div class="post">
+        {{ .Content }}
+    </div>
 </section>
 {{ end }}
 {{ define "footer"}}
