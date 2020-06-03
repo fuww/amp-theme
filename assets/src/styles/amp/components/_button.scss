@@ -23,6 +23,30 @@
   vertical-align: middle;
 }
 
+.btn:not(:disabled) {
+  color: #0002ff;
+  color: var(--mdc-theme-primary, #0002ff);
+}
+
+.btn--raised {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 1px 5px 0px rgba(0,0,0,.12);
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--raised, .btn--unelevated {
+  padding: 0 16px 0 16px;
+}
+
+.btn--raised:not(:disabled), .btn--unelevated:not(:disabled) {
+  color: #fff;
+  color: var(--theme-on-primary, #fff);
+}
+.btn--raised:not(:disabled), .btn--unelevated:not(:disabled) {
+  background-color: var(--theme-primary, #0002ff);
+}
+.btn--raised:not(:disabled), .btn--unelevated:not(:disabled) {
+  background-color: #0002ff;
+}
+
 .btn::before, .btn::after {
   position: absolute;
   border-radius: 50%;
@@ -35,14 +59,14 @@
   z-index: 1;
 }
 
+.btn-primary:not(:disabled) {
+  color: #fff;
+  color: var(--theme-on-primary, #fff);
+}
+
 .btn-primary { 
   background-color: var(--theme-primary, #0002ff);
   // border-radius: 4px;
-}
-
-.btn-outline {
-  // border-radius: 4px;
-  color: var(--theme-primary, #0002ff)
 }
 
 .btn-outline, .btn-outline:hover {
@@ -57,7 +81,7 @@
     width: 200%;
     height: 200%;
   }
-  .btn.mdc-ripple-upgraded::after {
+  .btn.ripple-upgraded::after {
   }
   .btn::-moz-focus-inner {
     padding: 0;
@@ -72,9 +96,9 @@
   .btn.btn--dense {
     border-radius: 4px;
   }
-  .btn:not(:disabled) {
-    background-color: transparent;
-  }
+  // .btn:not(:disabled) {
+  //   background-color: transparent;
+  // }
   .btn .btn__icon {
     /* @noflip */
     margin-left: 0;
@@ -86,24 +110,14 @@
     font-size: 18px;
     vertical-align: top;
   }
-  [dir=rtl] .btn .btn__icon, .btn .btn__icon[dir=rtl] {
-    /* @noflip */
-    margin-left: 8px;
-    /* @noflip */
-    margin-right: 0;
-  }
-  .btn:not(:disabled) {
-    color: #6200ee;
-    /* @alternate */
-    color: var(--theme-primary, #6200ee);
-  }
+
   .btn::before, .btn::after {
-    background-color: #6200ee;
+    background-color: #0002ff;
   }
   @supports not (-ms-ime-align: auto) {
     .btn::before, .btn::after {
       /* @alternate */
-      background-color: var(--theme-primary, #6200ee);
+      background-color: var(--theme-primary, #0002ff);
     }
   }
   .btn:hover::before {
@@ -116,12 +130,12 @@
     /* @noflip */
     margin-right: 0;
   }
-  [dir=rtl] .btn__label + .btn__icon, .btn__label + .btn__icon[dir=rtl] {
-    /* @noflip */
-    margin-left: 0;
-    /* @noflip */
-    margin-right: 8px;
-  }
+  // [dir=rtl] .btn__label + .btn__icon, .btn__label + .btn__icon[dir=rtl] {
+  //   /* @noflip */
+  //   margin-left: 0;
+  //   /* @noflip */
+  //   margin-right: 8px;
+  // }
   
   svg.btn__icon {
     fill: currentColor;
@@ -135,16 +149,7 @@
     /* @noflip */
     margin-right: 8px;
   }
-  [dir=rtl] .btn--raised .btn__icon, .btn--raised .btn__icon[dir=rtl],
-  [dir=rtl] .btn--unelevated .btn__icon,
-  .btn--unelevated .btn__icon[dir=rtl],
-  [dir=rtl] .btn-outline .btn__icon,
-  .btn-outline .btn__icon[dir=rtl] {
-    /* @noflip */
-    margin-left: 8px;
-    /* @noflip */
-    margin-right: -4px;
-  }
+
   .btn--raised .btn__label + .btn__icon,
   .btn--unelevated .btn__label + .btn__icon,
   .btn-outline .btn__label + .btn__icon {
@@ -153,16 +158,7 @@
     /* @noflip */
     margin-right: -4px;
   }
-  [dir=rtl] .btn--raised .btn__label + .btn__icon, .btn--raised .btn__label + .btn__icon[dir=rtl],
-  [dir=rtl] .btn--unelevated .btn__label + .btn__icon,
-  .btn--unelevated .btn__label + .btn__icon[dir=rtl],
-  [dir=rtl] .btn-outline .btn__label + .btn__icon,
-  .btn-outline .btn__label + .btn__icon[dir=rtl] {
-    /* @noflip */
-    margin-left: -4px;
-    /* @noflip */
-    margin-right: 8px;
-  }
+
   .btn-outline {
     border-style: solid;
     padding: 0 14px 0 14px;
@@ -172,9 +168,11 @@
     border-color: rgba(0, 0, 0, 0.37);
   }
   .btn-outline:not(:disabled) {
-    border-color: #6200ee;
+    border-color: #0002ff;
     /* @alternate */
-    border-color: var(--theme-primary, #6200ee);
+    border-color: var(--theme-primary, #0002ff);
+    color: #0002ff;
+    color: var(--theme-primary, #0002ff)
   }
   
   .btn--dense {

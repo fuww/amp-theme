@@ -1,13 +1,15 @@
 .nx-headerbar i {
-  color: $theme-primary;
-  color: var(--theme-primary);
-  }
+  // color: $theme-primary;
+  // color: var(--theme-primary);
+  color: #000
+}
   
-  svg {
-      fill: $theme-primary;
-      fill: var(--theme-primary);
-    }
-  
-    .nx-navbar-trigger {
-      font-size: 2.5rem; // fixes alignment of hamburger icon
-    }
+svg {
+  // fill: $theme-primary;
+  // fill: var(--theme-primary);
+  fill: #000
+}
+
+.nx-navbar-trigger {
+  font-size: 2.5rem; // fixes alignment of hamburger icon
+}

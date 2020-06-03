@@ -1,0 +1,7 @@
+<!-- https://basscss.com/v7/docs/guides/layout/#hero-banner -->
+<header class="center px3 py4 white bg-gray bg-cover bg-center"
+  style="background-image: url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)">
+  <h1 class="h1 h0-responsive caps mt4 mb0 regular">{{ with .title }}{{ . }}{{ end }}</h1>
+  <p class="h3">{{ with .subtitle }}{{ . }}{{ end }}</p>
+  <a href="{{ with .href }}{{ . }}{{ end }}" class="h3 btn btn-primary mb4">{{ with .btn }}{{ . }}{{ end }}</a>
+</header>
