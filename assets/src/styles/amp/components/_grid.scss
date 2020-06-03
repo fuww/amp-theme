@@ -1,4 +1,39 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+
+.centered {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+// @media screen and (min-width: 52em) {
+//   .centered {
+//       max-width: 52em;
+//   }
+// }
+
+.cards--marketplace {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card--marketplace {
+  flex: 1 0 500px;
+  box-sizing: border-box;
+  // margin: 1rem .25em;
+  margin: auto;
+}
+
+@media screen and (min-width: 40em) {
+  .card--marketplace {
+     max-width: calc(33% -  1em);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .card--marketplace {
+      max-width: calc(33% - 1em);
+  }
+}
+
 .grid {
     &__cards {
       display: grid;
