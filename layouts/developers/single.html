@@ -3,7 +3,7 @@
     {{ partial "_shared/hero" . }}
 </header>
 {{ end }}
-{{ define "sidebarmenu" }}
+{{ define "nav" }}
 {{- partial "_shared/menu-developers.html" . -}}
 {{ end}}
 {{ define "main" }}
@@ -16,3 +16,6 @@
     {{- partial "_shared/after-post-tags" . }}
 </div>
 {{ end }}
+{{ define "sidebar" }}
+{{- partial "toc.html" . -}}
+{{ end}}

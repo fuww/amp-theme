@@ -1,0 +1,16 @@
+<!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
+<aside class="list-reset md-px3 sm-py0 border-left black-disabled">
+    {{ if .Params.toc }}
+    <p class="bold">What's on this Page</p>
+    <span class="list-reset black-high">
+        {{ .TableOfContents }}
+    </span>
+    {{ end }}
+    {{- partial "previous-next-links-in-section.html" . -}}
+
+    {{- if .Params.godocref -}}
+    <a target="_blank" class="blue yellow tooltip right godoc-link"
+        data-tooltip="See the related Godocs for {{.Title }}" href="{{.Params.godocref}}">
+    </a>
+    {{- end -}}
+</aside>

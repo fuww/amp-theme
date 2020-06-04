@@ -25,7 +25,7 @@
                 {{ end }}
                 {{/*  {{ block "breadcrumbs" . }}{{ end }} */}}
                 {{ if (not (isset .Params "disablemenu")) }}
-                {{ block "sidebarmenu" . }}{{ end }}
+                {{ block "nav" . }}{{ end }}
                 {{ end }}
                 {{ block "main" . }}{{ end }}
             </div>
