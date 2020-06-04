@@ -1,17 +1,8 @@
 <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
   <li class="list-item flex py1 px0 m0 line-height-4">
     <span class="list-item__graphic px0 py2">
-      <div class="list__media list__media--16-9 border-bottom border-width2">
-        {{ if isset .Params "images"}}
+      <div class="list__media list__media--16-9">
         {{ partial "_shared/list-image" . }}
-        {{ else if isset .Params "logo"}}
-        <div class="m2 p3 logo">
-          <div class="logo-media flex justify-center">
-            <img class="self-center" src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}"
-              alt="{{.Title}}">
-          </div>
-        </div>
-        {{ end }}
       </div>
     </span>
     <span class="list-item__text">
@@ -21,7 +12,7 @@
       </span>
     </span>
     <span aria-hidden="true" class="list-item__meta">
-      <!---->Meta
+      <!---->{{ .WordCount }}
       <!----></span>
   </li>
   <li role="separator" class="list-divider list-divider--inset"></li>

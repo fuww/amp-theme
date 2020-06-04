@@ -82,12 +82,12 @@ text-transform: uppercase;
     // Basscss typography variables
     // https://basscss.com/v7/docs/base-typography/
     // body {
-    --font-family: Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
+    --font-family: 'Helvetica Now', Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
     --line-height: #{$line-height};
     --body-font-size: #{$body-font-size};
 
     // h1, h2, h3, h4, h5, h6 {
-    --heading-font-family: 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    --heading-font-family: 'Helvetica Now', 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     // --heading-font-weight:;
     // --heading-line-height:;
     // --heading-margin-top;
