@@ -23,6 +23,8 @@ $black-medium: rgba(0, 0, 0, .60);
 $black-inactive: rgba(0, 0, 0, 0.54);
 $black-disabled: rgba(0, 0, 0, .38);
 
+$theme-secondary-300: #0080FF; // links
+
 $body2: 1rem;
 
 $line-height: 1.5;
@@ -67,6 +69,8 @@ text-transform: uppercase;
 .black-medium {color:$black-medium;}
 .black-inactive {color:$black-inactive;}
 .black-disabled {color:$black-disabled;}
+
+.theme-secondary-300 {color:$theme-secondary-300;}
 
 :root {
     // Basscss Variables (set to match Material.io)
@@ -117,6 +121,9 @@ text-transform: uppercase;
     --h5: #{h5};    /* 16px */
     --h6: #{h6};    /* 22px */
 
+    // https://basscss.com/v7/docs/color-base/
+    --link-color: #{$theme-primary};
+
     --button-color: white;
     --button-background-color: #{$theme-primary};
 
@@ -143,6 +150,8 @@ text-transform: uppercase;
 
     --navbar-bg-color: #{$navbar-bg-color};
     --navbar-border-bottom-color: #{$navbar-border-bottom-color};
+
+    --theme-secondary-300: #{$theme-secondary-300};
 
     --body2: #{$body2};
     // END Custom vars

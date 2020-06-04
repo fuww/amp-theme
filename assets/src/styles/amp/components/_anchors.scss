@@ -1,7 +1,27 @@
 a, a:active, a:visited {
     color: inherit;
+    text-decoration: none;
   }
 
-  a:-webkit-any-link {
-    text-decoration: none;
+//   a:-webkit-any-link {
+//     text-decoration: none;
+// }
+
+// a {
+//   color: var(--link-color);
+//   text-decoration: var(--link-text-decoration);
+// }
+
+// a:hover {
+//   text-decoration: var(--link-hover-text-decoration);
+// }
+
+article {
+  a, a:active, a:visited {
+    text-decoration: underline;
+    color: #0002ff;
+    color: var(--theme-secondary-300, #0002ff);
+    font-weight:bold;
+    cursor:pointer;
+  }
 }
