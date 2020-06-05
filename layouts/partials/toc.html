@@ -1,8 +1,8 @@
 <!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
 <aside class="list-reset md-px3 sm-py0 border-left black-disabled">
     {{ if .Params.toc }}
-    <p class="bold">What's on this Page</p>
-    <span class="list-reset black-high">
+    <p class="bold px1 heading-font-family">What's on this Page</p>
+    <span class="nested-list-reset black-high">
         {{ .TableOfContents }}
     </span>
     {{ end }}

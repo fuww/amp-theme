@@ -1,4 +1,6 @@
 $font-system: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$heading-font-family: 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family: Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
 
 /* Color */
 $theme-primary: #0002ff; // #0022ff blue FF5719 orange (#F37022 = Hermes orange)
@@ -54,16 +56,18 @@ $h6: 1rem;    /* 22px */
 text-transform: uppercase;
 }
 
+.heading-font-family {font-family:$heading-font-family;}
+
 .theme-primary {color:$theme-primary;}
 .bg-theme-primary {background-color:$theme-primary;}
-.theme-on-primary{color:$theme-on-primary;}
+.theme-on-primary {color:$theme-on-primary;}
 .theme-secondary {color:$theme-secondary;}
 .bg-theme-secondary {background-color:$theme-secondary;}
 .theme-background {background-color:$theme-background;}
 .theme-surface {background-color:$theme-surface;}
-.theme-on-surface{color:$theme-on-surface;}
+.theme-on-surface {color:$theme-on-surface;}
 .theme-error {background-color:$theme-error;}
-.theme-on-error{color:$theme-on-error;}
+.theme-on-error {color:$theme-on-error;}
 
 .black-high {color:$black-high;}
 .black-medium {color:$black-medium;}
@@ -82,12 +86,12 @@ text-transform: uppercase;
     // Basscss typography variables
     // https://basscss.com/v7/docs/base-typography/
     // body {
-    --font-family: 'Helvetica Now', Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif;
+    --font-family: #{$font-family};
     --line-height: #{$line-height};
     --body-font-size: #{$body-font-size};
 
     // h1, h2, h3, h4, h5, h6 {
-    --heading-font-family: 'Helvetica Now', 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    --heading-font-family: #{$heading-font-family};
     // --heading-font-weight:;
     // --heading-line-height:;
     // --heading-margin-top;

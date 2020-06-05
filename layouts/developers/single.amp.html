@@ -16,3 +16,6 @@
     {{- partial "_shared/after-post-tags" . }}
 </div>
 {{ end }}
+{{ define "sidebar" }}
+{{- partial "toc.html" . -}}
+{{ end}}

@@ -1,6 +1,6 @@
 {{ define "hero"}}
 <header class="header-hero">
-    {{ partial "_shared/hero-developers" . }}
+    {{ partial "_shared/hero" . }}
 </header>
 {{ end }}
 {{ define "nav" }}
@@ -15,12 +15,17 @@
         <div class="section-title post">
             <h2><span>All Posts</span></h2>
         </div>
-        <div class="row listrecent">
-            {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
-            {{ range $post_paginator.Pages }}
-            {{- partial "list/card" . -}}
-            {{end}}
+
+        <div class="section-content post">
+
+            <ul class="list list--two-line list-reset">
+                {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 6 }}
+                {{ range $post_paginator.Pages }}
+                {{- partial "list/twoline" . -}}
+                {{end}}
+            </ul>
         </div>
+
     </section>
 </div>
 {{ end }}
