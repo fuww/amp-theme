@@ -19,6 +19,7 @@
 @import 'basscss-align/index.css';
 @import 'basscss-border/index.css';
 @import 'basscss-flexbox/index.css';
+@import 'components/flex';
 @import 'basscss-grid/index.css';
 /* >> Use CSS Grid Instead >> needed for breakpoints navbar */
 // @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP. Created custom class for .hide

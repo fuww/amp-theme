@@ -1,3 +1,4 @@
+{{/* Per section is not supported (only per language or alternate output format) */}}
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
     {{- if and (ge .Level 2) (le .Level 4) }}{{" " -}}
     <a class="header-link" href="#{{ .Anchor | safeURL }}"><svg class="fill-current o-60 hover-accent-color-light"

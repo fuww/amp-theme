@@ -1,0 +1,39 @@
+<section class="container px2 py3 {{ with .class }}{{ . }}{{ end }}">
+  <div class="sm-flex flex-center mxn2 my4">
+    <div class="flex-auto {{ with .imgclass }}{{ . }}{{ end }}        "
+      style="height: 563px; {{ with .src }}background-image: url({{ . }});{{ end }} ">
+      <img src="{{ with .src }}{{ . }}{{ end }}">
+      {{ partial "_shared/card-image" . }}
+      {{/*  style="height: 563px; background-image: url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)">  */}}
+      {{/*   sm-col sm-col-6    center px3 py4 white bg-gray bg-cover bg-center  */}}
+    </div>
+    <div class="flex-auto       sm-col sm-col-6 px2 py4">
+      <span class="red">New</span>
+      <h2 class="mb0">{{ with .title }}{{ . }}{{ end }}</h2>
+      <p class="h1">{{ with .subtitle }}{{ . }}{{ end }}</h2>
+        {{/*  <p>{{ with . description }}{{ . }}{{ end }}</p> */}}
+      <a href="{{ with .href }}{{ . }}{{ end }}" class="h3 btn btn-primary mb4">{{ with .btn }}{{ . }}{{ end }}</a>
+    </div>
+  </div>
+
+
+</section>
+{{/*  980x1120  */}}
+
+
+
+{{/*  
+  
+  
+
+*/}}
+
+{{/*  
+
+<!-- https://basscss.com/v7/docs/guides/layout/#hero-banner -->
+<header class="center px3 py4 white bg-gray bg-cover bg-center"
+  style="background-image: url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)">
+  <h1 class="h1 h0-responsive caps mt4 mb0 regular">{{ with .title }}{{ . }}{{ end }}</h1>
+<p class="h3">{{ with .subtitle }}{{ . }}{{ end }}</p>
+<a href="{{ with .href }}{{ . }}{{ end }}" class="h3 btn btn-primary mb4">{{ with .btn }}{{ . }}{{ end }}</a>
+</header> */}}
