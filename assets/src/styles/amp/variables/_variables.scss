@@ -176,9 +176,9 @@ text-transform: uppercase;
     // --baseline-multiplier: 0.22;
 }
 
-.black {
-    color: var(--white)
-}
+// .black {
+//     color: var(--black-high)
+// }
 
 .white {
     color: var(--white)
@@ -186,4 +186,9 @@ text-transform: uppercase;
 
 .border-width2 {
     border-width: 2px;
+}
+
+.overflow-x-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
 }
