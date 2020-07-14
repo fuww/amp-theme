@@ -4,6 +4,16 @@
 {{ define "main" }}
 <div class="grid-content">
     <article>
+        {{ with .Resources.ByType "csv" }}
+        <section class="post downloads">
+            <div class="Csv">
+                {{ range . }}
+                <a href="{{ .RelPermalink }}">{{.Title}}</a>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+
         <div class="post">
             {{ .Content }}
         </div>
@@ -14,5 +24,17 @@
 {{ define "sidebar" }}
 <div class="sticky   order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
     {{- partial "toc.html" . -}}
+
+    {{ with .Resources.ByType "csv" }}
+    <section class="post downloads">
+        <p class="bold px1 heading-font-family">Downloads</p>
+        <div class="Csv">
+            {{ range . }}
+            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+            {{ end }}
+        </div>
+    </section>
+
 </div>
+{{ end }}
 {{ end}}
