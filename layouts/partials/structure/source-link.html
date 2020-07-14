@@ -1,0 +1,5 @@
+<div class="center white bg-black">
+    {{ $path := (print "https://gitlab.com/fuww/landing/-/tree/master/content/" .Site.Params.domain "/" .File.Path) }}
+    {{ $webIDEpath := (print "https://gitlab.com/-/ide/project/fuww/landing/edit/master/-/master/content/" .Site.Params.domain "/" .File.Path) }}
+    Edit <a href="{{ $path }}">this page</a> &mdash; open <a href="{{ $webIDEpath }}">Web IDE</a>
+</div>
