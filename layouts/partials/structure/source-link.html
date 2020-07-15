@@ -1,6 +1,6 @@
 <div class="center white bg-black heading-font-family">
-    {{ $path := (print "https://gitlab.com/fuww/landing/-/tree/master/content/" .Site.Params.domain "/" .File.Path) }}
-    {{ $webIDEpath := (print "https://gitlab.com/-/ide/project/fuww/landing/blob/master/-/content/" .Site.Params.domain "/" .File.Path) }}
+    {{ $path := (print .Site.Params.contentRepo .File.Path) }}
+    {{ $webIDEpath := (print .Site.Params.contentRepoWebIDE .File.Path) }}
     Edit <a class="underline" href="{{ $path }}">this page</a> &mdash; open <a class="underline"
         href="{{ $webIDEpath }}">Web IDE</a>
 </div>
