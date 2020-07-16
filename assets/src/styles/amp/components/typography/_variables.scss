@@ -1,13 +1,5 @@
 @import "./functions";
 
-$mdc-typography-font-family: unquote("Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif") !default;
-
-$mdc-typography-base: (
-  font-family: $mdc-typography-font-family,
-  -moz-osx-font-smoothing: grayscale,
-  -webkit-font-smoothing: antialiased,
-) !default;
-
 $mdc-typography-font-weight-values: (
   thin: 100,
   light: 300,
@@ -24,6 +16,8 @@ html {
 }
 
 body {
+    font-family: $font-family;
+
     // Improve font rendering
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -32,6 +26,8 @@ body {
 }
 
 p, .body1, .body1 p {
+    font-family: $font-family;
+
     font-weight: 400;
     letter-spacing: .03125rem;
     text-decoration: inherit;
@@ -51,7 +47,7 @@ p, .body1, .body1 p {
 }
 
 .body2, .body2 p {
-    font-family: var(--font-family);
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
