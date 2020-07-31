@@ -214,13 +214,12 @@
         margin-right: auto;
     }
     .title {
-            font-family: var(--font-family);
-            font-weight: 300;
+            font-family: var(--heading-font-family);
+            font-weight: 700;
     }
 p{
-    font-size: 18px;
-    line-height: 1.58;
-    letter-spacing: -.004em;
+    // font-size: 18px;
+    // line-height: 1.58;
 }
 
 // needs work:
@@ -242,7 +241,7 @@ hr {
     border: 0;
 }
 hr.section-divider:before {
-    font-family: medium-content-slab-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-family: var(--font-system-serif);
     font-weight: 400;
     font-style: italic;
     font-size: 30px;
