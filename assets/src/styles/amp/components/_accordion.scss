@@ -1,3 +1,5 @@
+@forward "../variables/variables";
+
 .accordion___header {
   background-color: var(--theme-on-primary, $theme-on-primary);
 }

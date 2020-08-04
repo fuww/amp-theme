@@ -1,5 +1,5 @@
+@forward "../../variables/variables";
 @import "./functions";
-
 // All components on the page should have a height divisible by the height of one line of paragraph text. Maintaining vertical rhythm (or composing to a baseline grid34) is the
 // practice of making sure that the height of each textual element on the page (including lists, headings and block quotes) is divisible by a common number.
 
@@ -11,6 +11,8 @@ $mdc-typography-font-weight-values: (
   bold: 700,
   black: 900
 ) !default;
+
+
 
 // variables for font-sizes, weights, letter-spacing, line-heights, etc
 
@@ -223,7 +225,17 @@ blockquote {
     font-size: 10px;
 }
 
-
+.section-developers {
+    body, p, table, li, dt {
+        font-family: $futura-font-family;
+        font-size: 	1.125rem; // 18px
+        letter-spacing: 0.45px;
+    }
+    
+    .body2 {
+        font-family: $futura-font-family;
+    }
+    }
 
 
 // $mdc-typography-styles: mdc-typography-set-styles_(
