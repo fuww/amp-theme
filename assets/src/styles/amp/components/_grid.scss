@@ -1,3 +1,16 @@
+@import 'basscss-grid/index.css'; /* >> for breakpoints navbar */
+
+$breakpoint-sm: 480px;
+$breakpoint-md: 600px;
+$breakpoint-lg: 840px;
+
+:root {
+  /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+}
+
 // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
 
 .centered {

@@ -1,4 +1,10 @@
 
+$navbar-height: 3.5rem;
+
+:root {
+ --navbar-height: #{$navbar-height};
+}
+
 .nx-headerbar {
   border-bottom: 2px solid var(--navbar-border-bottom-color);
   &-nav {

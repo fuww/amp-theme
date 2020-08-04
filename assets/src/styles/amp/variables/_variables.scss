@@ -1,50 +1,10 @@
 @use "sass:string";
-
-
 @use "../theme/theme";
-
-
-
-$navbar-height: 3.5rem;
-
-
-
-// Basscss default breakpoints:
-// Prefix	Description
-// (no prefix)	Not scoped to a breakpoint
-$breakpoint-sm: 480px;
-$breakpoint-md: 600px;
-$breakpoint-lg: 840px;
 
 /* Shape */
 $shape-small-component-radius: 0px;
 $shape-medium-component-radius: 0px;
 $shape-large-component-radius: 0px;
-
-
-
-
-
-
-
-
-:root {
-    // Basscss Variables (set to match Material.io)
-    /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
-    --breakpoint-sm: #{$breakpoint-sm};
-    --breakpoint-md: #{$breakpoint-md};
-    --breakpoint-lg: #{$breakpoint-lg};
-
-   
-
-    // from basscss v7
-    --table-header-font-weight: bold;
-    --table-cell-padding-y: 0;
-    --table-cell-padding-x: 16px;
-    
-    --navbar-height: #{$navbar-height};
-}
-
 
 .border-width2 {
     border-width: 2px;
@@ -57,8 +17,4 @@ $shape-large-component-radius: 0px;
 
 .mw-260 {
     max-width: 260px;
-}
-
-.uppercase {
-    text-transform: uppercase;
 }
