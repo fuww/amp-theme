@@ -6,13 +6,14 @@
 // Not needed, Basscss does a reset
 
 // Load fonts early. Fonts are allowed in AMP
-@import "font-face/futura-condensed";
-@import "font-face/fu-futura-pt";
+@use "sass:meta";
+@use "font-face/futura-condensed";
+@use "font-face/fu-futura-pt";
 // @import "font-face/helvetica-now-display-black";
 
 // Mixins
-@import "mixins/css-grid";
-@import "mixins/multiline-ellipsis";
+@use "mixins/css-grid";
+@use "mixins/multiline-ellipsis";
 
 /* Basscss Modules */
 // https://github.com/basscss/basscss/blob/master/docs/GettingStarted.md
@@ -20,7 +21,7 @@
 @import 'basscss-align/index.css';
 @import 'basscss-border/index.css';
 @import 'basscss-flexbox/index.css';
-@import 'components/flex';
+@include meta.load-css('components/flex');
 @import 'basscss-grid/index.css';
 /* >> Use CSS Grid Instead >> needed for breakpoints navbar */
 // @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP. Created custom class for .hide
@@ -54,40 +55,40 @@
 // @import 'basscss-addons/modules/lighten/index.css';
 // @import 'basscss-addons/modules/background-images/index.css';
 
-@import 'components/navbar'; // Duplications in navbar and navigation
+@include meta.load-css('components/navbar'); // Duplications in navbar and navigation
 
-@import 'variables/variables';
+@include meta.load-css('variables/variables');
 // --------
 
 // // Components
 // // ----------
-@import "./components/typography/typography";
-@import "./components/anchors";
-@import "./components/elevation";
-@import "./components/author";
-@import "./components/form";
-@import "./components/hero";
-@import "./components/breadcrumbs";
-@import "./components/navigation";
-@import "./components/mdc-branding"; // card grid a no underline, logo sizing etc.
-@import "./components/card";
-@import "./components/button";
-@import "./components/tabs";
-@import "./components/accordion";
-@import "./components/footer";
-@import "./components/figure";
-@import "./components/blogpost";
-@import "./components/tags";
-@import "./components/grid";
-@import "./components/hide";
-@import "./components/table";
-@import './components/header-link';
+@include meta.load-css("./components/typography/typography");
+@include meta.load-css("./components/anchors");
+@include meta.load-css("./components/elevation");
+@include meta.load-css("./components/author");
+@include meta.load-css("./components/form");
+@include meta.load-css("./components/hero");
+@include meta.load-css("./components/breadcrumbs");
+@include meta.load-css("./components/navigation");
+@include meta.load-css("./components/mdc-branding"); // card grid a no underline, logo sizing etc.
+@include meta.load-css("./components/card");
+@include meta.load-css("./components/button");
+@include meta.load-css("./components/tabs");
+@include meta.load-css("./components/accordion");
+@include meta.load-css("./components/footer");
+@include meta.load-css("./components/figure");
+@include meta.load-css("./components/blogpost");
+@include meta.load-css("./components/tags");
+@include meta.load-css("./components/grid");
+@include meta.load-css("./components/hide");
+@include meta.load-css("./components/table");
+@include meta.load-css('./components/header-link');
 
-@import "./components/employer-branding-page";
-@import "./components/statistics_page";
+@include meta.load-css("./components/employer-branding-page");
+@include meta.load-css("./components/statistics_page");
 
 
-@import "./components/list";
-@import "./components/mdc-list-embedders"; // used with Embedder, though really BIG
-@import "./components/embedder/embedder";
+@include meta.load-css("./components/list");
+@include meta.load-css("./components/mdc-list-embedders"); // used with Embedder, though really BIG
+@include meta.load-css("./components/embedder/embedder");
 // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width

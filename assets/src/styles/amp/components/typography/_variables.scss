@@ -1,5 +1,6 @@
 @forward "../../variables/variables";
-@import "./functions";
+@use "sass:map";
+@use "./functions";
 // All components on the page should have a height divisible by the height of one line of paragraph text. Maintaining vertical rhythm (or composing to a baseline grid34) is the
 // practice of making sure that the height of each textual element on the page (including lists, headings and block quotes) is divisible by a common number.
 
@@ -69,8 +70,8 @@ p, .body1, .body1 p {
 
     font-size: 1rem; // 16sp
     line-height: 1.5; // not rem! (even though material uses it) // 24sp
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(.5, 1);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.5, 1);
     text-decoration: inherit;
     text-transform: inherit;
     margin-top: 0;
@@ -85,8 +86,8 @@ p, .body1, .body1 p {
 
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(.25, .875);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.25, .875);
     text-decoration: inherit;
     text-transform: inherit;
 }
@@ -112,8 +113,8 @@ h1,
 .h1 {
     font-size: pxToRem(60px);
     line-height: pxToRem(60px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(-.5, 3.75);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(-.5, 3.75);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 0 0 24px;    
@@ -123,8 +124,8 @@ h2,
 .h2 {
     font-size: pxToRem(48px);
     line-height: pxToRem(50px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(.25, 2.125);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.25, 2.125);
     text-decoration: inherit;
     text-transform: inherit;
     // margin: 12px 0;
@@ -137,7 +138,7 @@ h3,
 .h3 {
     font-size: pxToRem(34px);
     line-height: pxToRem(40px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
     letter-spacing: normal;
     text-decoration: inherit;
     text-transform: inherit;
@@ -151,8 +152,8 @@ h4,
 .h4 {
     font-size: pxToRem(24px);
     line-height: pxToRem(32px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(.25, 1.25);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 12px 0;
@@ -164,8 +165,8 @@ h5,
 .h5 {
     font-size: pxToRem(20px);
     line-height: pxToRem(32px);
-    font-weight: map-get($mdc-typography-font-weight-values, medium);
-    letter-spacing: mdc-typography-get-letter-spacing_(.25, 1.25);
+    font-weight: map.get($mdc-typography-font-weight-values, medium);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 12px 0;
@@ -177,7 +178,7 @@ h6,
 .h6 {
     font-size: pxToRem(20px);
     line-height: pxToRem(32px);
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
     letter-spacing: normal;
     text-decoration: inherit;
     text-transform: inherit;
@@ -197,8 +198,8 @@ blockquote {
     font-family: var(--heading-font-family);
     font-size: .875rem; // 14sp
     line-height: 2.25rem; // 36sp
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(1.25, .875);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(1.25, .875);
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -206,8 +207,8 @@ blockquote {
 .overline {
     font-size: .75rem; // 12sp
     line-height: 2rem; // 32sp
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(2, .75);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(2, .75);
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -215,8 +216,8 @@ blockquote {
 .caption {
     font-size: .75rem; // 12sp
     line-height: 1.25rem; // 20sp
-    font-weight: map-get($mdc-typography-font-weight-values, regular);
-    letter-spacing: mdc-typography-get-letter-spacing_(.4, .75);
+    font-weight: map.get($mdc-typography-font-weight-values, regular);
+    letter-spacing: functions.mdc-typography-get-letter-spacing_(.4, .75);
     text-decoration: inherit;
     text-transform: inherit;
 }

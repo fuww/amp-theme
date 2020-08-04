@@ -1,6 +1,6 @@
 // @import "@material/feature-targeting/functions";
 // @import "@material/feature-targeting/mixins";
-@import "./variables";
+@use "./variables";
 
 // @mixin mdc-typography-core-styles($query: mdc-feature-all()) {
 //     .mdc-typography {
