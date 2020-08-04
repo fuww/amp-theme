@@ -1,10 +1,11 @@
 <!-- sidebar start -->
-<aside class="aside-nav">
+<aside class="aside-nav futura-font-family">
+    <!-- uppercase heading-font-family -->
     <ul class="list-reset">
         {{ $currentPage := . }}
         {{ range .Site.Menus.developers }}
         {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "developers" . }}active{{ end }}">
+        <li class="{{ if $currentPage.HasMenuCurrent "developers" . }}active bold{{ end }}">
             {{/* <a href="#">  */}}
             <a href="{{ .URL }}" class="text-decoration-none">
                 {{ .Pre }}
@@ -13,7 +14,7 @@
         </li>
         <ul class="sub-menu pl1 list-style-none">
             {{ range .Children }}
-            <li class="{{ if $currentPage.IsMenuCurrent "developers" . }}active{{ end }}">
+            <li class="{{ if $currentPage.IsMenuCurrent "developers" . }}active bold{{ end }}">
                 <a href="{{ .URL }}" class="text-decoration-none">{{ .Name }}</a>
             </li>
             {{ end }}

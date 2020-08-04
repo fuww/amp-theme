@@ -2,7 +2,7 @@
 {{- partial "_shared/menu-developers.html" . -}}
 {{ end}}
 {{ define "main" }}
-<div class="grid-content">
+<div class="grid-content section-developers">
     <article>
         {{ with .Resources.ByType "csv" }}
         <section class="post downloads">
@@ -21,7 +21,7 @@
 </div>
 {{ end }}
 {{ define "sidebar" }}
-<div class="sticky   order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<div class="sticky mw-260 order-2 w-20-l ph5-m ph0-l mb4 sticky">
     {{- partial "toc.html" . -}}
 
     {{ with .Resources.ByType "csv" }}
