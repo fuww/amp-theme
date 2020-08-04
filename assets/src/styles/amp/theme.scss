@@ -20,7 +20,6 @@
 @import 'basscss-addons/modules/forms/index.css';
 
 @include meta.load-css('components/navbar'); // Duplications in navbar and navigation
-@include meta.load-css('variables/variables');
 @include meta.load-css("./components/typography/typography");
 @include meta.load-css("./theme/theme");
 @include meta.load-css("./components/shape");
@@ -50,3 +49,16 @@
 @include meta.load-css("./components/mdc-list-embedders"); // used with Embedder, though really BIG
 @include meta.load-css("./components/embedder/embedder");
 // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
+
+.border-width2 {
+    border-width: 2px;
+}
+
+.overflow-x-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+}
+
+.mw-260 {
+    max-width: 260px;
+}
