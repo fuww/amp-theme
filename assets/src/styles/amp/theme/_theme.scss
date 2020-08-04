@@ -1,0 +1,77 @@
+@import 'basscss-addons/modules/colors/index.css';
+@import 'basscss-addons/modules/background-colors/index.css';
+
+/* Color */
+$theme-primary: #0002ff; // #0022ff blue FF5719 orange (#F37022 = Hermes orange)
+$theme-on-primary: #ffffff;
+$theme-secondary: #000040;
+$theme-on-secondary: #ffffff;
+$theme-background: #ffffff;
+$theme-surface: #ededee;
+$theme-on-surface: rgba(0, 0, 0, .87);
+$theme-error: #b00020;
+$theme-on-error: #ffffff;
+
+$black: #000;
+$white: #fff;
+
+$black-high: rgba(0, 0, 0, .87); // High emphasis
+$black-medium: rgba(0, 0, 0, .60);
+$black-inactive: rgba(0, 0, 0, 0.54);
+$black-disabled: rgba(0, 0, 0, .38);
+
+$theme-secondary-300: #0080FF; // links
+
+$navbar-bg-color: $theme-background;
+$navbar-border-bottom-color: $theme-secondary;
+
+.theme-primary {color:$theme-primary;}
+.bg-theme-primary {background-color:$theme-primary;}
+.theme-on-primary {color:$theme-on-primary;}
+.theme-secondary {color:$theme-secondary;}
+.bg-theme-secondary {background-color:$theme-secondary;}
+.theme-background {background-color:$theme-background;}
+.theme-surface {background-color:$theme-surface;}
+.theme-on-surface {color:$theme-on-surface;}
+.theme-error {background-color:$theme-error;}
+.theme-on-error {color:$theme-on-error;}
+
+.black-high {color:$black-high;}
+.black-medium {color:$black-medium;}
+.black-inactive {color:$black-inactive;}
+.black-disabled {color:$black-disabled;}
+
+.theme-secondary-300 {color:$theme-secondary-300;}
+
+:root {
+ // https://basscss.com/v7/docs/color-base/
+ --link-color: #{$theme-primary};
+
+ --button-color: white;
+ --button-background-color: #{$theme-primary};
+
+ //------------------------------------
+ // Custom vars, not in Basscss
+ --theme-primary: #{$theme-primary};
+ --theme-secondary: #{$theme-secondary};
+ --theme-on-primary: #{$theme-on-primary};
+
+ --black-high: #{$black-high}; // High emphasis
+ --black-medium: #{$black-medium};
+ --black-inactive: #{$black-inactive};
+ --black-disabled: #{$black-disabled};
+
+ --black: #{$black};
+ --white: #{$white};
+
+ --navbar-bg-color: #{$navbar-bg-color};
+ --navbar-border-bottom-color: #{$navbar-border-bottom-color};
+
+ --theme-secondary-300: #{$theme-secondary-300};
+
+
+}
+
+.white {
+    color: var(--white)
+}

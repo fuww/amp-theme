@@ -1,68 +1,30 @@
 // Architecture
 // https://zellwk.com/blog/css-architecture-3/
 
-// Reset and base files
-// --------------------
-// Not needed, Basscss does a reset
-
-// Load fonts early. Fonts are allowed in AMP
 @use "sass:meta";
 @use "font-face/futura-condensed";
 @use "font-face/fu-futura-pt";
 // @import "font-face/helvetica-now-display-black";
-
-// Mixins
 @use "mixins/css-grid";
-@use "mixins/multiline-ellipsis";
-
-/* Basscss Modules */
-// https://github.com/basscss/basscss/blob/master/docs/GettingStarted.md
-// @import 'basscss/css/basscss.css';
 @import 'basscss-align/index.css';
 @import 'basscss-border/index.css';
 @import 'basscss-flexbox/index.css';
 @include meta.load-css('components/flex');
-@import 'basscss-grid/index.css';
-/* >> Use CSS Grid Instead >> needed for breakpoints navbar */
+@import 'basscss-grid/index.css'; /* >> for breakpoints navbar */
 // @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP. Created custom class for .hide
 @import 'basscss-layout/index.css';
 @import 'basscss-margin/index.css';
 @import 'basscss-padding/index.css';
 @import 'basscss-position/index.css';
 @import 'basscss-type-scale/index.css';
-@import 'basscss-typography/index.css';
-
-// https://basscss.com/
-/* Optional Modules (not included in Basscss by default) */
 @import 'basscss-addons/modules/responsive-margin/index.css';
 @import 'basscss-addons/modules/responsive-padding/index.css';
-
-// @import 'basscss-addons/modules/media-object/index.css';
-// @import 'basscss-addons/modules/all/index.css';
 @import 'basscss-addons/modules/forms/index.css';
-// @import 'basscss-addons/modules/input-range/index.css';
-// @import 'basscss-addons/modules/progress/index.css';
-
-// @import 'basscss-addons/modules/btn/index.css';
-// @import 'basscss-addons/modules/btn-primary/index.css';
-// @import 'basscss-addons/modules/btn-outline/index.css';
-// @import 'basscss-addons/modules/btn-sizes/index.css';
-
-@import 'basscss-addons/modules/colors/index.css';
-@import 'basscss-addons/modules/background-colors/index.css';
-// @import 'basscss-addons/modules/border-colors/index.css';
-// @import 'basscss-addons/modules/darken/index.css';
-// @import 'basscss-addons/modules/lighten/index.css';
-// @import 'basscss-addons/modules/background-images/index.css';
 
 @include meta.load-css('components/navbar'); // Duplications in navbar and navigation
-
 @include meta.load-css('variables/variables');
-// --------
-
-// // Components
-// // ----------
 @include meta.load-css("./components/typography/typography");
+@include meta.load-css("./theme/theme");
 @include meta.load-css("./components/anchors");
 @include meta.load-css("./components/elevation");
 @include meta.load-css("./components/author");
@@ -83,11 +45,8 @@
 @include meta.load-css("./components/hide");
 @include meta.load-css("./components/table");
 @include meta.load-css('./components/header-link');
-
 @include meta.load-css("./components/employer-branding-page");
 @include meta.load-css("./components/statistics_page");
-
-
 @include meta.load-css("./components/list");
 @include meta.load-css("./components/mdc-list-embedders"); // used with Embedder, though really BIG
 @include meta.load-css("./components/embedder/embedder");

@@ -2,6 +2,9 @@
 @use "sass:map";
 @use "sass:string";
 @use "./functions";
+@use "./multiline-ellipsis";
+@import 'basscss-typography/index.css';
+
 // All components on the page should have a height divisible by the height of one line of paragraph text. Maintaining vertical rhythm (or composing to a baseline grid34) is the
 // practice of making sure that the height of each textual element on the page (including lists, headings and block quotes) is divisible by a common number.
 
@@ -11,15 +14,51 @@ $font-system-serif: string.unquote("Georgia, Cambria, 'Times New Roman', Times, 
 $heading-font-family: string.unquote("'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif") !default;
 $futura-font-family: string.unquote("'FU Futura PT', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif") !default;
 
+$h1: 3.052rem;    /* 41px */
+$h2: 2.441rem;    /* 36px */
+$h3: 1.953rem;    /* 29px */
+$h4: 1.563rem;    /* 25px */
+$h5: 1.25rem;    /* 16px */
+$h6: 1rem;    /* 22px */
+
+$body2: 1rem;
+
+multiline-ellipsis.$line-height: 1.5;
+$body-font-size: 1rem;
+
 .heading-font-family {font-family:$heading-font-family;}
 .font-family {font-family:$font-family;}
 .futura-font-family {font-family:$futura-font-family}
+.upper {
+    text-transform: uppercase;
+    }
 
 :root {
+    // Basscss typography variables
+    // https://basscss.com/v7/docs/base-typography/
+    // body {
+    --line-height: #{multiline-ellipsis.$line-height};
+    --body-font-size: #{$body-font-size};
+
+    // p {
+    --paragraph-margin-top: 1em;
+    --paragraph-margin-bottom: 1rem;
+
+        // https://basscss.com/v7/docs/type-scale/
+    --h1: #{h1};    /* 41px */
+    --h2: #{h2};    /* 36px */
+    --h3: #{h3};    /* 29px */
+    --h4: #{h4};    /* 25px */
+    --h5: #{h5};    /* 16px */
+    --h6: #{h6};    /* 22px */
     --font-family: #{$font-family};
     --heading-font-family: #{$heading-font-family};
     --font-system: #{$font-system};
     --font-system-serif: #{$font-system-serif};
+
+    --body2: #{$body2};
+
+    --font-navigation: var(--heading-font-family);
 }
 
 table{
