@@ -95,8 +95,7 @@ module.exports = {
       //   use: ["babel-loader"]
       // },
       {
-        test: /\.(sa|sc|c)ss$/,
-        // test: /\.scss$/,
+        test: /\.(s(a|c)ss)$/,
         use: [
           // devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: MiniCssExtractPlugin.loader },
@@ -108,7 +107,9 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-            options: { includePaths: ['node_modules'] },
+            options: { // Prefer `dart-sass`
+            implementation: require('sass'),
+            includePaths: ['node_modules'] },
           },
         ],
 
