@@ -1,6 +1,8 @@
 .section-developers {
-body, p, table, li {
+body, p, table, li, dt {
     font-family: $futura-font-family;
+    font-size: 	1.125rem; // 18px
+    letter-spacing: 0.45px;
 }
 
 .body2 {
