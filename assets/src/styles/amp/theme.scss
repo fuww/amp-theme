@@ -2,8 +2,6 @@
 // https://zellwk.com/blog/css-architecture-3/
 
 @use "sass:meta";
-@use "font-face/futura-condensed";
-@use "font-face/fu-futura-pt";
 // @import "font-face/helvetica-now-display-black";
 @use "mixins/css-grid";
 @import 'basscss-align/index.css';
@@ -20,7 +18,7 @@
 @import 'basscss-addons/modules/forms/index.css';
 
 @include meta.load-css('components/navbar'); // Duplications in navbar and navigation
-@include meta.load-css("./components/typography/typography");
+@include meta.load-css("./typography/typography");
 @include meta.load-css("./theme/theme");
 @include meta.load-css("./components/shape");
 @include meta.load-css("./components/anchors");

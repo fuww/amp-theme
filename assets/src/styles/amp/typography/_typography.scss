@@ -1,0 +1,363 @@
+@use "sass:map";
+@use "sass:string";
+@use "./multiline-ellipsis";
+@use "font-face/futura-condensed";
+@use "font-face/fu-futura-pt";
+@import 'basscss-typography/index.css';
+@import 'basscss-type-scale/index.css';
+
+@function get-letter-spacing_($tracking, $font-size) {
+    @return $tracking / ($font-size * 16) * 1em;
+}
+
+@function pxToRem($px) {
+    @return #{$px / 16px}rem;
+}
+
+// All components on the page should have a height divisible by the height of one line of paragraph text. Maintaining vertical rhythm (or composing to a baseline grid34) is the
+// practice of making sure that the height of each textual element on the page (including lists, headings and block quotes) is divisible by a common number.
+
+$font-family: string.unquote("Georgia, Cambria, 'Bitstream Charter', 'Charis SIL', Utopia, 'URW Bookman L', 'Times New Roman', Times, serif") !default;
+$font-system: string.unquote("-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif") !default;
+$font-system-serif: string.unquote("Georgia, Cambria, 'Times New Roman', Times, serif") !default;
+$heading-font-family: string.unquote("'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif") !default;
+$futura-font-family: string.unquote("'FU Futura PT', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif") !default;
+
+$font-weight-values: (thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+) !default;
+
+// base = 1rem = 16px
+// font can be bigger for main text like article (18px) but base will stay 16 always 
+// because all calculations are done based on it.
+
+$font-size-values: (h1: pxToRem(60px),
+    h2: pxToRem(48px),
+    h3: pxToRem(34px),
+    h4: pxToRem(24px),
+    h5: pxToRem(20px),
+    h6: pxToRem(20px),
+    subtitle1: pxToRem(16px),
+    subtitle2: pxToRem(14px),
+    body1: pxToRem(16px),
+    body2: pxToRem(16px),
+    caption: pxToRem(12px),
+    button: pxToRem(14px),
+    overline: pxToRem(12px),
+) !default;
+
+$line-height-values: (h1: pxToRem(60px),
+    h2: pxToRem(50px),
+    h3: pxToRem(40px),
+    h4: pxToRem(32px),
+    h5: pxToRem(32px),
+    h6: pxToRem(32px),
+    subtitle1: pxToRem(28px),
+    subtitle2: pxToRem(22px),
+    body1: 1.5, // not rem! (even though material uses it) // 24sp
+    body2: pxToRem(21px),
+    caption: pxToRem(20px),
+    button: pxToRem(36px),
+    overline: pxToRem(32px),
+) !default;
+$body-font-size: 1rem;
+$body2: 1rem;
+
+multiline-ellipsis.$line-height: 1.5;
+
+:root {
+    // Basscss typography variables
+    // https://basscss.com/v7/docs/base-typography/
+    // body {
+    --line-height: #{multiline-ellipsis.$line-height};
+    --body-font-size: #{$body-font-size};
+
+    // p {
+    --paragraph-margin-top: 1em;
+    --paragraph-margin-bottom: 1rem;
+
+    // https://basscss.com/v7/docs/type-scale/
+    --h1: #{h1};
+    /* 41px */
+    --h2: #{h2};
+    /* 36px */
+    --h3: #{h3};
+    /* 29px */
+    --h4: #{h4};
+    /* 25px */
+    --h5: #{h5};
+    /* 16px */
+    --h6: #{h6};
+    /* 22px */
+    --font-family: #{$font-family};
+    --heading-font-family: #{$heading-font-family};
+    --font-system: #{$font-system};
+    --font-system-serif: #{$font-system-serif};
+
+    --body2: #{$body2};
+
+    --font-navigation: var(--heading-font-family);
+}
+
+.heading-font-family {
+    font-family: $heading-font-family;
+}
+
+.font-family {
+    font-family: $font-family;
+}
+
+.futura-font-family {
+    font-family: $futura-font-family
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+table {
+    font-family: $font-family;
+}
+
+/* this is the "root" in "root em." */
+html {
+    font-size: 1rem;
+}
+
+body {
+    font-family: $font-family;
+
+    // Improve font rendering
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: var(--black-high);
+}
+
+// hr in the style of medium.com
+hr {
+    border: none;
+    color: rgba(8, 8, 8, 1);
+    font-size: 28px;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 30px;
+
+    &:before {
+        content: "...";
+        line-height: 1.4;
+        font-style: italic;
+        text-indent: 0.6em;
+        letter-spacing: 0.6em;
+    }
+}
+
+.tiny {
+    // fine print, newsletter page privacy statement for example
+    font-size: 10px;
+}
+
+.section-developers {
+
+    body,
+    p,
+    table,
+    li,
+    dt {
+        font-family: $futura-font-family;
+        font-size: 1.125rem; // 18px
+        letter-spacing: 0.45px;
+    }
+
+    .body1,
+    .body1 p,
+    .body2,
+    .body2 p {
+        font-family: $futura-font-family;
+    }
+}
+
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+    {
+    font-family: var(--heading-font-family);
+}
+
+h1,
+.h1 {
+    font-size: map.get($font-size-values, h1);
+    line-height: map.get($line-height-values, h1);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(-.5, 3.75);
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin: 0 0 24px;
+}
+
+h2,
+.h2 {
+    font-size: map.get($font-size-values, h2);
+    line-height: map.get($line-height-values, h2);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(.25, 2.125);
+    text-decoration: inherit;
+    text-transform: inherit;
+    // margin: 12px 0;
+    margin: 0;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+h3,
+.h3 {
+    font-size: map.get($font-size-values, h3);
+    line-height: map.get($line-height-values, h3);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: normal;
+    text-decoration: inherit;
+    text-transform: inherit;
+    // margin: 12px 0;
+    margin: 0;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+h4,
+.h4 {
+    font-size: map.get($font-size-values, h4);
+    line-height: map.get($line-height-values, h4);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(.25, 1.25);
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin: 12px 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h5,
+.h5 {
+    font-size: map.get($font-size-values, h5);
+    line-height: map.get($line-height-values, h5);
+    font-weight: map.get($font-weight-values, medium);
+    letter-spacing: get-letter-spacing_(.25, 1.25);
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin: 12px 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h6,
+.h6 {
+    font-size: map.get($font-size-values, h6);
+    line-height: map.get($line-height-values, h6);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: normal;
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin: 12px 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle1 {
+    font-size: map.get($font-size-values, subtitle1);
+    line-height: map.get($line-height-values, subtitle1);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(0.15, 1);
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.subtitle2 {
+    font-size: map.get($font-size-values, subtitle2);
+    line-height: map.get($line-height-values, subtitle2);
+    font-weight: map.get($font-weight-values, regular); //medium
+    letter-spacing: get-letter-spacing_(0.1, 0.875);
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+p,
+.body1,
+.body1 p {
+    font-family: $font-family;
+    font-size: map.get($font-size-values, body1);
+    line-height: map.get($line-height-values, body1);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(.5, 1);
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin-top: 0;
+    color: var(--black-high);
+
+}
+
+.body2,
+.body2 p {
+    font-family: $font-family;
+    font-size: map.get($font-size-values, body2);
+    line-height: map.get($line-height-values, body2);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(.25, .875);
+    text-decoration: inherit;
+    text-transform: inherit;
+    color: var(--black-medium);
+}
+
+blockquote {
+    border-left: 3px solid var(--theme-primary, #0002ff);
+    font-family: var(--typography-font-family-secondary, $font-system);
+    padding-left: 16px;
+    margin: 32px;
+}
+
+.btn {
+    font-family: var(--heading-font-family);
+    font-size: map.get($font-size-values, button);
+    line-height: map.get($line-height-values, button);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(1.25, .875);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.overline {
+    font-size: map.get($font-size-values, overline);
+    line-height: map.get($line-height-values, overline);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(2, .75);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.caption {
+    font-size: map.get($font-size-values, caption);
+    line-height: map.get($line-height-values, caption);
+    font-weight: map.get($font-weight-values, regular);
+    letter-spacing: get-letter-spacing_(.4, .75);
+    text-decoration: inherit;
+    text-transform: inherit;
+}
