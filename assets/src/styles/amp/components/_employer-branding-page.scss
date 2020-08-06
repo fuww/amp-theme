@@ -1,16 +1,19 @@
-.fu-branding-social-media svg{margin:0 15px;max-width:30px}
+.fu-branding-social-media svg {
+    margin: 0 15px;
+    max-width: 30px
+}
 
 .ebp {
-.accordion___header {
-    padding: 20px;
-    background-color: var(--theme-primary-ebp, --theme-primary);
-    color: var(--theme-primary-ebp, #FFF) ;
-    font-family: var(--heading-font-family);
-  }
+    .accordion___header {
+        padding: 20px;
+        background-color: var(--theme-primary-ebp);
+        color: var(--theme-primary-ebp, #FFF);
+        font-family: var(--heading-font-family);
+    }
 
-.i-amp-accordion section {
-  margin: 0 20px;
-}
+    .i-amp-accordion section {
+        margin: 0 20px;
+    }
 }
 
 .ebp h1,
@@ -19,24 +22,29 @@
 .ebp h4,
 .ebp h5,
 .ebp h6 {
-    font-family: var(--secondary-font-family-ebp, --font-system);
+    font-family: var(--secondary-font-family-ebp);
     font-weight: var(--secondary_font_weight_ebp, 700);
 }
+
 .ebp li,
 .ebp p {
-    font-family: var(--primary-font-family-ebp, --font-system);
+    font-family: var(--primary-font-family-ebp);
     font-weight: var(--primary_font_weight_ebp, 300);
 }
+
 .ebp li {
     line-height: 1.5
 }
+
 .ebp amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
-    color: var(--tab-color, --theme-primary);
-    border-bottom: 2px solid var(--tab-underline-color, --theme-primary);
+    color: var(--tab-color);
+    border-bottom: 2px solid var(--tab-underline-color);
 }
+
 .fu-branding-social-media svg path {
-    fill: var(--social-icon-color,--theme-primary);
+    fill: var(--social-icon-color);
 }
+
 amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
     padding: 2.5rem 0;
 }
