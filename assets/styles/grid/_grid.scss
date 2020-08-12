@@ -1,4 +1,16 @@
+// @import 'basscss-hide/index.css'; // contains !important, we cannot use that with AMP. Created custom class for .hide
+@import 'basscss-layout/index.css';
+@import 'basscss-margin/index.css';
+@import 'basscss-padding/index.css';
+@import 'basscss-position/index.css';
+@import 'basscss-addons/modules/responsive-margin/index.css';
+@import 'basscss-addons/modules/responsive-padding/index.css';
 @import 'basscss-grid/index.css'; /* >> for breakpoints navbar */
+@import 'basscss-flexbox/index.css';
+@import 'basscss-align/index.css';
+@import 'basscss-border/index.css';
+
+@import 'hide';
 
 $breakpoint-sm: 480px;
 $breakpoint-md: 600px;
@@ -10,6 +22,9 @@ $breakpoint-lg: 840px;
   --breakpoint-md: #{$breakpoint-md};
   --breakpoint-lg: #{$breakpoint-lg};
 }
+
+.flex-first { order: -1 }
+.flex-last  { order: 99999 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
 

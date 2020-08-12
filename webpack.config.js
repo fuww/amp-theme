@@ -13,7 +13,7 @@ const plugins = require('./webpack/plugins');
 
 module.exports = {
   entry: {
-    main: ['./assets/src/styles/amp/theme.scss'],
+    main: ['./assets/styles/styles.scss'],
   },
   output: {
     path: path.join(__dirname, './'),

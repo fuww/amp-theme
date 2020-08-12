@@ -1,0 +1,49 @@
+// Architecture
+// https://zellwk.com/blog/css-architecture-3/
+
+@use "sass:meta";
+// @import "font-face/helvetica-now-display-black";
+@use "mixins/css-grid";
+
+@include meta.load-css('typography/typography');
+@include meta.load-css('theme/theme');
+@include meta.load-css('shape/shape');
+@include meta.load-css('anchors/anchors');
+@include meta.load-css('elevation/elevation');
+@include meta.load-css('author/author');
+@include meta.load-css('form/form');
+@include meta.load-css('hero/hero');
+@include meta.load-css('breadcrumbs/breadcrumbs');
+@include meta.load-css('navigation/navigation');
+@include meta.load-css('navbar/navbar');
+@include meta.load-css('mdc-branding/mdc-branding');
+@include meta.load-css('card/card');
+@include meta.load-css('button/button');
+@include meta.load-css('tabs/tabs');
+@include meta.load-css('accordion/accordion');
+@include meta.load-css('footer/footer');
+@include meta.load-css('figure/figure');
+@include meta.load-css('blogpost/blogpost');
+@include meta.load-css('tags/tags');
+@include meta.load-css('grid/grid');
+@include meta.load-css('table/table');
+@include meta.load-css('header-link/header-link');
+@include meta.load-css('employer-branding-page/employer-branding-page');
+@include meta.load-css('statistics_page/statistics_page');
+@include meta.load-css('list/list');
+@include meta.load-css('mdc-list-embedders/mdc-list-embedders');
+@include meta.load-css('embedder/embedder');
+// // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
+
+.border-width2 {
+    border-width: 2px;
+}
+
+.overflow-x-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+}
+
+.mw-260 {
+    max-width: 260px;
+}
