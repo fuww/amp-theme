@@ -1,36 +1,18 @@
 {{ define "header"}}
 {{- partial "_shared/navigation" . -}}
 {{ end }}
-
 {{ define "main" }}
 <div class="grid-content recent-posts">
-    {{/*  <div class="centered">
-        <section class="cards--marketplace">
+    <div class="row listrecent">
+        <div class="grid__cards--marketplace">
             {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
-            <div class="card--marketplace">
-                {{- partial "list/card" . -}}
-            </div>
+            {{- partial "list/card" . -}}
             {{ end }}
-        </section>
-    </div> */}}
-    {{/*  <div class="flex grid__cards--marketplace">
-        {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
-    <div class="flex-auto px2 py1 border">
-        {{- partial "list/card" . -}}
+        </div>
     </div>
-    {{ end }}
-</div> */}}
-
-<div class="row listrecent">
-    <div class="grid__cards--marketplace">
-        {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
-        {{- partial "list/card" . -}}
-        {{ end }}
+    <div class="post">
+        {{ .Content }}
     </div>
-</div>
-<div class="post">
-    {{ .Content }}
-</div>
 </div>
 {{ end }}
 {{ define "footer"}}

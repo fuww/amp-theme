@@ -1,0 +1,9 @@
+{{ if eq (.Get "type") "news" }}
+    <div class="fu-news-embed" data-field="{{ .Get "field" }}" data-keywords="{{ .Get "keyword" }}" data-limit="{{ .Get "limit" }}">
+        {{.Inner}}
+    </div>
+{{ else if eq (.Get "type") "jobs"}}
+    <div class="fu-embed-jobs" data-component="CompanyJobs" data-locales="{{ .Get "locale" }}" data-limit="{{ .Get "limit" }}" {{if .Get "id"}}data-profile_id="{{.Get "id"}}"{{end}}>
+        {{.Inner}}
+    </div>
+{{ end }}

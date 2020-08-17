@@ -7,7 +7,7 @@ const plugins = require('./webpack/plugins');
 
 module.exports = {
   entry: {
-    main: ['./assets/styles/styles.scss'],
+    main: ['./src/styles/styles.scss'],
   },
   output: {
     path: path.join(__dirname, './'),

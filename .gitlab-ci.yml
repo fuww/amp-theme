@@ -20,7 +20,7 @@ stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
   stage: test
-  image: eu.gcr.io/kubernetes-164514/github.com/fashionunited/dockerfiles/hugo:v0.62.2-extended
+  image: registry.gitlab.com/fuww/landing/hugo:v0.72.0-extended
   cache:
     key: "$CI_JOB_NAME"
     paths:

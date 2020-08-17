@@ -34,7 +34,7 @@
 
 <figure class="m0">
     <div {{ if ne .Params.headerShadow false }}class="elevation--z12" {{ end }}>
-        <amp-img src="{{ $375x230.RelPermalink }}" srcset="
+        <amp-img data-hero src="{{ $375x230.RelPermalink }}" srcset="
         {{ $1440x960.RelPermalink }} 1440w, 
         {{ $720x480.RelPermalink }} 720w, 
         {{ $375x230.RelPermalink }} 375w,
@@ -45,7 +45,7 @@
             </amp-img>
         </amp-img>
 
-        <amp-img src="{{ $2560x421.RelPermalink }}" srcset="
+        <amp-img data-hero src="{{ $2560x421.RelPermalink }}" srcset="
         {{ $2560x421.RelPermalink }} 2560w,
     {{ $2048x337.RelPermalink }} 2048w, 
     {{ $1366x225.RelPermalink }} 1366w, 

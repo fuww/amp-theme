@@ -46,7 +46,6 @@
     <meta name="msapplication-TileImage"
         content="https://media.fashionunited.com/media/favicon/dark/mstile-144x144.png" />
     <meta name="msapplication-config" content="https://media.fashionunited.com/media/favicon/dark/browserconfig.xml" />
-
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
@@ -60,9 +59,7 @@
     {{ if isset $.Site.Params "ampmanifest" }}
     {{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
     {{ end }}
-
     {{ else }}
     {{ partial "structure/head.no-amp" . }}
     {{ end }}
-
     {{ partial "googleTagManagerNoScript" . }}
