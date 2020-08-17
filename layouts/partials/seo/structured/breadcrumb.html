@@ -1,3 +1,4 @@
+{{/*
 {{ $url := replace .RelPermalink ( printf "%s" .Site.BaseURL) "" }}
 {{ $.Scratch.Add "path" .Site.BaseURL }}
 
@@ -18,9 +19,10 @@
         "@type": "ListItem",
         "position": {{ .position }},
         "item": {
-          "@id": "{{ .RelPermalink }}",
+          "@id": "{{ .url }}",
           "name": "{{ .name }}"
         }
     }{{ end }}]
 }
 </script>
+*/}}
