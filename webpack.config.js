@@ -63,7 +63,9 @@ module.exports = {
         test: /\.(s(a|c)ss)$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'css-loader', options: { importLoaders: 1, 
+            // sourceMap: true 
+          } },
           {
             loader: 'postcss-loader?sourceMap',
             options: { config: { path: './' } },
@@ -72,7 +74,9 @@ module.exports = {
             loader: 'sass-loader',
             options: { // Prefer `dart-sass`
             implementation: require('sass'),
-            includePaths: ['node_modules'] },
+            includePaths: ['node_modules'],
+            // sourceMap: true, 
+          },
           },
         ],
       },

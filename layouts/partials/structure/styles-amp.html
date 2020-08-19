@@ -19,12 +19,14 @@
 		--secondary-font-family-ebp: {{if isset .Params "secondary_font_family_ebp"}}
 				{{.Params.secondary_font_family_ebp | safeCSS}}
 			, {{end}}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-		--primary_font_weight_ebp: {{if isset .Params "primary_font_weight_ebp"}}
+		--primary-font-weight-ebp: {{if isset .Params "primary_font_weight_ebp"}}
 				{{.Params.primary_font_weight_ebp | safeCSS}}
-			{{else}}300{{end}};
-		--secondary_font_weight_ebp: {{if isset .Params "secondary_font_weight_ebp"}}
+			{{else}}
+			300{{end}};
+		--secondary-font-weight-ebp: {{if isset .Params "secondary_font_weight_ebp"}}
 				{{.Params.secondary_font_weight_ebp | safeCSS}}
-			{{else}}700{{end}};
+			{{else}}
+			700{{end}};
 
 		{{if .Params.hero_border_color}}
 			--hero-border-color: {{index .Params "hero_border_color"}};

@@ -1,6 +1,8 @@
+{{ with .File }}
 <div class="center white bg-black heading-font-family">
-    {{ $path := (print .Site.Params.contentRepo .File.Path) }}
-    {{ $webIDEpath := (print .Site.Params.contentRepoWebIDE .File.Path) }}
+    {{ $path := (print $.Site.Params.contentRepo .Path) }}
+    {{ $webIDEpath := (print $.Site.Params.contentRepoWebIDE .Path) }}
     Edit <a class="underline" href="{{ $path }}">this page</a> &mdash; open <a class="underline"
         href="{{ $webIDEpath }}">Web IDE</a>
 </div>
+{{ end }}

@@ -3,8 +3,23 @@
 // --tab-underline-color: black;
 // --tab-color:white;
 // --primary-font-family-ebp:
-//--secondary-font-family-ebp
+// --secondary-font-family-ebp
 // --theme-primary-ebp
+
+:root {
+    --primary-font-family-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
+    --secondary-font-family-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    --theme-primary-ebp: #36332f;
+
+    --primary-font-weight-ebp: 300;
+    --secondary-font-weight-ebp: 700;
+
+    --tab-color: #000;
+    --tab-underline-color: #0002ff;
+
+    --social-icon-color: #000;
+}
 
 .fu-branding-social-media svg {
     margin: 0 15px;
@@ -31,13 +46,13 @@
 .ebp h5,
 .ebp h6 {
     font-family: var(--secondary-font-family-ebp);
-    font-weight: var(--secondary_font_weight_ebp, 700);
+    font-weight: var(--secondary-font-weight-ebp);
 }
 
 .ebp li,
 .ebp p {
     font-family: var(--primary-font-family-ebp);
-    font-weight: var(--primary_font_weight_ebp, 300);
+    font-weight: var(--primary-font-weight-ebp);
 }
 
 .ebp li {

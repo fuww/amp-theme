@@ -1,8 +1,9 @@
 ---
 author: Joost van der Laan
-date: 
-title: 
-description: 
+date: {{ .Date }}
+title: "{{ replace .Name "-" " " | title }}"
+description: ""
 # images: 
 #   - ""
 ---
+
