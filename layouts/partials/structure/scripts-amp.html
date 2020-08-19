@@ -1,24 +1,23 @@
-{{/* Recommended order: https://www.ampproject.org/docs/fundamentals/optimize_amp  */}}  
-{{ if isset $.Site.Params "amp" }} 
+{{/* Recommended order: https://www.ampproject.org/docs/fundamentals/optimize_amp  */}}
+{{ if isset $.Site.Params "amp" }}
 {{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
-<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-<link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com/" crossorigin>
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com/" crossorigin>
-<link rel="preconnect dns-prefetch" href="https://stats.g.doubleclick.net/" crossorigin>
 <script async src="{{ $ampCorePath }}"></script>{{/*  Import other AMP Extensions here  */}}
-    {{- range $.Site.Params.ampElements -}}
-        {{- if (index (index $.Site.Data "amp-modules") .) -}}
-            <script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>{{- end }}{{- end }}
-    {{ with .Params.amp.elements }}
-        {{ range . }}
-            {{ if in $.Site.Params.ampElements . }}
-            {{ else }}
-                {{- if (index (index $.Site.Data "amp-modules") .) -}}
-                    <script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>{{- end }}{{ end }}
-        {{ end }}
-    {{ end }}
-    {{ if isset $.Site.Params "ampmanifest" }}
-        {{ partial "amp/app-banner-header" . }}
-    {{ end }}
+{{- range $.Site.Params.ampElements -}}
+{{- if (index (index $.Site.Data "amp-modules") .) -}}
+<script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>
+{{- end }}{{- end }}
+{{ with .Params.amp.elements }}
+{{ range . }}
+{{ if in $.Site.Params.ampElements . }}
+{{ else }}
+{{- if (index (index $.Site.Data "amp-modules") .) -}}
+<script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>
+{{- end }}{{ end }}
 {{ end }}
-{{ if isset .Params "googleFontLink" }}<link rel="preconnect dns-prefetch" href="{{ .Params.googleFontLink }}" crossorigin>{{ end }}
+{{ end }}
+{{ if isset $.Site.Params "ampmanifest" }}
+{{ partial "amp/app-banner-header" . }}
+{{ end }}
+{{ end }}
+{{ if isset .Params "googleFontLink" }}
+<link rel="preconnect dns-prefetch" href="{{ .Params.googleFontLink }}" crossorigin>{{ end }}

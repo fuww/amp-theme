@@ -7,14 +7,24 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8"> {{/* Must be first for AMP  */}}
+    <meta charset="utf-8">
+    {{/* Must be first for AMP  https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp/ */}}
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="{{.Description}}" />
+    <meta name="msapplication-TileImage"
+        content="https://media.fashionunited.com/media/favicon/dark/mstile-144x144.png" />
+    <meta name="msapplication-config" content="https://media.fashionunited.com/media/favicon/dark/browserconfig.xml" />
     {{ if isset $.Site.Params "amp" }}
     {{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
     <link rel="preload" as="script" href="{{ $ampCorePath }}">{{ end }}
-    <title>{{ .Title }}</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="{{.Description}}" />
+    <link rel="preconnect dns-prefetch" href="https://media.fashionunited.com" crossorigin="anonymous" />
+    {{ if .Params.googleFontLink }}
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous">{{ end }}
+    <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com/" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com/" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="https://stats.g.doubleclick.net/" crossorigin="anonymous">
     {{ partial "structure/scripts-amp" . }}
+    {{ partial "structure/styles-amp" . }}
     <link rel="icon" href="https://media.fashionunited.com/media/favicon/dark/favicon.ico" />
     <link rel="apple-touch-icon" sizes="60x60"
         href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-60x60.png" />
@@ -36,16 +46,15 @@
     <link rel="manifest" href="https://media.fashionunited.com/media/favicon/dark/site.webmanifest" />
     <link rel="mask-icon" href="https://media.fashionunited.com/media/favicon/dark/safari-pinned-tab.svg"
         color="#5bbad5" />
-    <meta name="msapplication-TileImage"
-        content="https://media.fashionunited.com/media/favicon/dark/mstile-144x144.png" />
-    <meta name="msapplication-config" content="https://media.fashionunited.com/media/favicon/dark/browserconfig.xml" />
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" /> {{/*  Android address bar color  */}}
     {{ partial "seo/main" . }}
     {{ if .Params.googleFontLink }}
-    <link rel="stylesheet" href="{{ .Params.googleFontLink }}">{{ end }}
+    <link rel="stylesheet" href="{{ .Params.googleFontLink }}">
+    {{ end }}
+    <title>{{ .Title }}</title>
 </head>
 
 <body>
