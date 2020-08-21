@@ -1,13 +1,20 @@
 .card {
+    border-radius: 4px;
+    /* @alternate */
+    border-radius: var(--mdc-shape-medium, 4px);
+
     &__l {
         max-width: 344px;
     }
+
     &__media {
         border-color: var(--theme-secondary);
     }
+
     &__media--16-9:before {
         margin-top: 56.25%;
     }
+
     &___primary {
         .logo-media-fixed-container {
             position: relative;
@@ -17,16 +24,18 @@
             margin: 10px auto;
         }
 
-        .logo-media{
+        .logo-media {
             height: 60px;
             width: 160px;
         }
-        .logo{
+
+        .logo {
             height: 60px;
             width: 160px;
         }
     }
 }
-    amp-img.contain img {
-        object-fit: contain;
-      }
+
+amp-img.contain img {
+    object-fit: contain;
+}

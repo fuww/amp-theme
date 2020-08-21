@@ -5,10 +5,19 @@
 // @import "font-face/helvetica-now-display-black";
 @use "mixins/css-grid";
 
+// set border radius to 0
+@use "shape"with ($shape-small-component-radius: 0px,
+    $shape-medium-component-radius: 0px,
+    $shape-large-component-radius: 0px, );
+
 @include meta.load-css('typography/typography');
 @include meta.load-css('theme/theme');
-@include meta.load-css('shape/shape');
+// @include meta.load-css('shape');
+
+
+
 @include meta.load-css('anchors/anchors');
+@include meta.load-css('data-table');
 @include meta.load-css('elevation/elevation');
 @include meta.load-css('author/author');
 @include meta.load-css('form/form');
