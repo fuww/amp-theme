@@ -10,38 +10,38 @@
     $shape-medium-component-radius: 0px,
     $shape-large-component-radius: 0px, );
 
-@include meta.load-css('typography/typography');
-@include meta.load-css('theme/theme');
+@include meta.load-css('typography');
+@include meta.load-css('theme');
 // @include meta.load-css('shape');
 
 
-
-@include meta.load-css('anchors/anchors');
+@include meta.load-css('accordion');
+@include meta.load-css('anchors');
 @include meta.load-css('data-table');
-@include meta.load-css('elevation/elevation');
-@include meta.load-css('author/author');
-@include meta.load-css('form/form');
-@include meta.load-css('hero/hero');
-@include meta.load-css('breadcrumbs/breadcrumbs');
-@include meta.load-css('navigation/navigation');
-@include meta.load-css('navbar/navbar');
-@include meta.load-css('mdc-branding/mdc-branding');
-@include meta.load-css('card/card');
-@include meta.load-css('button/button');
-@include meta.load-css('tabs/tabs');
-@include meta.load-css('accordion/accordion');
-@include meta.load-css('footer/footer');
-@include meta.load-css('figure/figure');
-@include meta.load-css('blogpost/blogpost');
-@include meta.load-css('tags/tags');
-@include meta.load-css('grid/grid');
-@include meta.load-css('table/table');
-@include meta.load-css('header-link/header-link');
-@include meta.load-css('employer-branding-page/employer-branding-page');
-@include meta.load-css('statistics_page/statistics_page');
-@include meta.load-css('list/list');
-@include meta.load-css('mdc-list-embedders/mdc-list-embedders');
-@include meta.load-css('embedder/embedder');
+@include meta.load-css('elevation');
+@include meta.load-css('author');
+@include meta.load-css('form');
+@include meta.load-css('hero');
+@include meta.load-css('breadcrumbs');
+@include meta.load-css('navigation');
+@include meta.load-css('navbar');
+@include meta.load-css('mdc-branding');
+@include meta.load-css('card');
+@include meta.load-css('button');
+@include meta.load-css('tabs');
+
+@include meta.load-css('footer');
+@include meta.load-css('figure');
+@include meta.load-css('blogpost');
+@include meta.load-css('tags');
+@include meta.load-css('grid');
+@include meta.load-css('table');
+@include meta.load-css('header-link');
+@include meta.load-css('employer-branding-page');
+@include meta.load-css('statistics_page');
+@include meta.load-css('list');
+@include meta.load-css('mdc-list-embedders');
+@include meta.load-css('embedder');
 // // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
 
 .border-width2 {
