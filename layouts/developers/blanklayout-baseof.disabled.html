@@ -1,11 +1,9 @@
-{{ partial "structure/head.no-amp" . }} {{/* Body starts inside head-amp */}}
+{{ partial "structure/head.no-amp" . }}
 <div></div>
 {{ block "hero" . }}
-<header class="hero header-hero">
-    {{ partial "_shared/hero" . }}
-</header>
+<div></div>
 {{ end }}
-</div>{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+</div>
 <main class="main-content" id="main-content">
     <div class="grid-wrapper">
         {{ block "title" . }}
@@ -26,7 +24,6 @@
         </div>
     </div>
 </main>
-{{ block "main-blank" . }}{{ end }}
 {{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
 {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
 {{ block "source-link" . }}{{ end }}
