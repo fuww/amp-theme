@@ -6,10 +6,10 @@
 @use "mixins/css-grid";
 
 // set border radius to 0
-@use "shape"with ($shape-small-component-radius: 0px,
-    $shape-medium-component-radius: 0px,
-    $shape-large-component-radius: 0px, );
-
+// @use "shape"with ($shape-small-component-radius: 0px,
+    //     $shape-medium-component-radius: 0px,
+    //     $shape-large-component-radius: 0px, );
+@include meta.load-css('shape');
 @include meta.load-css('typography');
 @include meta.load-css('theme');
 // @include meta.load-css('shape');
