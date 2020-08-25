@@ -1,7 +1,11 @@
 .card {
     border-radius: 4px;
     /* @alternate */
-    border-radius: var(--mdc-shape-medium, 4px);
+    border-radius: var(--shape-medium, 4px);
+    /* @alternate */
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    /* @alternate */
+    box-shadow: var(--elevation-card, 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12));
 
     &__l {
         max-width: 344px;
