@@ -43,16 +43,3 @@
 @include meta.load-css('mdc-list-embedders');
 @include meta.load-css('embedder');
 // // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
-
-.border-width2 {
-    border-width: 2px;
-}
-
-.overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-}
-
-.mw-260 {
-    max-width: 260px;
-}
