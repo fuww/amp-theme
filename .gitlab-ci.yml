@@ -37,4 +37,4 @@ stylesheet.html:
       - packages/amp-theme/layouts/partials/stylesheet.html
     expire_in: 1 week
   <<: *retry
-  # <<: *only-changes
+  <<: *only-changes
