@@ -4,6 +4,16 @@
 {{ define "title"}}
 <div></div>{{/* DUMMY COMMENT to override */}}{{ end }} {{ define "main"}}
 {{/*  {{- partial "landing-page-sections/examples/showcase.html" . -}} */}}
+{{/*  In development: show a list of all pages for quick access when testing */}}
+{{ if .Site.BuildDrafts }}
+<div class="section-content post">
+    <ul class="list list--two-line list-reset">
+        {{ range .Site.Pages }}
+        {{- partial "list/twoline" . -}}
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
 <div class="grid-content fu-image-full">
     <h1 class="center h1 my4 pt4 fu-lite-header">The Industry Network</h1>
     <div class="m4 center">
