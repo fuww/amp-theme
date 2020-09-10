@@ -21,6 +21,7 @@
         </div>
     </div>
 </main>
+{{ block "main-blank" . }}{{ end }}
 {{ block "navigation" . }}{{ partial "_shared/navigation-marketplace" . }}{{ end }}
 {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
 {{ partial "structure/footer-amp-scripts" . }}
