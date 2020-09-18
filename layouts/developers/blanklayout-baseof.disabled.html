@@ -1,23 +1,23 @@
-{{ partial "structure/head-amp" . }} {{/* Body starts inside head-amp */}}
+{{ partial "structure/head.no-amp" . }}
 <div></div>
 {{ block "hero" . }}
-<header class="hero header-hero">
-    {{ partial "_shared/hero" . }}
-</header>
+<div></div>
 {{ end }}
-{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+</div>
 <main class="main-content" id="main-content">
     <div class="grid-wrapper">
         {{ block "title" . }}
-        <div class="grid-header pt2 pb1 md-pt3 md-pb2 px2">
-            {{- partial "_shared/title" . -}}
+        <div class="grid-header post">
+            <div class="pt2 pb1 md-pt3 md-pb2">
+                {{- partial "_shared/title" . -}}
+            </div>
         </div>
         {{ end }}
+        {{ if (not (isset .Params "disablemenu")) }}
         <div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
-            {{ if (not (isset .Params "disablemenu")) }}
             {{ block "nav" . }}{{ end }}
-            {{ end }}
         </div>
+        {{ end }}
         {{ block "main" . }}{{ end }}
         <div class="grid-sidebar pt2 pb1 md-pt3 md-pb2 px2">
             {{ block "sidebar" . }}{{ end }}
@@ -26,4 +26,5 @@
 </main>
 {{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
 {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
+{{ block "source-link" . }}{{ end }}
 {{ partial "structure/footer-amp-scripts" . }}

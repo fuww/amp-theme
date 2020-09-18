@@ -1,6 +1,19 @@
 {{ define "title"}}<div></div>{{/* Disable the title */}}{{ end }}
-{{ define "hero"}}<div></div>{{ end }}
+{{ define "hero"}}<div></div>{{/* Disable the hero */}}{{ end }}
 {{ define "main-blank"}}
 {{ .Content }}
+{{/*  <div class="grid-content">
+    <div class="grid-article___inner">
+        <article>
+            <div class="post">
+                {{- partial "_shared/title" . -}}
+</div>
+<div class="post">
+
+</div>
+</article>
+{{- partial "_shared/after-post-tags" . }}
+</div>
+</div> */}}
 {{ end }}
 {{ define "footer"}}<div></div>{{/* Disable the footer */}}{{ end }}
