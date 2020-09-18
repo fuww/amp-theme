@@ -45,7 +45,6 @@ $navbar-height: 3.5rem;
 .nx-navbar-trigger {
   // line-height: inherit;
   line-height: var(--navbar-height);
-  font-size: var(--h2);
   &:focus {
     outline: none;
   }
