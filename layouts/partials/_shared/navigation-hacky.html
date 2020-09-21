@@ -1,18 +1,12 @@
-<header
-  class="nx-headerbar bg-white black-high bg-theme-primary-disabled theme-on-primary-disabled fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 z4 elevation--z12">
+<header class="nx-headerbar bg-white black-high bg-theme-primary-disabled theme-on-primary-disabled fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 z4 elevation--z12">
   <!-- <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="nx-navbar-trigger md-hide lg-hide pr2  ">☰
   </div> -->
   <div class="nx-navbar-trigger theme-primary">
-    <i role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0"
-      class="mdc-top-app-bar__action-item mdc-top-app-bar__navigation-icon menu-icon-svg"><svg
-        xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 48 48" width="48">
-        <path d="M0 0h48v48h-48z" fill="none" />
-        <path d="M6 36h36v-4h-36v4zm0-10h36v-4h-36v4zm0-14v4h36v-4h-36z" /></svg></i>
+  <i role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="mdc-top-app-bar__action-item mdc-top-app-bar__navigation-icon menu-icon-svg"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48h-48z" fill="none"/><path d="M6 36h36v-4h-36v4zm0-10h36v-4h-36v4zm0-14v4h36v-4h-36z"/></svg></i>
   </div>
-  <a href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}"
-    class="text-decoration-none inline-block nx-headerbar-home-link  ">
+  <a href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}" class="text-decoration-none inline-block nx-headerbar-home-link  ">
     <div class="nx-headerbar-title mx-auto mt1">
-      {{/*  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 8901.5 737.9" enable-background="new 0 0 8901.5 737.9" xml:space="preserve">
+        {{/*  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 8901.5 737.9" enable-background="new 0 0 8901.5 737.9" xml:space="preserve">
           <g>
             <path d="M26.2,716V29.7h397.1v13.7H39.9v319.7h345.2v13.7H39.9v339.3H26.2V716z"/>
             <path d="M1273.4,716h-14.7c-22.2-51.6-44.1-103.3-65.7-154.9s-43.5-103.3-65.7-154.9H811.6c-22.2,51.7-44.1,103.3-65.7,154.9   c-21.6,51.7-43.5,103.3-65.7,154.9h-14.7c51-120.3,101.6-239.9,152-358.9c50.3-119,101-238.6,152-358.9   c51,120.3,101.6,239.9,152,358.9C1171.8,476.2,1222.4,595.8,1273.4,716z M978.3,54.2c-1.3-3.9-2.8-8-4.4-12.3   c-1.6-4.3-3.1-8.3-4.4-12.3c-22.9,61.5-47.5,122.1-74,181.9c-26.5,59.9-52.5,120.2-78,181h304c-24.2-56.9-48-113.3-71.6-169.1   C1026.3,167.4,1002.5,111.1,978.3,54.2z"/>
@@ -29,61 +23,35 @@
             <path d="M8374.4,29.7h159.8c47.1,0,91.5,8,133.3,24s78.4,39.1,109.8,69.1c31.4,30.1,56.2,66.2,74.5,108.4s27.4,89.7,27.4,142.6   c0,38.6-6.7,78.1-20.1,118.7s-35.1,77.3-65.2,110.3c-30.1,33-69.1,60.2-117.2,81.4c-48,21.3-106.7,31.9-176,31.9h-126.5V29.7   H8374.4z M8455.8,107.1v530.5h68.6c38.6,0,74.5-6.2,107.9-18.6c33.3-12.4,62.3-30.2,86.8-53.4s43.8-51,57.9-83.3   c14-32.4,21.1-68.8,21.1-109.3s-7-77.1-21.1-109.8s-33.4-60.6-57.9-83.8c-24.5-23.2-53.5-41-86.8-53.4s-69.3-18.6-107.9-18.6h-68.6   V107.1z"/>
           </g>
           </svg>  */}}
-      <amp-img class="fu-nav-logo" src="/{{ $.Site.Params.cdnSubdir }}/theme/logo.svg" title="FashionUnited"
-        alt="FashionUnited" layout="fixed" width="168" height="18">
+        <amp-img class="fu-nav-logo" src="/landing/theme/logo.svg" title="FashionUnited" alt="FashionUnited" layout="fixed"
+        width="168" height="18">
       </amp-img>
-    </div>
+      </div>
   </a>
   <div class="mx-auto"></div>
   <nav class="nx-headerbar-nav nx-nav xs-hide sm-hide">
     <ul class="list-reset center m0 p0 flex justify-center nowrap">
-      <li class="nx-nav-item my2 upper"><a
-          href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.news }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.news }}</a></li>
       {{/*  <li class="nx-nav-item my2 upper nx-nav-dropdown pb4 m0 relative">
         .nx-dropdown-item mb0
       </li>  */}}
-      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).url }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.jobs }}</a>
-      </li>
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbookUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbook }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).url }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.jobs }}</a></li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbookUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbook }}</a></li>
       {{ if .Site.Params.joomlaNavBar }}
       {{ if not (in .Site.Params.locale "en-GB")}}
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ else }}
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}
-          </span></a></li>
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }} </span></a></li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ end }}
       {{ end }}
       {{ if or (eq .Site.Params.locale "en-HU") (eq .Site.Params.locale "sv-SE") (eq .Site.Params.locale "cs-CZ") (eq .Site.Params.locale "da-DK") (eq .Site.Params.locale "fi-FI") (eq .Site.Params.locale "en-JP") (eq .Site.Params.locale "nb-NO") (eq .Site.Params.locale "pt-PT") (eq .Site.Params.locale "pl-PL") (eq .Site.Params.locale "tr-TR") }}
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ else if or (eq .Site.Params.locale "en-IE") (eq .Site.Params.locale "zh-HK") (eq .Site.Params.locale "pt-BR") (eq .Site.Params.locale "de-AT") (eq .Site.Params.locale "fr-LU")}}
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ end }}
       {{ if .Site.Params.joomlaNavBar }}
-      <li class="nx-nav-item my2 upper"><a
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trendsUrl }}"
-          class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trends }}</a>
-      </li>
+      <li class="nx-nav-item my2 upper"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trendsUrl }}" class="text-decoration-none block">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trends }}</a></li>
       {{ end }}
     </ul>
   </nav>
@@ -95,70 +63,33 @@
 
 <amp-sidebar id="header-sidebar" class="nx-sidebar bg-white" layout="nodisplay">
   <div class="flex justify-start items-center nx-sidebar-header">
-    <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0"
-      class="nx-navbar-trigger items-start">✕</div>
+    <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="nx-navbar-trigger items-start">✕</div>
   </div>
   <nav class="nx-sidebar-nav nx-nav">
     <ul class="list-reset m0 p0 nx-label">
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.news }}</a>
-      </li>
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).url }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.jobs }}</a>
-      </li>
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbookUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbook }}</a>
-      </li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.news }}</a></li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).url }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.jobs }}</a></li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbookUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.lookbook }}</a></li>
       {{ if .Site.Params.joomlaNavBar }}
       {{ if not (in .Site.Params.locale "en-GB")}}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a>
-      </li>
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a></li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ else }}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a>
-      </li>
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a></li>
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
       {{ end }}
-      {{ end }}
-      {{ if or (eq .Site.Params.locale "en-HU") (eq .Site.Params.locale "sv-SE") (eq .Site.Params.locale "cs-CZ") (eq .Site.Params.locale "da-DK") (eq .Site.Params.locale "fi-FI") (eq .Site.Params.locale "en-JP") (eq .Site.Params.locale "nb-NO") (eq .Site.Params.locale "pt-PT") (eq .Site.Params.locale "pl-PL") (eq .Site.Params.locale "tr-TR") }}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
-      {{ else if or (eq .Site.Params.locale "en-IE") (eq .Site.Params.locale "zh-HK") (eq .Site.Params.locale "pt-BR") (eq .Site.Params.locale "de-AT") (eq .Site.Params.locale "fr-LU") }}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a>
-      </li>
+    {{ end }}
+    {{ if or (eq .Site.Params.locale "en-HU") (eq .Site.Params.locale "sv-SE") (eq .Site.Params.locale "cs-CZ") (eq .Site.Params.locale "da-DK") (eq .Site.Params.locale "fi-FI") (eq .Site.Params.locale "en-JP") (eq .Site.Params.locale "nb-NO") (eq .Site.Params.locale "pt-PT") (eq .Site.Params.locale "pl-PL") (eq .Site.Params.locale "tr-TR") }}
+    <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
+    {{ else if or (eq .Site.Params.locale "en-IE") (eq .Site.Params.locale "zh-HK") (eq .Site.Params.locale "pt-BR") (eq .Site.Params.locale "de-AT") (eq .Site.Params.locale "fr-LU") }}
+    <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }}</a></li>
 
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a>
-      </li>
-      {{ end }}
-      {{ if .Site.Params.joomlaNavBar }}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trendsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trends }}</a>
-      </li>
-      {{ end }}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a
-          class="nx-nav-link pl1 pr4 py2 inline-block"
-          href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletterUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletter }}</a>
-      </li>
+    <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</a></li>
+    {{ end }}
+    {{ if .Site.Params.joomlaNavBar }}
+    <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trendsUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.trends }}</a></li>
+    {{ end }}
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm"><a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletterUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletter }}</a></li>
     </ul>
   </nav>
 </amp-sidebar>

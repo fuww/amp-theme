@@ -37,9 +37,7 @@ For some features, you need to add configuration to your base `config.toml` para
   themeColor = "#FFFFFF" # define a theme color (this will colorize the android address-bar)
   adsensePublisher = "pub-7763170145936962" # ca-pub-123456789 required if you want to include google adsense
   # googleAnalytics = "UA-123456-78" # required if you want to use google analytics
-  googleTagManager = "GTM-NSP9SH"
-  googleTagManagerAMP = "GTM-537Z2Q"
-    # appleItunesApp = "app-id=123456789, app-argument=app-name://link/to/app-content" # required if you want to add an app banner with iOS app
+  # appleItunesApp = "app-id=123456789, app-argument=app-name://link/to/app-content" # required if you want to add an app banner with iOS app
   # ampManifest = "/amp-manifest.json" # required if you want to add the app-banner feature
   alternatePageName = "FashionUnited AMP" # alternative name for website structured data
   organizationLogo = "https://fashionunited.com/global-assets/fu20164/dist/images/schema-org/logo-600x51.png" # set organization logo for structured data

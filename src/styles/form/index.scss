@@ -1,15 +1,15 @@
 @import 'basscss-addons/modules/forms/index.css';
 
 .field {
-    border: 1px solid rgba(0, 0, 0, .125);
+    border: 1px solid rgba(0,0,0,.125);
     border-radius: 3px;
 }
 
 input {
-    caret-color: #0002ff;
+    caret-color:#0002ff;
 }
 
 :focus {
-    outline: var(--theme-primary, #0002ff) auto 2px;
-    outline: #0002ff auto 2px;
+    outline: var(--theme-primary,#0002ff) auto 2px;
+    outline:#0002ff auto 2px;
 }

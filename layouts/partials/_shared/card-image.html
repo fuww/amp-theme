@@ -17,23 +17,19 @@
 <!-- {{ partial "_shared/card-img-16-9-smartcrop" (dict "context" . "featured" $featured) }} -->
 
 <figure class="m0" itemscope itemtype="http://schema.org/ImageObject">
-    <amp-img itemprop="image" src="/{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_375x211.webp"
-        srcset="
-        /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_1366x768.webp 1366w,
-        /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_768x432.webp 768w, 
-        /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_375x211.webp 375w
+    <amp-img itemprop="image" src="/landing/theme/images/default/default_16_9_375x211.webp" srcset="
+        /landing/theme/images/default/default_16_9_1366x768.webp 1366w,
+        /landing/theme/images/default/default_16_9_768x432.webp 768w, 
+        /landing/theme/images/default/default_16_9_375x211.webp 375w
         " alt="Default card image" layout="responsive" width="16" height="9">
-        <amp-img placeholder src="/{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_placeholder_16_9.svg"
-            layout="fill">
+        <amp-img placeholder src="/landing/theme/images/default/default_placeholder_16_9.svg" layout="fill">
         </amp-img>
-        <amp-img fallback itemprop="image"
-            src="/{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_375x211.jpg" srcset="
-            /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_1366x768.jpg 1366w,
-            /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_768x432.jpg 768w, 
-            /{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_16_9_375x211.jpg 375w
+        <amp-img fallback itemprop="image" src="/landing/theme/images/default/default_16_9_375x211.jpg" srcset="
+            /landing/theme/images/default/default_16_9_1366x768.jpg 1366w,
+            /landing/theme/images/default/default_16_9_768x432.jpg 768w, 
+            /landing/theme/images/default/default_16_9_375x211.jpg 375w
             " alt="Default card image" layout="responsive" width="16" height="9">
-            <amp-img placeholder src="/{{ $.Site.Params.cdnSubdir }}/theme/images/default/default_placeholder_16_9.svg"
-                layout="fill">
+            <amp-img placeholder src="/landing/theme/images/default/default_placeholder_16_9.svg" layout="fill">
             </amp-img>
         </amp-img>
     </amp-img>

@@ -4,8 +4,7 @@
       {{/*  Disabled, needs re-implementation for AMP <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>  */}}
       <span class="mdc-top-app-bar__title">
         <a href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}">
-          <img class="fu-nav-logo" src="/{{ $.Site.Params.cdnSubdir }}/theme/logo.svg" width="168" height="18"
-            title="FashionUnited" alt="FashionUnited">
+          <img class="fu-nav-logo" src="/landing/theme/logo.svg" width="168" height="18" title="FashionUnited" alt="FashionUnited">
         </a>
       </span>
     </section>
@@ -14,8 +13,7 @@
         <div class="mdc-tab-scroller">
           <div class="mdc-tab-scroller__scroll-area">
             <div class="mdc-tab-scroller__scroll-content">
-              <a class="mdc-tab"
-                href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}">
+              <a class="mdc-tab" href="{{if .Site.Params.showBaseUrlPrefix}}{{.Site.Params.baseUrlPrefix}}{{else}}/{{end}}">
                 <div class="mdc-tab__content">
                   <span class="mdc-tab__text-label">
                     {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.news }}
@@ -53,30 +51,29 @@
               {{ else }}
               <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">
                 <div class="mdc-tab__content">
-                  <span class="mdc-tab__text-label">
-                    {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }} </span>
+                    <span class="mdc-tab__text-label">
+                      {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }} </span>
                 </div>
                 <span class="mdc-tab-indicator">
-                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
+                    </span>
                   </span>
-                </span>
               </a>
               <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">
                 <div class="mdc-tab__content">
-                  <span class="mdc-tab__text-label">
-                    {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}
-                  </span>
+                      <span class="mdc-tab__text-label">
+                        {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}
+                      </span>
                 </div>
                 <span class="mdc-tab-indicator">
-                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
-                  </span>
-                </span>
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
+                      </span>
+                    </span>
               </a>
               {{ end }}
               {{ end }}
               {{ if or (eq .Site.Params.locale "en-HU") (eq .Site.Params.locale "sv-SE") (eq .Site.Params.locale "cs-CZ") (eq .Site.Params.locale "da-DK") (eq .Site.Params.locale "fi-FI") (eq .Site.Params.locale "en-JP") (eq .Site.Params.locale "nb-NO") (eq .Site.Params.locale "pt-PT") (eq .Site.Params.locale "pl-PL") (eq .Site.Params.locale "tr-TR") }}
-              <a class="mdc-tab"
-                href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">
+              <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">
                 <div class="mdc-tab__content">
                   <span class="mdc-tab__text-label">
                     {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}
@@ -88,17 +85,11 @@
                 </span>
               </a>
               {{ else if or (eq .Site.Params.locale "en-IE") (eq .Site.Params.locale "zh-HK") (eq .Site.Params.locale "pt-BR") (eq .Site.Params.locale "de-AT") (eq .Site.Params.locale "fr-LU")}}
-              <button id="fu-menu-lower-right"
-                class="mdl-button fu-navbar-dropdown-no-bgcolor mdl-js-button mdc-tab fu-nav-header--button">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</button>
-              <ul
-                class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect fu-nav-header--button__dropdown"
-                for="fu-menu-lower-right">
-                <li class="mdl-menu__item"><a
-                    href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_data }}</a>
+              <button id="fu-menu-lower-right" class="mdl-button fu-navbar-dropdown-no-bgcolor mdl-js-button mdc-tab fu-nav-header--button">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.data }}</button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect fu-nav-header--button__dropdown" for="fu-menu-lower-right">
+                <li class="mdl-menu__item"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.business_data }}</a>
                 </li>
-                <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"><a
-                    href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.fashion_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.fashion_data }}</a>
-                </li>
+                <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"><a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.fashion_dataUrl }}">{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.fashion_data }}</a></li>
               </ul>
               {{ end }}
               {{ if .Site.Params.joomlaNavBar  }}
@@ -114,8 +105,7 @@
                 </span>
               </a>
               {{ end }}
-              <a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletterUrl }}"
-                class="material-icons mdc-top-app-bar__navigation-icon">mail</a>
+              <a href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.newsletterUrl }}" class="material-icons mdc-top-app-bar__navigation-icon">mail</a>
             </div>
           </div>
         </div>

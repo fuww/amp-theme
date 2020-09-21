@@ -20,6 +20,7 @@
         {{ block "main" . }}{{ end }}
     </div>
 </main>
+{{ block "main-blank" . }}{{ end }}
 {{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
 {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
 {{ partial "structure/footer-amp-scripts" . }}
