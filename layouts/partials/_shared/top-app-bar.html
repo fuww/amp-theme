@@ -35,6 +35,16 @@
                   </span>
                 </span>
               </a>
+              <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.marketplaceUrl }}">
+                <div class="mdc-tab__content">
+                    <span class="mdc-tab__text-label">
+                      {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.marketplace }} </span>
+                </div>
+                <span class="mdc-tab-indicator">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
+                    </span>
+                  </span>
+              </a>
               {{ if .Site.Params.joomlaNavBar }}
               {{ if not (in .Site.Params.locale "en-GB")}}
               <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">
@@ -49,16 +59,6 @@
                 </span>
               </a>
               {{ else }}
-              <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.eventsUrl }}">
-                <div class="mdc-tab__content">
-                    <span class="mdc-tab__text-label">
-                      {{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.events }} </span>
-                </div>
-                <span class="mdc-tab-indicator">
-                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
-                    </span>
-                  </span>
-              </a>
               <a class="mdc-tab" href="{{ ( index $.Site.Data.translations $.Site.Params.locale ).navbar.dataUrl }}">
                 <div class="mdc-tab__content">
                       <span class="mdc-tab__text-label">
