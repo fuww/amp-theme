@@ -1,0 +1,2 @@
+{{ $featured := .Resources.GetMatch (printf "**%s" .Params.imagecard) }}
+{{ partial "_shared/card-img-16-9-smartcrop" (dict "context" . "featured" $featured) }}
