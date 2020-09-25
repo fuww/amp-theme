@@ -2,7 +2,7 @@
   amp-selector[role=tablist].tabs-with-flex {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 42px;
+    padding: 42px 16px 24px;
 
     @media (max-width: 320px) {
       max-width: 270px;
@@ -10,7 +10,7 @@
     }
 
     @media (min-width: 480px) {
-      padding-top: 72px;
+      padding: 72px 0 0;
     }
   }
   amp-selector[role=tablist].tabs-with-flex [role=tab] {
