@@ -1,4 +1,6 @@
-  /* Styles for the flex layout based tabs */
+@use "../theme";
+
+/* Styles for the flex layout based tabs */
   amp-selector[role=tablist].tabs-with-flex {
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +24,7 @@
   amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
       outline: none;
       /* custom styling, feel free to change */
-      border-bottom: 2px solid var(--theme-primary, #EA0051);
+      border-bottom: 2px solid theme.$theme-primary;
     //   border-bottom: 2px solid var(--brand-primary);
   }
   amp-selector[role=tablist].tabs-with-flex [role=tabpanel]  {
@@ -47,7 +49,7 @@
   amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
       outline: none;
       /* custom styling, feel free to change */
-      border-bottom: 2px solid var(--theme-primary, #EA0051);
+      border-bottom: 2px solid theme.$theme-primary;
     //   border-bottom: 2px solid var(--brand-primary, $theme-primary);
   }
   amp-selector[role=tablist].tabs-with-selector {
@@ -71,7 +73,6 @@
 
   .mdc-tab {
     position: relative;
-    font-family: 'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-size: .875rem;
@@ -106,5 +107,5 @@
 }
 
 amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
-    color: var(--theme-primary, #EA0051);
+    color: theme.$theme-primary;
 }

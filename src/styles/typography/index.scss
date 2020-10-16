@@ -128,9 +128,18 @@ table {
 // typography found in other css files, often wrong, duplicate
 // Also, we want that long list of fonts in as little places as possible
 // as it adds up quickly in CSS size (!!!)
-.blogpost .title, nav.breadcrumbs ul li a, nav.breadcrumbs ul li+li:before, .nx-nav-item, .tags a, .footer p, .footer a.h5.block {
+.blogpost .title, nav.breadcrumbs ul li a, nav.breadcrumbs ul li+li:before, .nx-nav-item, .tags a, .footer p, .footer a.h5.block, .mdc-tab {
     font-family: $heading-font-family;
     font-weight: 700;
+}
+.mdc-list-item__text, .mdc-list-item__secondary-text {
+    font-family: $font-system;
+}
+hr.section-divider:before {
+    font-family: $font-system-serif;
+}
+.imageCaption {
+    font-family: $font-family;
 }
 
 /* this is the "root" in "root em." */

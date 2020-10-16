@@ -1,3 +1,4 @@
+@use "../theme";
 @import 'basscss-addons/modules/forms/index.css';
 
 .field {
@@ -6,10 +7,9 @@
 }
 
 input {
-    caret-color:#EA0051;
+    caret-color: theme.$theme-primary;
 }
 
 :focus {
-    outline: var(--theme-primary,#EA0051) auto 2px;
-    outline:#EA0051 auto 2px;
+    outline: theme.$theme-primary auto 2px;
 }

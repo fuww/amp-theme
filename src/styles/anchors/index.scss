@@ -1,3 +1,5 @@
+@use "../theme";
+
 a, a:active, a:visited {
     color: inherit;
     text-decoration: none;
@@ -20,7 +22,7 @@ article {
   a, a:active, a:visited {
     text-decoration: underline;
     color: #EA0051;
-    color: var(--theme-secondary-300, #EA0051);
+    color: theme.$theme-secondary-300;
     font-weight:bold;
     cursor:pointer;
   }

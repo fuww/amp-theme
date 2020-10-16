@@ -1,6 +1,7 @@
+@use "../theme";
+
 .imageCaption {
-    font-family: var(--font-family);
-    color: var(--black-disabled);
+    color: theme.$black-disabled;
     letter-spacing: -.02em;
     font-weight: 400;
     font-style: normal;

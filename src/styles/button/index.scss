@@ -1,4 +1,5 @@
 @use "../theme";
+@use "../shape";
 
 .btn {
   // btn typography is in typography
@@ -16,7 +17,7 @@
   outline: none;
   border-radius: 4px;
   /* @alternate */
-  border-radius: var(--mdc-shape-small, 4px);
+  border-radius: shape.$shape-small-component-radius;
   /* @alternate */
   line-height: inherit;
   -webkit-user-select: none;
@@ -29,7 +30,7 @@
 }
 
 .btn:not(:disabled) {
-  color: var(--theme-primary, #EA0051);
+  color: theme.$theme-primary;
 }
 
 .btn--raised {
@@ -50,7 +51,7 @@
 
 .btn--raised:not(:disabled),
 .btn--unelevated:not(:disabled) {
-  background-color: var(--theme-primary, #EA0051);
+  background-color: theme.$theme-primary;
 }
 
 .btn--raised:not(:disabled),
@@ -78,7 +79,7 @@
 }
 
 .btn-primary {
-  background-color: var(--theme-primary, #EA0051);
+  background-color: theme.$theme-primary;
   // border-radius: 4px;
 }
 
@@ -141,7 +142,7 @@
   .btn::before,
   .btn::after {
     /* @alternate */
-    background-color: var(--theme-primary, #EA0051);
+    background-color: theme.$theme-primary;
   }
 }
 
@@ -196,11 +197,8 @@ svg.btn__icon {
 }
 
 .btn-outline:not(:disabled) {
-  border-color: #EA0051;
-  /* @alternate */
-  border-color: var(--theme-primary, #EA0051);
-  color: #EA0051;
-  color: var(--theme-primary, #EA0051)
+  border-color: theme.$theme-primary;
+  color: theme.$theme-primary
 }
 
 .btn--dense {

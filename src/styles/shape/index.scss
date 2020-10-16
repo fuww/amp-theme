@@ -3,12 +3,6 @@ $shape-small-component-radius: 4px !default;
 $shape-medium-component-radius: 4px !default;
 $shape-large-component-radius: 24px !default;
 
-:root {
-    --mdc-shape-small:#{$shape-small-component-radius};
-    --mdc-shape-medium:#{$shape-medium-component-radius};
-    --mdc-shape-large:#{$shape-large-component-radius};
-}
-
 /*
 # Small Components
 

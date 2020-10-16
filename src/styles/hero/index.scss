@@ -1,5 +1,7 @@
+@use "../navbar";
+
 .header-hero {
-margin-top: var(--navbar-height);
+margin-top: navbar.$navbar-height;
 
 &--ebp {
   // box-sizing: border-box;

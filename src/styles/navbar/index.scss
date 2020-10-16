@@ -1,3 +1,4 @@
+@use "../theme";
 
 $navbar-height: 3.5rem;
 
@@ -20,7 +21,7 @@ $navbar-height: 3.5rem;
 
 
 .nx-headerbar-nav {
-  line-height: var(--navbar-height);
+  line-height: $navbar-height;
   flex: 1;
   > ul {
     
@@ -43,7 +44,7 @@ $navbar-height: 3.5rem;
 
 .nx-navbar-trigger {
   // line-height: inherit;
-  line-height: var(--navbar-height);
+  line-height: $navbar-height;
   &:focus {
     outline: none;
   }
@@ -71,7 +72,7 @@ $navbar-height: 3.5rem;
   min-width: 300px;
   width: 300px;
   .nx-icon {
-    fill: var(--black-medium);
+    fill: theme.$black-medium;
   }
   .nx-nav-item {
     border-bottom-color:rgba(0, 0, 0, 0.08);
@@ -92,14 +93,14 @@ $navbar-height: 3.5rem;
   
 }
 .nx-sidebar-header {
-  line-height: var(--navbar-height);
-  min-height: var(--navbar-height);
+  line-height: $navbar-height;
+  min-height: $navbar-height;
 }
 
 
 
 .nx-headerbar-icon-wrapper svg {
-    stroke: var(--theme-primary);
+    stroke: theme.$theme-primary;
 }
 
 .nx-dropdown-items > li:last-child {
@@ -108,6 +109,6 @@ $navbar-height: 3.5rem;
 
 .nx-icon,
 .nx-sidebar .nx-icon {
-  color: var(--black-high);
-  fill: var(--black-high);
+  color: theme.$black-high;
+  fill: theme.$black-high;
 }

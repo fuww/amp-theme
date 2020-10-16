@@ -1,3 +1,5 @@
+@use "../theme";
+
 nav.breadcrumbs ul{
   // background-color: rgba($color: #000000, $alpha: 0.2);
   }
@@ -6,7 +8,7 @@ nav.breadcrumbs ul{
   nav.breadcrumbs ul li+li:before {
     // padding: 8px;
     padding: 4px;
-    color: var(--black-disabled);
+    color: theme.$black-disabled;
     content: "/\00a0";
     font-size:15px;
     text-transform: uppercase;
@@ -15,7 +17,7 @@ nav.breadcrumbs ul{
   /* Add a color to all links inside the list */
   nav.breadcrumbs ul li a {
     font-size:15px;
-    color: var(--black-disabled);
+    color: theme.$black-disabled;
     text-transform: uppercase;
   }
   

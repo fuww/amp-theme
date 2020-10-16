@@ -1,10 +1,13 @@
+@use "../theme";
+@use "../shape";
+
 .data-table {
     background-color: #fff;
     /* @alternate */
-    background-color: var(--mdc-theme-surface, #fff);
+    background-color: theme.$theme-surface;
     border-radius: 4px;
     /* @alternate */
-    border-radius: var(--mdc-shape-medium, 4px);
+    border-radius: shape.$shape-medium-component-radius;
     border-width: 1px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.12);

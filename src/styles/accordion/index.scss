@@ -1,5 +1,7 @@
+@use "../theme";
+
 .accordion___header {
-  background-color: var(--theme-on-primary);
+  background-color: theme.$theme-on-primary;
 }
 
 .i-amp-accordion section {
