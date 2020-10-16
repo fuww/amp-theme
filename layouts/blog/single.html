@@ -5,7 +5,7 @@
 {{/* {{ partial "_shared/author" }} */}}<div></div>
 {{ end }}
 {{ define "main" }}
-<div class="grid-content blogpost">
+<div class="grid-content blogpost section-blog">
   <h1 class="title" id="{{ .Title | urlize }}">{{ .Title }}</h1>
   {{- range .Params.authors }}
   {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
