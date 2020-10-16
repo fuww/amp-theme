@@ -6,10 +6,10 @@
 }
 
 input {
-    caret-color:#0002ff;
+    caret-color:#EA0051;
 }
 
 :focus {
-    outline: var(--theme-primary,#0002ff) auto 2px;
-    outline:#0002ff auto 2px;
+    outline: var(--theme-primary,#EA0051) auto 2px;
+    outline:#EA0051 auto 2px;
 }

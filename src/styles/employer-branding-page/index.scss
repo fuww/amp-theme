@@ -16,7 +16,7 @@
     --secondary-font-weight-ebp: 700;
 
     --tab-color: #000;
-    --tab-underline-color: #0002ff;
+    --tab-underline-color: #EA0051;
 
     --social-icon-color: #000;
 }
@@ -31,7 +31,7 @@
         padding: 20px;
         background-color: var(--theme-primary-ebp);
         color: var(--theme-primary-ebp, #FFF);
-        font-family: var(--heading-font-family);
+        font-family: var(--heading-font-family); // must be var! overwritten by EBP
     }
 
     .i-amp-accordion section {

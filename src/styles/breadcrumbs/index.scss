@@ -8,18 +8,14 @@ nav.breadcrumbs ul{
     padding: 4px;
     color: var(--black-disabled);
     content: "/\00a0";
-    font-family: var(--heading-font-family);
     font-size:15px;
-    font-weight: 700;
     text-transform: uppercase;
   }
   
   /* Add a color to all links inside the list */
   nav.breadcrumbs ul li a {
-    font-family: var(--heading-font-family);
     font-size:15px;
     color: var(--black-disabled);
-    font-weight: 700;
     text-transform: uppercase;
   }
   

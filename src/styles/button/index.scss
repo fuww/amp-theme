@@ -1,3 +1,5 @@
+@use "../theme";
+
 .btn {
   // btn typography is in typography
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -27,8 +29,7 @@
 }
 
 .btn:not(:disabled) {
-  color: #0002ff;
-  color: var(--mdc-theme-primary, #0002ff);
+  color: var(--theme-primary, #EA0051);
 }
 
 .btn--raised {
@@ -49,12 +50,12 @@
 
 .btn--raised:not(:disabled),
 .btn--unelevated:not(:disabled) {
-  background-color: var(--theme-primary, #0002ff);
+  background-color: var(--theme-primary, #EA0051);
 }
 
 .btn--raised:not(:disabled),
 .btn--unelevated:not(:disabled) {
-  background-color: #0002ff;
+  background-color: #EA0051;
 }
 
 .btn::before,
@@ -77,7 +78,7 @@
 }
 
 .btn-primary {
-  background-color: var(--theme-primary, #0002ff);
+  background-color: var(--theme-primary, #EA0051);
   // border-radius: 4px;
 }
 
@@ -132,7 +133,7 @@
 
 .btn::before,
 .btn::after {
-  background-color: #0002ff;
+  background-color: #EA0051;
 }
 
 @supports not (-ms-ime-align: auto) {
@@ -140,7 +141,7 @@
   .btn::before,
   .btn::after {
     /* @alternate */
-    background-color: var(--theme-primary, #0002ff);
+    background-color: var(--theme-primary, #EA0051);
   }
 }
 
@@ -195,11 +196,11 @@ svg.btn__icon {
 }
 
 .btn-outline:not(:disabled) {
-  border-color: #0002ff;
+  border-color: #EA0051;
   /* @alternate */
-  border-color: var(--theme-primary, #0002ff);
-  color: #0002ff;
-  color: var(--theme-primary, #0002ff)
+  border-color: var(--theme-primary, #EA0051);
+  color: #EA0051;
+  color: var(--theme-primary, #EA0051)
 }
 
 .btn--dense {
