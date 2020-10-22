@@ -3,7 +3,7 @@
 {{ partial "amp/googleTagManager" . }}
 
 {{ if isset .Params "embedder" }}
-{{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:8080/" }}
+{{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:8082/" }}
 <script src="https://fashionunited.com/embed.js" async=""></script>
 {{ else }}
 <script src="/embed.js" async=""></script>

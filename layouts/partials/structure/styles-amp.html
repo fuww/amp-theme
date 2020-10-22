@@ -3,7 +3,9 @@
 		{{partial "stylesheet" | safeCSS}}
 		{{if eq .Type "developers"}}
 			{{partial "highlight-syntax" | safeCSS}}{{end}}
-		{{if eq .Type "jobs"}}:root {
+			{{if eq .Type "company"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
+			{{if eq .Type "developers"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
+		{{if eq .Type "jobs"}}{{partial "employer-branding-page" | safeCSS}}{{partial "mdc-list-embedders" | safeCSS}}:root {
 			{{if .Params.theme_primary_ebp}}
 			--theme-primary-ebp: {{index .Params "theme_primary_ebp"}};
 				{{else}}
