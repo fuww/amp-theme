@@ -1,3 +1,4 @@
+{{/*Save without formatting: Ctrl + K S  */}}
 {{ if ne .Params.amp.enable false }}
 	<style amp-custom>
 		{{partial "stylesheet" | safeCSS}}
@@ -5,6 +6,7 @@
 			{{partial "highlight-syntax" | safeCSS}}{{end}}
 			{{if eq .Type "company"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
 			{{if eq .Type "developers"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
+		{{if eq .Type "marketplace"}}{{partial "marketplace" | safeCSS}}{{ end }}
 		{{if eq .Type "jobs"}}{{partial "employer-branding-page" | safeCSS}}{{partial "mdc-list-embedders" | safeCSS}}:root {
 			{{if .Params.theme_primary_ebp}}
 			--theme-primary-ebp: {{index .Params "theme_primary_ebp"}};
