@@ -1,15 +1,16 @@
 @use "../theme";
 
-$navbar-height: 3.5rem;
-
-:root {
- --navbar-height: #{$navbar-height};
-}
+$navbar-height: 64px;
 
 .nx-headerbar {
   border-bottom: 2px solid var(--navbar-border-bottom-color);
   &-nav {
     flex: none;
+  }
+  &-title { // logo
+    display: flex;
+    width: 100%;
+    margin: 23px 0;
   }
 }
 
@@ -21,7 +22,18 @@ $navbar-height: 3.5rem;
 
 
 .nx-headerbar-nav {
-  line-height: $navbar-height;
+  // display: flex;
+  // -webkit-box-pack: justify;
+  // justify-content: space-between;
+  // -webkit-box-align: center;
+  // align-items: center;
+  // margin: 0px auto;
+  // max-width: 1440px;
+  // width: 100%;
+  // box-sizing: border-box;
+  height: 64px;
+  padding: 0px 12px;
+
   flex: 1;
   > ul {
     
@@ -29,6 +41,7 @@ $navbar-height: 3.5rem;
     float: right;
   }
   .nx-nav-item {
+    line-height: 32px;
   padding: 0 var(--space-2);
   background: transparent;
   opacity: .8;
@@ -44,7 +57,9 @@ $navbar-height: 3.5rem;
 
 .nx-navbar-trigger {
   // line-height: inherit;
-  line-height: $navbar-height;
+  // line-height: $navbar-height;
+  line-height: 48px;
+  margin: 8px 0;
   &:focus {
     outline: none;
   }
