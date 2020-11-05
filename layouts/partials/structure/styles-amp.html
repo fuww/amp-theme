@@ -1,67 +1,71 @@
 {{/*Save without formatting: Ctrl + K S  */}}
 {{ if ne .Params.amp.enable false }}
 	<style amp-custom>
-		{{partial "stylesheet" | safeCSS}}
-		{{if eq .Type "developers"}}
-			{{partial "highlight-syntax" | safeCSS}}{{end}}
-			{{if eq .Type "company"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
-			{{if eq .Type "developers"}}{{partial "mdc-list-embedders" | safeCSS}}{{end}}
-		{{if eq .Type "marketplace"}}{{partial "marketplace" | safeCSS}}{{ end }}
-		{{if eq .Type "jobs"}}{{partial "employer-branding-page" | safeCSS}}{{partial "mdc-list-embedders" | safeCSS}}:root {
-			{{if .Params.theme_primary_ebp}}
-			--theme-primary-ebp: {{index .Params "theme_primary_ebp"}};
+		{{ if eq .Type "marketplace" }}
+			{{ partial "marketplace-stylesheet" | safeCSS }}
+		{{ else }}
+		{{ partial "main-stylesheet" | safeCSS }}
+		{{ end }}
+		{{ if eq .Type "developers" }}
+			{{ partial "highlight-syntax" | safeCSS }}
+		{{ end }}
+			{{ if eq .Type "company" }}{{ partial "mdc-list-embedders" | safeCSS }}{{ end }}
+			{{ if eq .Type "developers" }}{{ partial "mdc-list-embedders" | safeCSS }}{{ end }}
+		{{ if eq .Type "jobs" }}{{ partial "employer-branding-page" | safeCSS }}{{ partial "mdc-list-embedders" | safeCSS }}:root {
+			{{ if .Params.theme_primary_ebp}}
+			--theme-primary-ebp: {{ index .Params "theme_primary_ebp" }};
 				{{else}}
-		{{end}}
-		{{if .Params.theme_secondary_ebp}}
-			--theme-secondary-ebp: {{index .Params "theme_secondary_ebp"}};
+		{{ end }}
+		{{ if .Params.theme_secondary_ebp}}
+			--theme-secondary-ebp: {{ index .Params "theme_secondary_ebp" }};
 				{{else}}
-		{{end}}
+		{{ end }}
 
-		--primary-font-family-ebp: {{if isset .Params "primary_font_family_ebp"}}
-				{{.Params.primary_font_family_ebp | safeCSS}}
-			, {{end}}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-		--secondary-font-family-ebp: {{if isset .Params "secondary_font_family_ebp"}}
-				{{.Params.secondary_font_family_ebp | safeCSS}}
-			, {{end}}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-		--primary-font-weight-ebp: {{if isset .Params "primary_font_weight_ebp"}}
-				{{.Params.primary_font_weight_ebp | safeCSS}}
+		--primary-font-family-ebp: {{ if isset .Params "primary_font_family_ebp" }}
+				{{ .Params.primary_font_family_ebp | safeCSS }}
+			, {{ end }}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		--secondary-font-family-ebp: {{ if isset .Params "secondary_font_family_ebp" }}
+				{{ .Params.secondary_font_family_ebp | safeCSS }}
+			, {{ end }}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		--primary-font-weight-ebp: {{ if isset .Params "primary_font_weight_ebp" }}
+				{{ .Params.primary_font_weight_ebp | safeCSS }}
 			{{else}}
-			300{{end}};
-		--secondary-font-weight-ebp: {{if isset .Params "secondary_font_weight_ebp"}}
-				{{.Params.secondary_font_weight_ebp | safeCSS}}
+			300{{ end }};
+		--secondary-font-weight-ebp: {{ if isset .Params "secondary_font_weight_ebp" }}
+				{{ .Params.secondary_font_weight_ebp | safeCSS }}
 			{{else}}
-			700{{end}};
+			700{{ end }};
 
-		{{if .Params.hero_border_color}}
-			--hero-border-color: {{index .Params "hero_border_color"}};
+		{{ if .Params.hero_border_color}}
+			--hero-border-color: {{ index .Params "hero_border_color" }};
 				{{else}}
-		{{end}}
-		{{if .Params.tab_color}}
-			--tab-color: {{index .Params "tab_color"}};
+		{{ end }}
+		{{ if .Params.tab_color}}
+			--tab-color: {{ index .Params "tab_color" }};
 				{{else}}
-		{{end}}
-		{{if .Params.tab_underline_color}}
-			--tab-underline-color: {{index .Params "tab_underline_color"}};
+		{{ end }}
+		{{ if .Params.tab_underline_color}}
+			--tab-underline-color: {{ index .Params "tab_underline_color" }};
 				{{else}}
-		{{end}}
-		{{if .Params.heading_color}}
-			--heading-color: {{index .Params "heading_color"}};
+		{{ end }}
+		{{ if .Params.heading_color}}
+			--heading-color: {{ index .Params "heading_color" }};
 				{{else}}
-		{{end}}
-		{{if .Params.heading_background_color}}
-			--heading-background-color: {{index .Params "heading_background_color"}};
+		{{ end }}
+		{{ if .Params.heading_background_color}}
+			--heading-background-color: {{ index .Params "heading_background_color" }};
 				{{else}}
-		{{end}}
-		{{if .Params.social_icon_color}}
-			--social-icon-color: {{index .Params "social_icon_color"}};
+		{{ end }}
+		{{ if .Params.social_icon_color}}
+			--social-icon-color: {{ index .Params "social_icon_color" }};
 				{{else}}
-		{{end}}
+		{{ end }}
 	}
-{{end}}
-{{if isset .Params "custom_style"}}
-		{{.Params.custom_style | safeCSS}}{{end}}
-{{if isset .Params "fullpage_background"}}:root {
-		--fullpage-background: {{.Params.fullpage_background | safeCSS}}
+{{ end }}
+{{ if isset .Params "custom_style" }}
+		{{ .Params.custom_style | safeCSS }}{{ end }}
+{{ if isset .Params "fullpage_background" }}:root {
+		--fullpage-background: {{ .Params.fullpage_background | safeCSS }}
 	;
 }
 footer {
@@ -75,7 +79,7 @@ footer {
 	background-image: url('/landing/images/home/header.jpg');
 	background-image: var(--fullpage-background);
 }
-{{end}}
+{{ end }}
 	</style>
 	<style amp-boilerplate>
 		body {
