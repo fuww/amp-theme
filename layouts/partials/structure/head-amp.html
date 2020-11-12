@@ -58,7 +58,7 @@
 </head>
 
 <body>
+    {{ partial "amp/googleTagManager" . }}
     {{ if isset $.Site.Params "ampmanifest" }}
     {{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
     {{ end }}
-    {{ partial "googleTagManagerNoScript" . }}

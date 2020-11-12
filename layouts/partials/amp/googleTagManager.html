@@ -1,10 +1,11 @@
+<!-- Place this code immediately after the opening <body> element. Replace GTM-CONTAINER_ID with your Tag Manager's container ID, or copy and paste the entire snippet from the Tag Manager user interface. -->
 <amp-analytics config="https://www.googletagmanager.com/amp.json?id=
-GTM-537Z2Q&amp;gtm.url=SOURCE_URL" data-credentials="include">
-    <script type="application/json">
+{{ $.Site.Params.googleTagManagerAMP }}" data-credentials="include">
+  <script type="application/json">
     {
       "vars": {
         "section": "LandingPages"
       }
     }
     </script>
-  </amp-analytics>
+</amp-analytics>
