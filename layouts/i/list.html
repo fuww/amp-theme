@@ -9,10 +9,14 @@
         {{ .Content }}
     </div>
     <div class="row listrecent">
-        <div class="grid__cards shuffle" id="shuffle">
-            {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+        <div class="grid__cards">
+            {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 100 }}
+            {{ range where $post_paginator.Pages "Params.hidden" "ne" true }}
             {{- partial "list/card" . -}}
-            {{ end }}
+            {{end}}
+            <!-- {{ range where .Pages.ByDate "Params.hidden" "ne" true }}
+            {{- partial "list/card" . -}}
+            {{ end }} -->
         </div>
     </div>
 

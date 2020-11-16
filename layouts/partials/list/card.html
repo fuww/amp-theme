@@ -31,7 +31,11 @@
       </div>
       <div class="card___secondary p2 bg-white">
         <p class="body2">
-          {{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}
+          {{ if eq .Section "i" }}
+          {{ if isset .Params "description"}}{{ .Params.Description | truncate 160 }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}
+          {{ else }}
+          {{ if isset .Params "description"}}{{ .Params.Description | truncate 75 }}{{ else }}{{ .Summary | truncate 75 }}{{ end }}
+          {{ end }}
         </p> {{/* No more then 3 lines  */}}
       </div>
     </a>
