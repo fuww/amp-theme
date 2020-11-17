@@ -5,9 +5,9 @@
     letter-spacing: -.02em;
     font-weight: 400;
     font-style: normal;
-    font-feature-settings: "liga" on,"lnum" on;
-    -moz-font-feature-settings: "liga" on,"lnum" on;
-    -webkit-font-feature-settings: "liga" on,"lnum" on;
+    font-feature-settings: "liga"on, "lnum"on;
+    -moz-font-feature-settings: "liga"on, "lnum"on;
+    -webkit-font-feature-settings: "liga"on, "lnum"on;
     font-size: 12px;
     line-height: 1.4;
     letter-spacing: 0;
@@ -17,4 +17,9 @@
     width: 100%;
     top: 0;
     outline: 0;
+}
+
+#flag-icon amp-img {
+    clip-path: circle(50% at 50% 50%);
+    width: 24px;
 }
