@@ -1,4 +1,3 @@
-{{ if (eq .Site.Params.locale "en-US")  }}
 <header
   class="nx-headerbar bg-white black-high bg-theme-primary-disabled theme-on-primary-disabled fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 z4 elevation--z12">
   <!-- <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="nx-navbar-trigger md-hide lg-hide pr2  ">☰
@@ -68,6 +67,3 @@
     </ul>
   </nav>
 </amp-sidebar>
-{{ else }}
-{{ partial "_shared/navigation-hacky" . }}
-{{ end }}
