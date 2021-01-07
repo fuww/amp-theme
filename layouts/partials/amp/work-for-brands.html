@@ -6,7 +6,7 @@
 <section class="grid__logos">
     {{ range seq 12 }}
     <div class="mx-auto">
-        <amp-ad width="150" height="50" type="doubleclick" data-slot="/53457124/{{ $domain }}/wfb{{ . }}">
+        <amp-ad width="150" height="50" type="doubleclick" data-slot="/53457124/{{ $domain }}/wfb{{ printf "%02d" . }}">
         </amp-ad>
     </div>
     {{ end }}
