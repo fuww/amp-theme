@@ -33,10 +33,10 @@
 {{ $figcaption := .Params.figcaption }}
 
 <figure class="m0">
-    <div {{ if ne .Params.headerShadow false }}class="elevation--z12" {{ end }}>
+    <div>
         <amp-img data-hero src="{{ $375x230.RelPermalink }}" srcset="
-        {{ $1440x960.RelPermalink }} 1440w, 
-        {{ $720x480.RelPermalink }} 720w, 
+        {{ $1440x960.RelPermalink }} 1440w,
+        {{ $720x480.RelPermalink }} 720w,
         {{ $375x230.RelPermalink }} 375w,
         {{ $360x240.RelPermalink }} 360w
     " alt="{{ .Title }}" layout="responsive" width="{{ $360x240.Width }}" height="{{ $360x240.Height }}"
@@ -47,9 +47,9 @@
 
         <amp-img data-hero src="{{ $2560x421.RelPermalink }}" srcset="
         {{ $2560x421.RelPermalink }} 2560w,
-    {{ $2048x337.RelPermalink }} 2048w, 
-    {{ $1366x225.RelPermalink }} 1366w, 
-    {{ $786x126.RelPermalink }} 768w, 
+    {{ $2048x337.RelPermalink }} 2048w,
+    {{ $1366x225.RelPermalink }} 1366w,
+    {{ $786x126.RelPermalink }} 768w,
     {{ $375x62.RelPermalink }} 375w
         " alt="{{ .Title }}" layout="responsive" width="{{ $375x62.Width }}" height="{{ $375x62.Height }}"
             class="xs-hide sm-hide">
@@ -93,7 +93,7 @@
 
 {{/* 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 1:1 */}}
 
-{{/* 
+{{/*
 {{ if isset .Params "image" }}
 
 {{ $page := . }}
@@ -123,7 +123,7 @@
 
 
 {{/* 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 16:9 */}}
-{{/* 
+{{/*
 {{ if isset .Params "image" }}
 
 {{ $page := . }}

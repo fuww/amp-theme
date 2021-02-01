@@ -3,11 +3,15 @@
 $navbar-height: 64px;
 
 .nx-headerbar {
-  border-bottom: 2px solid var(--navbar-border-bottom-color);
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: none;
+
   &-nav {
     flex: none;
   }
-  &-title { // logo
+  &-title {
+    // logo
     display: flex;
     width: 100%;
     margin: 23px 0;
@@ -20,30 +24,36 @@ $navbar-height: 64px;
   }
 }
 
-
 .nx-headerbar-nav {
   height: 64px;
   padding: 0px 12px;
 
   flex: 1;
   > ul {
-    
     text-align: right;
     float: right;
   }
   .nx-nav-item {
     line-height: 32px;
-  padding: 0 var(--space-2);
-  background: transparent;
-  opacity: .8;
-}}
+    font-size: 1.0625rem;
+    letter-spacing: 0.0833rem;
+    padding: 0 var(--space-2);
+    background: transparent;
+
+    a,
+    a:active,
+    a:visited {
+      color: var(--black);
+    }
+  }
+}
 
 .nx-nav-item {
   &:focus,
-&:hover,
-&:active {
-  opacity: 1;
-}
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
 }
 
 .nx-navbar-trigger {
@@ -81,7 +91,7 @@ $navbar-height: 64px;
     fill: theme.$black-medium;
   }
   .nx-nav-item {
-    border-bottom-color:rgba(0, 0, 0, 0.08);
+    border-bottom-color: rgba(0, 0, 0, 0.08);
   }
   .nx-dropdown-items::after {
     content: '';
@@ -96,17 +106,14 @@ $navbar-height: 64px;
   .nx-faq-item {
     margin-bottom: 1.5rem;
   }
-  
 }
 .nx-sidebar-header {
   line-height: $navbar-height;
   min-height: $navbar-height;
 }
 
-
-
 .nx-headerbar-icon-wrapper svg {
-    stroke: theme.$theme-primary;
+  stroke: theme.$theme-primary;
 }
 
 .nx-dropdown-items > li:last-child {

@@ -11,9 +11,9 @@
 Headless works local, but is not published. We must reference a regular page bundle instead
 https://stackoverflow.com/questions/48213883/image-processing-outside-bundles
 */}}
-        
+
 {{ $image := (.Resources.ByType "image").GetMatch "*header.jpg" }}
-{{ $placeholder := $image.Resize "48x24 smart q20" }}  
+{{ $placeholder := $image.Resize "48x24 smart q20" }}
 <!-- {{ $placeholder := (.Resources.ByType "image").GetMatch "*placeholder.svg" }} -->
 
 {{/* {{ $image := (.Resources.ByType "image").GetMatch "*header.jpg" }} */}}
@@ -47,11 +47,11 @@ Nice to have (if image quality allows it)
 */}}
 
 <figure class="m0" itemscope itemtype="http://schema.org/ImageObject">
-  <div {{ if ne .Params.headerShadow false }}class="elevation--z12"{{ end }}>
+  <div>
   <amp-img itemprop="image" src="{{ $resized2048.RelPermalink }}" srcset="
-    {{ $resized2048.RelPermalink }} 2048w, 
-    {{ ($image.Fill "1366x281 smart").RelPermalink }} 1366w, 
-    {{ ($image.Fill "768x158 smart").RelPermalink }} 768w, 
+    {{ $resized2048.RelPermalink }} 2048w,
+    {{ ($image.Fill "1366x281 smart").RelPermalink }} 1366w,
+    {{ ($image.Fill "768x158 smart").RelPermalink }} 768w,
     {{ ($image.Fill "375x77 smart").RelPermalink }} 375w
     "
     alt="{{ .Title }}" layout="responsive" {{/*  You can use aspect ratio in amp-img  */}} width="{{ if isset .Params "width" }}{{ .Params.width }}{{ else }}4.869269949{{ end }}"

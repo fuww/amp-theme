@@ -1,25 +1,23 @@
 @use "../navbar";
 
 .header-hero {
-margin-top: navbar.$navbar-height;
+  &--ebp {
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // -webkit-box-sizing: border-box;
+    position: relative;
+    // // elevation z12 will cast shadow over the border-bottom
+    // box-shadow: 0;
+    // Changed the offset
+    // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
+    // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
+    // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12), inset 0 -5px 0 $theme-primary;
+    // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12), inset 0 -5px 0 var(--hero-border-color);
+  }
 
-&--ebp {
-  // box-sizing: border-box;
-  // -moz-box-sizing: border-box;
-  // -webkit-box-sizing: border-box;
-  position: relative;
-  // // elevation z12 will cast shadow over the border-bottom
-  // box-shadow: 0;
-  // Changed the offset
-  // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
-  // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
-  // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12), inset 0 -5px 0 $theme-primary;
-  // box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12), inset 0 -5px 0 var(--hero-border-color);
-}
-
-&--image{
+  &--image {
     // setting max-heights here stretches the image, need to find a different solution making the image behave like background-cover in CSS
-}
+  }
 }
 
 .grid-content {
@@ -29,7 +27,7 @@ margin-top: navbar.$navbar-height;
 .ebp-logo {
   max-width: 140px;
   width: 100%;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   position: absolute;
   top: -120px;
   margin-left: 16px;
@@ -42,6 +40,3 @@ margin-top: navbar.$navbar-height;
     margin-left: 0;
   }
 }
-
-
-

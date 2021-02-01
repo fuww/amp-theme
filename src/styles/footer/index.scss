@@ -1,42 +1,52 @@
 @use "../theme";
 
 footer {
-    h1, h2, h3, h4, h5, h6 {
-        // color: #e0e0e0;;
-        position: relative;
-        width: 100%;
-        text-overflow: ellipsis;
-        box-sizing: border-box;
-        font-size: 1.75rem;
-        line-height: 1.75rem;
-        margin-bottom: 1rem;
-        color: #fff;
-        overflow: hidden;
-    }
-    p {
-        // color: #e0e0e0;;
-        position: relative;
-        width: 100%;
-        text-overflow: ellipsis;
-        box-sizing: border-box;
-        // font-size: 1.75rem;
-        // line-height: 1.75rem;
-        margin-bottom: 1rem;
-        color: #fff;
-        overflow: hidden;
-    }
-    background-color: theme.$black-high; // dark blue, for switching later
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    // color: #e0e0e0;;
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    overflow: hidden;
+  }
+  p {
+    // color: #e0e0e0;;
+    position: relative;
+    width: 100%;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    // font-size: 1.75rem;
+    // line-height: 1.75rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    overflow: hidden;
+  }
+  background-color: theme.$black-high; // dark blue, for switching later
 
-    a.h5.block {
-        color: #FFF;
-        font-size: 14px;
+  a.h5.block {
+    color: #fff;
+    font-size: 14px;
+  }
+  .container .mx-auto .clearfix {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media (min-width: 840px) {
+      flex-direction: row;
     }
-    .container .mx-auto .clearfix {
-        display: flex;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 32px;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
+  }
 }
