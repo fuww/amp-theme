@@ -19,8 +19,6 @@
 stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
-  tags:
-    - vm
   stage: test
   image: registry.gitlab.com/fuww/landing/hugo:v0.74.3-extended
   cache:
