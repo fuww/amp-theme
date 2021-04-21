@@ -1,10 +1,19 @@
 {{/*Save without formatting: Ctrl + K S  */}}
+
+{{/* Use this method to have Hugo process PostCSS */}}
+  {{/* {{ $css := resources.Get "styles/styles.css" | postCSS (dict "config" "./postcss.config.js") | minify }}
+  {{ with $css }}
+    {{ $securecss := . | resources.Fingerprint }}  
+    <link rel="stylesheet" href="{{ $securecss.Permalink | relURL  }}" integrity="{{ $securecss.Data.Integrity }}" crossorigin="anonymous"> 
+  {{ end }}   */}}
+  
 {{ if ne .Params.amp.enable false }}
 	<style amp-custom>
 		{{ if eq .Type "marketplace" }}
 			{{ partial "marketplace-stylesheet" | safeCSS }}
 		{{ else }}
-		{{ partial "main-stylesheet" | safeCSS }}
+		{{/* {{ partial "main-stylesheet" | safeCSS }} */}}
+		{{ partial "fu-stylesheet" | safeCSS }}
 		{{ end }}
 		{{ if eq .Type "developers" }}
 			{{ partial "highlight-syntax" | safeCSS }}
