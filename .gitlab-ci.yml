@@ -8,6 +8,9 @@
       - missing_dependency_failure
       - runner_unsupported
 
+variables:
+  GIT_DEPTH: 10
+
 stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
