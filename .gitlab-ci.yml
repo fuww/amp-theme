@@ -38,3 +38,6 @@ stylesheet.html:
     expire_in: 1 week
   <<: *retry
   <<: *only-changes
+
+include:
+   - local: exampleSite/.gitlab-ci.yml
