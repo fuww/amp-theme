@@ -1,0 +1,56 @@
+/*
+  amp-theme
+  ----
+  this is just a minimal styling entry point for your custom stylesheet
+  you can replace the following styles with your own stylesheet
+  or import them writing:
+   @import 'path/to/your/stylesheet.scss'
+
+*/
+@use "sass:string";
+@use "sass:meta";
+
+@use "font-face/futura-condensed";
+@use "font-face/fu-futura-pt";
+
+// Customized:
+
+@use "shape"with ($shape-small-component-radius: 0px,
+  $shape-medium-component-radius: 0px,
+  $shape-large-component-radius: 0px, );
+@use "theme"with ($theme-primary: #EA0051);
+@use "elevation"with ($elevation-card: 0px 0px 17px rgba(0, 0, 0, 0.3));
+
+@use "typography"with ($heading-font-family: string.unquote("'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"),
+  $font-family: string.unquote("'FU Futura PT', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"));
+
+// Defaults:
+
+@import "accordion";
+@import "author";
+@import "anchors";
+@import "blogpost";
+@import "breadcrumbs";
+@import "button";
+@import "card";
+@import "data-table";
+
+@import "embedder";
+// @import "employer-branding-page";
+@import "figure";
+@import "footer";
+@import "form";
+@import "grid";
+@import "header-link";
+@import "hero";
+@import "list";
+@import "mdc-branding";
+// @import "mdc-list-embedders"; // big, should only load on pages with embedders...
+@import "navigation";
+@import "navbar";
+@import "statistics_page";
+@import "table";
+@import "tabs";
+@import "tags";
+
+// @import 'styles.scss'; // to use the default styling

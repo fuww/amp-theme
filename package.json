@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --mode production",
-    "start": "webpack --bail -p --mode production --watch",
+    "build": "webpack --mode production",
+    "start": "webpack --bail --mode production --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

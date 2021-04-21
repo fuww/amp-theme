@@ -7,7 +7,9 @@ const plugins = require('./webpack/plugins');
 
 module.exports = {
   entry: {
-    main: ['./src/styles/styles.scss'],
+    main: ['./assets/styles/styles.scss'],
+    fu: './assets/styles/fu.scss',
+    marketplace: './assets/styles/marketplace.scss',
   },
   output: {
     path: path.join(__dirname, './'),
@@ -15,8 +17,8 @@ module.exports = {
   },
   performance: {
     hints: 'error',
-    maxEntrypointSize: 60000,
-    maxAssetSize: 60000,
+    maxEntrypointSize: 750000,
+    maxAssetSize: 250000,
   },
   optimization: {
     splitChunks: {
@@ -46,7 +48,7 @@ module.exports = {
   plugins: [
     plugins.StyleLintPlugin,
     new MiniCssExtractPlugin({
-      filename: './layouts/partials/stylesheet.html',
+      filename: './layouts/partials/[name]-stylesheet.html',
     }),
   ],
   module: {
@@ -80,21 +82,21 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {},
-          },
-        ],
-      },
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {},
+      //     },
+      //   ],
+      // },
       {
         test: /.(gif|jpe?g|png|svg|tiff|webp)$/i,
         use: [
           {
             loader: 'file-loader',
-            options: { name: 'img/[name].[hash:4].[ext]' },
+            options: { name: './assets/compiled/img/[name].[hash:4].[ext]' },
           },
           {
             loader: 'image-webpack-loader',
@@ -118,7 +120,14 @@ module.exports = {
 
               // @see https://github.com/imagemin/imagemin-svgo#api
               svgo: {
-                plugins: [{ removeViewBox: true }],
+                plugins: [{ removeViewBox: true }],      //   test: /\.(png|svg|jpg|gif)$/,
+                //   use: [
+                //     {
+                //       loader: 'file-loader',
+                //       options: {},
+                //     },
+                //   ],
+                // },
               },
             },
             // @see https://github.com/imagemin/imagemin-webp#api
