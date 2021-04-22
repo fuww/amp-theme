@@ -11,6 +11,22 @@
 variables:
   GIT_DEPTH: 10
 
+# test local: gitlab-runner exec docker build-kaniko-hugo > does not work, can only test on gitlab ci
+stylesheet-kaniko:
+  stage: build
+  variables:
+    CI_REGISTRY_IMAGE: amp-theme
+    TEST_DIR: "."
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR$TEST_DIR --dockerfile $CI_PROJECT_DIR$TEST_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  only:
+    - tags
+
 stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
