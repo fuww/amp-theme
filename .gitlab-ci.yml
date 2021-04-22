@@ -18,7 +18,6 @@ variables:
 
 # test local: gitlab-runner exec docker build-kaniko-hugo > does not work, can only test on gitlab ci
 stylesheet-kaniko:
-news-build-dev:
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
