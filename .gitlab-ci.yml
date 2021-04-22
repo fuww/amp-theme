@@ -31,7 +31,7 @@ stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
   stage: test
-  image: registry.gitlab.com/fuww/landing/hugo:v0.82.1-ext
+  image: $CI_REGISTRY/hugo:v0.82.1-ext
   cache:
     key: "$CI_JOB_NAME"
     paths:
