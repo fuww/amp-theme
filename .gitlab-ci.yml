@@ -13,7 +13,7 @@ variables:
 
 # test local: gitlab-runner exec docker build-kaniko-hugo > does not work, can only test on gitlab ci
 stylesheet-kaniko:
-  stage: build
+  stage: test
   variables:
     CI_REGISTRY_IMAGE: amp-theme
     TEST_DIR: "."
