@@ -8,7 +8,7 @@ module.exports = {
     'postcss-custom-media': {},
     'postcss-custom-properties': {},
     // 'postcss-calc': {},
-    // 'autoprefixer': {},
+    'autoprefixer': {},
     'clean-css': {},
   },
 };
