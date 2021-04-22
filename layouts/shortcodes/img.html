@@ -12,14 +12,14 @@
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
 <figure>
-	<amp-img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" layout="responsive">
-	<figcaption>
-	<small>
-	{{ with .Inner }}
-	{{ . }}
-	{{ else }}
-	.{{ $command }} "{{ $options }}"
-	{{ end }}
-	</small>
-	</figcaption>
-</figure>   
+  <amp-img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" layout="responsive">
+  <figcaption>
+  <small>
+  {{ with .Inner }}
+  {{ . }}
+  {{ else }}
+  .{{ $command }} "{{ $options }}"
+  {{ end }}
+  </small>
+  </figcaption>
+</figure>

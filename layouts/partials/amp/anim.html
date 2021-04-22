@@ -7,7 +7,7 @@
         {{ if isset . "layout" }}layout="{{ .layout }}"{{ end }}>
     {{ if isset . "placeholder" }}
         <amp-img placeholder
-           {{ if isset . "width" }}width="{{ .width }}"{{ end }}
+          {{ if isset . "width" }}width="{{ .width }}"{{ end }}
             {{ if isset . "height" }}height="{{ .height }}"{{ end }}
             {{ if isset . "placeholder" }}src="{{ .placeholder }}"{{ end }}></amp-img>
     {{ end }}

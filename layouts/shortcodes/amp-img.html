@@ -13,7 +13,7 @@
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
 {{/*  Create placeholder and blur it  */}}
-{{ $placeholder := $image.Resize "48x smart q20" }}  
+{{ $placeholder := $image.Resize "48x smart q20" }}
 {{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
 
 {{ $resized412 := $image.Resize "412x smart" }}
@@ -22,11 +22,11 @@
     <amp-img src="{{ $image.RelPermalink }}"
     srcset="
     {{ $image.RelPermalink }} {{ $image.Width }}w,
-    {{ ($image.Resize "768x smart").RelPermalink }} 768w, 
+    {{ ($image.Resize "768x smart").RelPermalink }} 768w,
     {{ ($image.Resize "412x smart").RelPermalink }} 412w
     "
     alt="{{ $title }}"
-     width="{{ $image.Width }}" height="{{ $image.Height }}" layout="responsive">
+    width="{{ $image.Width }}" height="{{ $image.Height }}" layout="responsive">
         <amp-img placeholder
             src="{{ $placeholder.RelPermalink }}"
             layout="fill">
@@ -36,4 +36,4 @@
 <figcaption>
     <h4 class="center">{{ $title }} </h4>
 </figcaption>
-{{- end }}    
+{{- end }}

@@ -34,7 +34,7 @@ $font-weight-values: (thin: 100,
 ) !default;
 
 // base = 1rem = 16px
-// font can be bigger for main text like article (18px) but base will stay 16 always 
+// font can be bigger for main text like article (18px) but base will stay 16 always
 // because all calculations are done based on it.
 
 $font-size-values: (h1: pxToRem(60px),
