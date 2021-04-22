@@ -8,6 +8,11 @@
       - missing_dependency_failure
       - runner_unsupported
 
+# .only: &only
+#   only:
+#     - master
+#     - merge_requests
+
 variables:
   GIT_DEPTH: 10
 
