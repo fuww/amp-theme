@@ -7,6 +7,13 @@ This Hugo theme is supposed to be a starter theme to make it easy to adapt to [G
 
 ## build
 
+europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest
+
+docker build . -t europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest
+
+docker run -t europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest bash
+
+
 docker run -it \
   -v /tmp/config.json:/kaniko/.docker/config.json \
   -v $(pwd):/build \
