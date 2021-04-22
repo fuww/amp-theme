@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CssNano = require('cssnano');
 const plugins = require('./webpack/plugins');
@@ -32,10 +31,6 @@ module.exports = {
       },
     },
     minimizer: [
-      new UglifyJsPlugin({
-        parallel: true,
-        sourceMap: true, // set to true if you want JS source maps
-      }),
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /stylesheet\.html$/g,
         cssProcessor: CssNano,
