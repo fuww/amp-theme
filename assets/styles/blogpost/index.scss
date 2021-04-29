@@ -1,9 +1,9 @@
 .post {
     display: grid;
-    grid-template-columns: 
+    grid-template-columns:
     [full-start] minmax(1rem, 1fr)  // 1rem matches Basscss p2 padding on breadcrumbs for example
     [title-start main-start] minmax(auto, 60ch) [main-end] // Readability: 50-60 characters per line
-      minmax(1rem, 1fr) [full-end title-end]; 
+      minmax(1rem, 1fr) [full-end title-end];
         > p,
         > a,
         > h1,
@@ -201,7 +201,7 @@
             margin-top: 36px;
         }
         }
-        
+
         @media (min-width: 840px) {
         figure, .graf--figure.graf-after--h4, .graf--mixtapeEmbed.graf-after--h4, .graf--pre.graf-after--h4 {
             margin-top: 44px;

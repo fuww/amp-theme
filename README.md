@@ -5,6 +5,24 @@
 
 This Hugo theme is supposed to be a starter theme to make it easy to adapt to [Google's AMP-Project](https://www.ampproject.org/). Included in the theme are [**40+ shortcodes and partials**](https://gohugo-amp.gohugohq.com/shortcodes/) and [automatic Structured Data](https://gohugo-amp.gohugohq.com/schema/) making it a pleasure to embed AMP-Elements within your content files or your template.
 
+## build
+
+europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest
+
+docker build . -t europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest
+
+docker run -t europe-west1-docker.pkg.dev/pkg-fuww/fu/amp-theme:latest bash
+
+
+docker run -it \
+  -v /tmp/config.json:/kaniko/.docker/config.json \
+  -v $(pwd):/build \
+  gcr.io/kaniko-project/executor:debug \
+  --cache=true \
+  --dockerfile /Dockerfile \
+  --destination someimage
+
+
 ## Installation
 
 Go to the directory where you have your Hugo site and run:

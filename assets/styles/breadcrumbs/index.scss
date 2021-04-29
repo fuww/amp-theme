@@ -3,7 +3,7 @@
 nav.breadcrumbs ul{
   // background-color: rgba($color: #000000, $alpha: 0.2);
   }
-  
+
   /* Add a slash symbol (/) before/behind each list item */
   nav.breadcrumbs ul li+li:before {
     // padding: 8px;
@@ -13,14 +13,14 @@ nav.breadcrumbs ul{
     font-size:15px;
     text-transform: uppercase;
   }
-  
+
   /* Add a color to all links inside the list */
   nav.breadcrumbs ul li a {
     font-size:15px;
     color: theme.$black-disabled;
     text-transform: uppercase;
   }
-  
+
   /* Add a color on mouse-over */
   nav.breadcrumbs ul li a:hover {
     text-decoration: underline;

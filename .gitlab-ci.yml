@@ -8,14 +8,63 @@
       - missing_dependency_failure
       - runner_unsupported
 
+# .only: &only
+#   only:
+#     - master
+#     - merge_requests
+
 variables:
   GIT_DEPTH: 10
+
+# test local: gitlab-runner exec docker build-kaniko-hugo > does not work, can only test on gitlab ci
+stylesheet-kaniko:
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  tags:
+    - docker
+  stage: test
+  variables:
+    GIT_STRATEGY: fetch
+    CACHE_REPO: "$CI_REGISTRY/$CI_PROJECT_PATH-cache"
+    IMAGE: "$CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_REF_SLUG-dev"
+    GOOGLE_APPLICATION_CREDENTIALS: /kaniko/config.json
+  before_script:
+    - echo "$GOOGLE_CLOUD_SERVICE_KEY" > /kaniko/config.json
+  except:
+    - schedules
+  script:
+    - /kaniko/executor
+      --cache=true
+      --cache-ttl=6h
+      --cache-repo "$CACHE_REPO"
+      --destination "$IMAGE"
+      --dockerfile "$CI_PROJECT_DIR/Dockerfile"
+      --context "$CI_PROJECT_DIR"
+  dependencies: []
+  needs: []
+  <<: *retry
+  # <<: *only
+
+  # stage: test
+  # variables:
+  #   CI_REGISTRY_IMAGE: amp-theme
+  #   TEST_DIR: "."
+  # image:
+  #   name: gcr.io/kaniko-project/executor:debug
+  #   entrypoint: [""]
+  # script:
+  #   - mkdir -p /kaniko/.docker
+  #   - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+  #   - /kaniko/executor --context $CI_PROJECT_DIR$TEST_DIR --dockerfile $CI_PROJECT_DIR$TEST_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+  # only:
+  #   - tags
 
 stylesheet.html:
   variables:
     GIT_SUBMODULE_STRATEGY: none
   stage: test
-  image: registry.gitlab.com/fuww/landing/hugo:v0.74.3-extended
+  image: $CI_REGISTRY/hugo:v0.82.1-ext
   cache:
     key: "$CI_JOB_NAME"
     paths:
@@ -31,4 +80,4 @@ stylesheet.html:
   <<: *retry
 
 include:
-   - local: exampleSite/.gitlab-ci.yml
+  - local: exampleSite/.gitlab-ci.yml

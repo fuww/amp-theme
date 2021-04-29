@@ -8,10 +8,11 @@ const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
 });
 const StyleLintPlugin = new _StyleLintPlugin({
   configFile: path.resolve(__dirname, 'stylelint.config.js'),
-  context: path.resolve(__dirname, '../src/styles'),
+  context: path.resolve(__dirname, '../assets/styles'),
   files: '**/*.css',
   failOnError: false,
   quiet: false,
+  fix: true,
 });
 module.exports = {
   MiniCssExtractPlugin,

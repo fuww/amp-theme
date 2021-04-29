@@ -1,12 +1,12 @@
 {{ if isset .Params "image" }}
 
-{{ $page := . }}      
+{{ $page := . }}
 {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }}
-{{ $placeholder := $imageSrc.Resize "36x24 smart q20" }}  
+{{ $placeholder := $imageSrc.Resize "36x24 smart q20" }}
 
 {{/*
-   
-{{ $placeholder := $image.Resize "48x q20" }}  
+
+{{ $placeholder := $image.Resize "48x q20" }}
     src="{{ if isset .Params "placeholder" }}{{ .Params.placeholder }}{{ else }}/landing/theme/images/unit_denis_koval_174-2868x589-placeholder.svg{{ end }}"
 
 
@@ -18,13 +18,13 @@
     src="{{ $resized1366.RelPermalink }}"
     srcset="
     {{ $resized1366.RelPermalink }} 1366w,
-    {{ ($imageSrc.Fill "768x385 smart").RelPermalink }} 768w, 
+    {{ ($imageSrc.Fill "768x385 smart").RelPermalink }} 768w,
     {{ ($imageSrc.Fill "375x188 smart").RelPermalink }} 375w
     "
     alt="{{ .Title }}"
     layout="responsive"
     {{/*  You can use aspect ratio in amp-img  */}}
-    width="375" 
+    width="375"
     height="188"
     >
     <amp-img placeholder

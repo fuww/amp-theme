@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CssNano = require('cssnano');
 const plugins = require('./webpack/plugins');
@@ -18,7 +17,7 @@ module.exports = {
   performance: {
     hints: 'error',
     maxEntrypointSize: 750000,
-    maxAssetSize: 250000,
+    maxAssetSize: 300000,
   },
   optimization: {
     splitChunks: {
@@ -32,10 +31,6 @@ module.exports = {
       },
     },
     minimizer: [
-      new UglifyJsPlugin({
-        parallel: true,
-        sourceMap: true, // set to true if you want JS source maps
-      }),
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /stylesheet\.html$/g,
         cssProcessor: CssNano,
@@ -65,8 +60,8 @@ module.exports = {
         test: /\.(s(a|c)ss)$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader', options: { importLoaders: 1, 
-            // sourceMap: true 
+          { loader: 'css-loader', options: { importLoaders: 1,
+            // sourceMap: true
           } },
           {
             loader: 'postcss-loader?sourceMap',
@@ -77,7 +72,7 @@ module.exports = {
             options: { // Prefer `dart-sass`
             implementation: require('sass'),
             includePaths: ['node_modules'],
-            // sourceMap: true, 
+            // sourceMap: true,
           },
           },
         ],
@@ -89,45 +84,6 @@ module.exports = {
             loader: 'file-loader',
             options: { name: './assets/compiled/img/[name].[hash:4].[ext]' },
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              // @see https://github.com/imagemin/imagemin-gifsicle#api
-              gifsicle: {
-                interlaced: true,
-                optimizationLevel: 3,
-              },
-
-              // @see https://github.com/imagemin/imagemin-mozjpeg#api
-              mozjpeg: {
-                quality: 75,
-              },
-
-              // @see https://github.com/imagemin/imagemin-pngquant#api
-              pngquant: {
-                quality: '65-85',
-                speed: 1,
-              },
-
-              // @see https://github.com/imagemin/imagemin-svgo#api
-              svgo: {
-                plugins: [{ removeViewBox: true }],      //   test: /\.(png|svg|jpg|gif)$/,
-                //   use: [
-                //     {
-                //       loader: 'file-loader',
-                //       options: {},
-                //     },
-                //   ],
-                // },
-              },
-            },
-            // @see https://github.com/imagemin/imagemin-webp#api
-            // webp: {
-            //   quality: 75,
-            //   method: 6
-            // })
-          },
-          // 'sharp-image-loader'
         ],
       },
     ],
