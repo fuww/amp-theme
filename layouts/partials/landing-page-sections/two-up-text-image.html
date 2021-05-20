@@ -10,7 +10,8 @@
     <div class="flex-auto       sm-col sm-col-6 px2 py4">
       <span class="red">New</span>
       <h2 class="mb0">{{ with .title }}{{ . }}{{ end }}</h2>
-      <p class="h1">{{ with .subtitle }}{{ . }}{{ end }}</h2>
+      <p class="h1">{{ with .subtitle }}{{ . }}{{ end }}</p>
+      <span>{{ with .description }}{{ . }}{{ end }}</span>
         {{/*  <p>{{ with . description }}{{ . }}{{ end }}</p> */}}
       <a href="{{ with .href }}{{ . }}{{ end }}" class="h3 btn btn-primary mb4">{{ with .btn }}{{ . }}{{ end }}</a>
     </div>
