@@ -1,0 +1,13 @@
+{{ partial "structure/head.no-amp" . }} {{/* Body starts inside head-amp */}}
+<div></div>
+{{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
+{{ block "hero" . }}
+<header class="hero header-hero">
+    {{ partial "_shared/hero" . }}
+</header>
+{{ end }}
+</div>{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
+{{ block "main-blank" . }}{{ end }}
+{{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
+{{ block "source-link" . }}{{ end }}
+{{ partial "structure/footer-amp-scripts" . }}
