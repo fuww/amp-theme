@@ -1,0 +1,108 @@
+section {
+    padding: 2rem 20%;
+}
+
+section:nth-child(1) {
+    /* background: #08809E; */
+    background: #193348;
+    clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 80%);
+    /* full width for header with youtube video */
+    padding: 10rem 0%;
+}
+
+section:nth-child(2) {
+    padding: 4rem 0%;
+}
+
+/* primary #ea0051 */
+
+section:nth-child(3) {
+    /* background: #08809E; */
+    background: #193348;
+    color: white;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+    padding: 10rem 20%;
+}
+
+.fu-hr-apps {
+
+    .max-width {
+        max-width: 1140px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .body1 {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        border-radius: 4px;
+        background-color: rgb(255, 122, 0);
+    }
+
+    &-lime {
+        color: #4dcdb3;
+        // color: #17EBA1; // nieuwe stijl, past bij roze buttons
+    }
+
+    &-section--center {
+        justify-content: center;
+        margin: auto;
+    }
+
+    &-section2 {
+        /* padding: 40px 20px; */
+        background-color: #193348;
+        transform-origin: left bottom;
+        transformation: skewY (3deg);
+        /* position: relative;
+          z-index: -40; */
+    }
+
+    &-section4 {
+        /* background-color: #ecede8; */
+    }
+
+    &-section4 {
+        // background-color: #ecede8;
+    }
+
+    &-section4 .fu-hr-apps-dashed-line {
+        border-top: 2px dashed #87a0a6;
+        margin-top: 60px;
+        width: 100%;
+    }
+
+    &-section4 .fu-hr-apps-dashed-line span {
+        display: inline-block;
+        position: relative;
+        padding: 0;
+        top: -22px;
+        background-color: #064052;
+        border-radius: 50%;
+        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        line-height: 40px;
+        margin: 0 auto;
+    }
+
+    &-background-image {
+        background: linear-gradient(0deg, rgba(1, 11, 69, .3) 0%, #000000 100%), url(https://fashionunited.com/global-assets/fu20164/dist/landing/images/hr-apps/fashionunited-hr-apps-background.png);
+        background-position-x: 0%, 0%;
+        background-position-y: 0%, 0%;
+        background-repeat: repeat, repeat;
+        background-size: auto, auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        height: 100%;
+        min-height: 650px;
+        /* position: relative; */
+    }
+
+}

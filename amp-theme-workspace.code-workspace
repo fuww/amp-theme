@@ -1,17 +1,11 @@
 {
-  "folders": [
-    {
-      "path": "."
-    },
-    {
-      "path": "../demo.fashionunited.com"
-    },
-    {
-      "path": "../amp-theme-example"
-    },
-    {
-      "path": "../landing"
-    }
-  ],
-  "settings": {}
+	"folders": [
+		{
+			"path": "../landing"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
 }

@@ -2,6 +2,17 @@
 {{ define "hero"}}<div></div>{{/* Disable the hero */}}{{ end }}
 {{ define "main"}}<div></div>{{/* Disable main, it has a grid with padding */}}{{ end }}
 {{ define "main-blank"}}
+{{ $sass := resources.Get "styles/hr-apps/index.scss" }}
+{{ $style := $sass | resources.ToCSS }}
+
+{{/* {{ $css := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify }}
+*/}}
+{{ $css := $style | minify }}
+{{ with $css }}
+{{ $securecss := . | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $securecss.Permalink | relURL  }}" integrity="{{ $securecss.Data.Integrity }}"
+    crossorigin="anonymous">
+{{ end }}
 {{ .Content }}
 {{ end }}
 {{ define "footer"}}<div></div>{{/* Disable the footer */}}{{ end }}
