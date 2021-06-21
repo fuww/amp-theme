@@ -8,6 +8,10 @@
   {{ end }}   */}}
 
 {{ if ne .Params.amp.enable false }}
+
+{{ $hrappssass := resources.Get "styles/hr-apps/index.scss" }}
+{{ $hrappsstyle := $hrappssass | resources.ToCSS | minify }}
+
   <style amp-custom>
     {{ if eq .Type "marketplace" }}
       {{ partial "marketplace-stylesheet" | safeCSS }}
@@ -17,6 +21,9 @@
     {{ end }}
     {{ if eq .Type "developers" }}
       {{ partial "highlight-syntax" | safeCSS }}
+    {{ end }}
+    {{ if eq .Type "hr-apps" }}
+      {{ $hrappsstyle.Content | safeCSS}}
     {{ end }}
       {{ if eq .Type "company" }}{{ partial "mdc-list-embedders" | safeCSS }}{{ end }}
       {{ if eq .Type "developers" }}{{ partial "mdc-list-embedders" | safeCSS }}{{ end }}
