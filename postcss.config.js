@@ -6,7 +6,9 @@ module.exports = {
       browsers: 'last 2 versions',
     },
     'postcss-custom-media': {},
-    'postcss-custom-properties': {},
+    'postcss-custom-properties': {
+      preserve: true
+    },
     // 'postcss-calc': {},
     'autoprefixer': {},
     'clean-css': {},

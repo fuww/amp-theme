@@ -1,3 +1,5 @@
+@use "sass:math";
+@use 'sass:list';
 @use "sass:map";
 @use "sass:string";
 @use "./multiline-ellipsis";
@@ -6,11 +8,11 @@
 @import 'basscss-type-scale/index.css';
 
 @function get-letter-spacing_($tracking, $font-size) {
-    @return $tracking / ($font-size * 16) * 1em;
+    @return math.div($tracking, $font-size * 16) * 1em;
 }
 
-@function pxToRem($px) {
-    @return #{$px / 16px}rem;
+@function px-to-rem($px) {
+    @return math.div($px, 16px) * 1rem;
 }
 
 // All components on the page should have a height divisible by the height of one line of paragraph text. Maintaining vertical rhythm (or composing to a baseline grid34) is the
@@ -41,37 +43,37 @@ $heading-weight-h6: map.get($font-weight-values, regular) !default;
 // font can be bigger for main text like article (18px) but base will stay 16 always
 // because all calculations are done based on it.
 
-$font-size-values: (h1: pxToRem(60px),
-    h2: pxToRem(48px),
-    h3: pxToRem(34px),
-    h4: pxToRem(24px),
-    h5: pxToRem(20px),
-    h6: pxToRem(20px),
-    subtitle1: pxToRem(16px),
-    subtitle2: pxToRem(14px),
-    body1: pxToRem(16px),
-    body2: pxToRem(16px),
-    caption: pxToRem(12px),
-    button: pxToRem(14px),
-    overline: pxToRem(12px),
+$font-size-values: (h1: px-to-rem(60px),
+    h2: px-to-rem(48px),
+    h3: px-to-rem(34px),
+    h4: px-to-rem(24px),
+    h5: px-to-rem(20px),
+    h6: px-to-rem(20px),
+    subtitle1: px-to-rem(16px),
+    subtitle2: px-to-rem(14px),
+    body1: px-to-rem(16px),
+    body2: px-to-rem(14px),
+    caption: px-to-rem(12px),
+    button: px-to-rem(14px),
+    overline: px-to-rem(12px),
 ) !default;
 
-$line-height-values: (h1: pxToRem(60px),
-    h2: pxToRem(50px),
-    h3: pxToRem(40px),
-    h4: pxToRem(32px),
-    h5: pxToRem(32px),
-    h6: pxToRem(32px),
-    subtitle1: pxToRem(28px),
-    subtitle2: pxToRem(22px),
+$line-height-values: (h1: px-to-rem(60px),
+    h2: px-to-rem(50px),
+    h3: px-to-rem(40px),
+    h4: px-to-rem(32px),
+    h5: px-to-rem(32px),
+    h6: px-to-rem(32px),
+    subtitle1: px-to-rem(28px),
+    subtitle2: px-to-rem(22px),
     body1: 1.5, // not rem! (even though material uses it) // 24sp
-    body2: pxToRem(21px),
-    caption: pxToRem(20px),
-    button: pxToRem(36px),
-    overline: pxToRem(32px),
+    body2: px-to-rem(21px),
+    caption: px-to-rem(20px),
+    button: px-to-rem(36px),
+    overline: px-to-rem(32px),
 ) !default;
 $body-font-size: 1rem;
-$body2: 1rem;
+$body2: 0.875rem;
 
 multiline-ellipsis.$line-height: 1.5;
 
@@ -87,22 +89,23 @@ multiline-ellipsis.$line-height: 1.5;
     --paragraph-margin-bottom: 1rem;
 
     // https://basscss.com/v7/docs/type-scale/
-    --h1: #{h1};
+    --h1: #{map.get($font-size-values, h1)};
     /* 41px */
-    --h2: #{h2};
+    --h2: #{map.get($font-size-values, h2)};
     /* 36px */
-    --h3: #{h3};
+    --h3: #{map.get($font-size-values, h3)};
     /* 29px */
-    --h4: #{h4};
+    --h4: #{map.get($font-size-values, h4)};
     /* 25px */
-    --h5: #{h5};
+    --h5: #{map.get($font-size-values, h5)};
     /* 16px */
-    --h6: #{h6};
+    --h6: #{map.get($font-size-values, h6)};
     /* 22px */
     --font-family: #{$font-family};
     --heading-font-family: #{$heading-font-family};
     --font-system: #{$font-system};
     --font-system-serif: #{$font-system-serif};
+    --read-font-family: #{$read-font-family};
 
     --body2: #{$body2};
 
@@ -197,7 +200,7 @@ hr {
     table,
     li,
     dt {
-        font-family: $read-font-family;
+        font-family: var(--read-font-family);
         font-size: 1.125rem; // 18px
         letter-spacing: 0.45px;
     }
@@ -206,12 +209,12 @@ hr {
     .body1 p,
     .body2,
     .body2 p {
-        font-family: $read-font-family;
+        font-family: var(--read-font-family);
     }
 }
 
 blockquote {
-    font-family: var(--typography-font-family-secondary);
+    font-family: var(--read-font-family);
 }
 
 h1,
@@ -254,7 +257,7 @@ h1,
     font-size: map.get($font-size-values, h1);
     line-height: map.get($line-height-values, h1);
     font-weight: $heading-weight-h1-h4;
-    letter-spacing: get-letter-spacing_(-.5, 3.75);
+    letter-spacing: get-letter-spacing_(-1.5, 3.75);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 0 0 24px;
@@ -265,7 +268,7 @@ h2,
     font-size: map.get($font-size-values, h2);
     line-height: map.get($line-height-values, h2);
     font-weight: $heading-weight-h1-h4;
-    letter-spacing: get-letter-spacing_(.25, 2.125);
+    letter-spacing: get-letter-spacing_(-0.5, 2.125);
     text-decoration: inherit;
     text-transform: inherit;
     // margin: 12px 0;
@@ -306,7 +309,7 @@ h5,
     font-size: map.get($font-size-values, h5);
     line-height: map.get($line-height-values, h5);
     font-weight: $heading-weight-h5;
-    letter-spacing: get-letter-spacing_(.25, 1.25);
+    letter-spacing: get-letter-spacing_(0.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 12px 0;
@@ -319,7 +322,7 @@ h6,
     font-size: map.get($font-size-values, h6);
     line-height: map.get($line-height-values, h6);
     font-weight: $heading-weight-h6;
-    letter-spacing: normal;
+    letter-spacing: get-letter-spacing_(0.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
     margin: 12px 0;

@@ -9,7 +9,7 @@
 
 <head>
     {{ partial "googleTagManager" . }}
-    <meta charset="utf-8"> {{/* Must be first for AMP  */}}
+    <meta charset="utf-8"> {{/* Must be first for AMP */}}
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="{{.Description}}" />
     <meta name="msapplication-TileImage"
@@ -19,12 +19,10 @@
     {{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
     <link rel="preload" as="script" href="{{ $ampCorePath }}">{{ end }}
     <link rel="preconnect dns-prefetch" href="https://media.fashionunited.com" crossorigin="anonymous" />
+    {{/* Preload font face example:
     <link rel="preload" href="https://media.fashionunited.com/media/fonts/futura-cond-700.latin.woff2" as="font"
         type="font/woff2" crossorigin>
-    <link rel="preload" href="https://media.fashionunited.com/media/fonts/FuturaRegular.latin.woff2" as="font"
-        type="font/woff2" crossorigin>
-    <link rel="preload" href="https://media.fashionunited.com/media/fonts/FuturaBold.latin.woff2" as="font"
-        type="font/woff2" crossorigin>
+    */}}
     {{ if .Params.googleFontLink }}
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous">{{ end }}
     <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com/" crossorigin="anonymous">
@@ -55,9 +53,10 @@
         color="#5bbad5" />
 
     {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-    <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" /> {{/*  Android address bar color  */}}
+    <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" /> {{/* Android address bar color */}}
     {{ partial "seo/main" . }}
     {{ if .Params.googleFontLink }}
     <link rel="stylesheet" href="{{ .Params.googleFontLink }}">{{ end }}
