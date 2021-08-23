@@ -2,7 +2,7 @@
 // https://zellwk.com/blog/css-architecture-3/
 
 @use "sass:meta";
-// @import "font-face/helvetica-now-display-black";
+// @use "font-face/helvetica-now-display-black";
 @use "mixins/css-grid";
 
 // Example: set border radius to 0
@@ -38,4 +38,4 @@
 @include meta.load-css('tabs');
 @include meta.load-css('tags');
 
-// // @import "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width
+// // @use "./lib/fu-accordion-standalone"; // Important, for embedders to not break page width

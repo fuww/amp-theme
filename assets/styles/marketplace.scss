@@ -4,11 +4,11 @@
   this is just a minimal styling entry point for your custom stylesheet
   you can replace the following styles with your own stylesheet
   or import them writing:
-  @import 'path/to/your/stylesheet.scss'
+  @use 'path/to/your/stylesheet.scss'
 
 */
 @use "sass:string";
-@use "sass:meta";
+// @use "sass:meta";
 
 // Customized:
 
@@ -23,34 +23,34 @@
 
 // Defaults:
 
-// @import "accordion";
-// @import "author";
-// @import "anchors";
-@import "blogpost";
-// @import "breadcrumbs";
-@import "button";
-// @import "card";
-// @import "data-table";
+// @use "accordion";
+// @use "author";
+// @use "anchors";
+@use "blogpost";
+// @use "breadcrumbs";
+@use "button";
+// @use "card";
+// @use "data-table";
 
-// @import "embedder";
-// @import "employer-branding-page";
-// @import "figure";
-@import "footer";
-// @import "form";
-@import "grid"; // important! contains most basscss stuff
-// @import "header-link";
-@import "hero";
-// @import "list";
-// @import "mdc-branding";
-// @import "mdc-list-embedders"; // big, should only load on pages with embedders...
-@import "navigation";
-@import "navbar";
-// @import "statistics_page";
-// @import "table";
-// @import "tabs";
-// @import "tags";
+// @use "embedder";
+// @use "employer-branding-page";
+// @use "figure";
+@use "footer";
+// @use "form";
+@use "grid"; // ./lib/sm-margin error // important! contains most basscss stuff
+// @use "header-link";
+@use "hero";
+// @use "list";
+// @use "mdc-branding";
+// @use "mdc-list-embedders"; // big, should only load on pages with embedders...
+@use "navigation";
+@use "navbar";
+// @use "statistics_page";
+// @use "table";
+// @use "tabs";
+// @use "tags";
 
-// @import 'styles.scss'; // to use the default styling
+// @use 'styles.scss'; // to use the default styling
 
 
-@import "marketplace-section/marketplace-section";
+@use "marketplace-section/marketplace-section";

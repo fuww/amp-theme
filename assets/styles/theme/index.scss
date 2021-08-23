@@ -1,5 +1,5 @@
-@import 'basscss-addons/modules/background-colors/index.css';
-@import 'basscss-addons/modules/colors/index.css'; // http://clrs.cc/
+@use "./background-colors";
+@use "./colors"; // http://clrs.cc/
 
 /* Color */
 $theme-primary: #ea0051 !default; // #0022ff blue FF5719 orange (#F37022 = Hermes orange)

@@ -1,0 +1,56 @@
+{
+  "_args": [
+    [
+      "basscss-grid@2.0.0",
+      "/home/joost/git/fu/amp-theme"
+    ]
+  ],
+  "_from": "basscss-grid@2.0.0",
+  "_id": "basscss-grid@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-b0wxmOeGo4Up+DYrw7O85SVME2k=",
+  "_location": "/basscss-grid",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "basscss-grid@2.0.0",
+    "name": "basscss-grid",
+    "escapedName": "basscss-grid",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "/basscss"
+  ],
+  "_resolved": "https://registry.npmjs.org/basscss-grid/-/basscss-grid-2.0.0.tgz",
+  "_spec": "2.0.0",
+  "_where": "/home/joost/git/fu/amp-theme",
+  "author": {
+    "name": "Brent Jackson"
+  },
+  "bugs": {
+    "url": "https://github.com/basscss/basscss/issues"
+  },
+  "description": "CSS grid module for Basscss",
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "postcss-cli": "^2.5.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.0",
+    "postcss-import": "^8.0.2"
+  },
+  "homepage": "https://github.com/basscss/basscss",
+  "license": "MIT",
+  "name": "basscss-grid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basscss/basscss.git"
+  },
+  "scripts": {
+    "prepublish": "mkdir -p css && postcss index.css -u postcss-import -u postcss-custom-media -u postcss-custom-properties -u autoprefixer -o css/grid.css"
+  },
+  "style": "index.css",
+  "version": "2.0.0"
+}
