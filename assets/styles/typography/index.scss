@@ -81,8 +81,10 @@ multiline-ellipsis.$line-height: 1.5;
     // Basscss typography variables
     // https://basscss.com/v7/docs/base-typography/
     // body {
-    --line-height: #{multiline-ellipsis.$line-height};
-    --body-font-size: #{$body-font-size};
+    --font-family: #{$font-family}; // basscss-typography
+    --line-height: #{multiline-ellipsis.$line-height}; // basscss-typography
+    --body-font-size: #{$body-font-size}; // basscss-typography
+
 
     // p {
     --paragraph-margin-top: 1em;
@@ -101,7 +103,7 @@ multiline-ellipsis.$line-height: 1.5;
     /* 16px */
     --h6: #{map.get($font-size-values, h6)};
     /* 22px */
-    --font-family: #{$font-family};
+
     --heading-font-family: #{$heading-font-family};
     --font-system: #{$font-system};
     --font-system-serif: #{$font-system-serif};
@@ -113,15 +115,15 @@ multiline-ellipsis.$line-height: 1.5;
 }
 
 .heading-font-family {
-    font-family: $heading-font-family;
+    font-family: var(--heading-font-family);
 }
 
 .font-family {
-    font-family: $font-family;
+    font-family: var(--font-family);
 }
 
 .read-font-family {
-    font-family: $read-font-family
+    font-family: var(--read-font-family);
 }
 
 .upper {
@@ -133,7 +135,7 @@ multiline-ellipsis.$line-height: 1.5;
 }
 
 table {
-    font-family: $font-family;
+    font-family: var(--font-family);
 }
 
 // typography found in other css files, often wrong, duplicate
@@ -142,15 +144,15 @@ table {
 
 .mdc-list-item__text,
 .mdc-list-item__secondary-text {
-    font-family: $font-system;
+    font-family: var(--font-system);
 }
 
 hr.section-divider:before {
-    font-family: $font-system-serif;
+    font-family: var(--font-system-serif);
 }
 
 .imageCaption {
-    font-family: $font-family;
+    font-family: var(--font-family);
 }
 
 /* this is the "root" in "root em." */
@@ -159,7 +161,7 @@ html {
 }
 
 body {
-    font-family: $font-family;
+    font-family: var(--font-family);
 
     // Improve font rendering
     text-rendering: optimizeLegibility;
@@ -238,7 +240,7 @@ nav.breadcrumbs ul li+li:before,
 .footer p,
 .footer a.h5.block,
 .mdc-tab {
-    font-family: $heading-font-family;
+    font-family: var(--heading-font-family);
 }
 
 .blogpost .title,
@@ -353,7 +355,7 @@ p,
 .body1 p,
 .body2,
 .body2 p {
-    font-family: $font-family;
+    font-family: var(--font-family);
 }
 
 p,

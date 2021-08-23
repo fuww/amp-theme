@@ -7,7 +7,7 @@ module.exports = {
     },
     'postcss-custom-media': {},
     'postcss-custom-properties': {
-      preserve: true
+      // preserve: true // for debugging only, adds ~10kb to CSS
     },
     // 'postcss-calc': {},
     'autoprefixer': {},
