@@ -1,8 +1,17 @@
-.nx-headerbar i {
-  // color: $theme-primary;
-  // color: var(--theme-primary);
-  color: #000
+.nx-headerbar {
+  i {
+    // color: $theme-primary;
+    // color: var(--theme-primary);
+    color: #000;
+  }
+
+  a {
+    letter-spacing: -0.025rem;
+    font-size: var(--body2);
+  }
 }
+
+
 
 svg {
   // fill: $theme-primary;

@@ -10,8 +10,10 @@
 @use "sass:string";
 @use "sass:meta";
 
-@use "font-face/futura-condensed";
-@use "font-face/fu-futura-pt";
+// When using web fonts, add the font-face like so:
+// @use "font-face/futura-pt";
+// Also, to prevent faux bold, add $heading-weight-h1-h4: 400 to the typography 
+// @use below to change the heading weight.
 
 // Customized:
 
@@ -21,8 +23,10 @@
 @use "theme"with ($theme-primary: #EA0051);
 @use "elevation"with ($elevation-card: 0px 0px 17px rgba(0, 0, 0, 0.3));
 
-@use "typography"with ($heading-font-family: string.unquote("'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"),
-  $font-family: string.unquote("'FU Futura PT', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"));
+@use "typography"with ($heading-font-family: string.unquote("'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"),
+  $font-family: string.unquote("'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"),
+  $heading-weight-h5: 700,
+  $heading-weight-h6: 700);
 
 // Defaults:
 

@@ -16,7 +16,7 @@ module.exports = {
   },
   performance: {
     hints: 'error',
-    maxEntrypointSize: 750000,
+    maxEntrypointSize: 550000, // 50 is the old, 75 is the new limit for AMP
     maxAssetSize: 300000,
   },
   optimization: {

@@ -10,9 +10,6 @@
 @use "sass:string";
 @use "sass:meta";
 
-@use "font-face/futura-condensed";
-@use "font-face/fu-futura-pt";
-
 // Customized:
 
 @use "shape"with ($shape-small-component-radius: 0px,
@@ -21,8 +18,8 @@
 @use "theme"with ($theme-primary: #EA0051);
 // @use "elevation"with ($elevation-card: 0px 0px 17px rgba(0, 0, 0, 0.3));
 
-@use "typography"with ($heading-font-family: string.unquote("'Futura PT Web Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"),
-  $font-family: string.unquote("'FU Futura PT', 'HelveticaNeue-CondensedBold', 'Helvetica Neue Condensed Bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"));
+@use "typography"with ($heading-font-family: string.unquote("'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"),
+  $font-family: string.unquote("'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"));
 
 // Defaults:
 

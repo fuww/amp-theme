@@ -2,41 +2,41 @@
 // --social-icon-color: black;
 // --tab-underline-color: black;
 // --tab-color:white;
-// --primary-font-family-ebp:
-// --secondary-font-family-ebp
+// --font1-ebp:
+// --font2-ebp
 // --theme-primary-ebp
 
 :root {
-    --primary-font-family-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
-    --secondary-font-family-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
+--font1-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
+--font2-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
 
-    --theme-primary-ebp: #36332f;
+--theme-primary-ebp: #36332f;
 
-    --primary-font-weight-ebp: 300;
-    --secondary-font-weight-ebp: 700;
+--primary-font-weight-ebp: 300;
+--secondary-font-weight-ebp: 700;
 
-    --tab-color: #000;
-    --tab-underline-color: #EA0051;
+--tab-color: #000;
+--tab-underline-color: #EA0051;
 
-    --social-icon-color: #000;
+--social-icon-color: #000;
 }
 
 .fu-branding-social-media svg {
-    margin: 0 15px;
-    max-width: 30px
+margin: 0 15px;
+max-width: 30px
 }
 
 .ebp {
-    .accordion___header {
-        padding: 20px;
-        background-color: var(--theme-primary-ebp);
-        color: var(--theme-primary-ebp, #FFF);
-        font-family: var(--heading-font-family); // must be var! overwritten by EBP
-    }
+.accordion___header {
+padding: 20px;
+background-color: var(--theme-primary-ebp);
+color: var(--theme-primary-ebp, #FFF);
+font-family: var(--heading-font-family); // must be var! overwritten by EBP
+}
 
-    .i-amp-accordion section {
-        margin: 0 20px;
-    }
+.i-amp-accordion section {
+margin: 0 20px;
+}
 }
 
 .ebp h1,
@@ -45,29 +45,29 @@
 .ebp h4,
 .ebp h5,
 .ebp h6 {
-    font-family: var(--secondary-font-family-ebp);
-    font-weight: var(--secondary-font-weight-ebp);
+font-family: var(--font2-ebp);
+font-weight: var(--secondary-font-weight-ebp);
 }
 
 .ebp li,
 .ebp p {
-    font-family: var(--primary-font-family-ebp);
-    font-weight: var(--primary-font-weight-ebp);
+font-family: var(--font1-ebp);
+font-weight: var(--primary-font-weight-ebp);
 }
 
 .ebp li {
-    line-height: 1.5
+line-height: 1.5
 }
 
 .ebp amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
-    color: var(--tab-color);
-    border-bottom: 2px solid var(--tab-underline-color);
+color: var(--tab-color);
+border-bottom: 2px solid var(--tab-underline-color);
 }
 
 .fu-branding-social-media svg path {
-    fill: var(--social-icon-color);
+fill: var(--social-icon-color);
 }
 
 amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
-    padding: 2.5rem 0;
+padding: 2.5rem 0;
 }
