@@ -4,8 +4,8 @@
 @use "sass:string";
 @use "./multiline-ellipsis";
 @use "../theme";
-@import 'basscss-typography/index.css';
-@import 'basscss-type-scale/index.css';
+@import "basscss-typography";
+@import "basscss-type-scale";
 
 @function get-letter-spacing_($tracking, $font-size) {
     @return math.div($tracking, $font-size * 16) * 1em;
