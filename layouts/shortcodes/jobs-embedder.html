@@ -1,3 +1,7 @@
-<div class="fu-embed-jobs embedder--responsive" data-component="CompanyJobs" data-category="{{ .Get "category" }}" data-locales="{{ .Get "locale" }}"
-  data-limit="{{ .Get "limit" }}" {{if .Get "id"}}data-profile_id="{{.Get "id"}}" {{end}}
-  {{if .Get "keywords"}}data-keywords="{{.Get "keywords"}}" {{end}}></div>
+{{/* {{ partial "fu/jobs-embedder" . }} */}}
+<div {{ with .Get "category" }}data-category="{{ . }}"{{end}}
+{{ with .Get "locale" }} data-locales="{{ . }}"{{ end }}
+{{ if (.Get "limit") }} data-limit="{{ with .Get "limit" }}{{ . }}{{else}}20{{ end }}"{{ end }}
+{{ with .Get "id" }} data-profile_id="{{ . }}" {{end}}
+{{ with .Get "keywords" }} data-keywords="{{ . }}" {{end}} class="fu-embed-jobs embedder--responsive" data-component="CompanyJobs" 
+></div>
