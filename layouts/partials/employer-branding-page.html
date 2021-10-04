@@ -1,10 +1,10 @@
-// we may want to create fallbacks for these:
-// --social-icon-color: black;
-// --tab-underline-color: black;
-// --tab-color:white;
-// --font1-ebp:
-// --font2-ebp
-// --theme-primary-ebp
+/* we may want to create fallbacks for these:
+--social-icon-color: black;
+--tab-underline-color: black;
+--tab-color:white;
+--font1-ebp:
+--font2-ebp
+--theme-primary-ebp */
 
 :root {
 --font1-ebp: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -26,17 +26,15 @@ margin: 0 15px;
 max-width: 30px
 }
 
-.ebp {
-.accordion___header {
+.ebp .accordion___header {
 padding: 20px;
 background-color: var(--theme-primary-ebp);
 color: var(--theme-primary-ebp, #FFF);
-font-family: var(--heading-font-family); // must be var! overwritten by EBP
+font-family: var(--heading-font-family); /* must be var! overwritten by EBP */
 }
 
 .i-amp-accordion section {
 margin: 0 20px;
-}
 }
 
 .ebp h1,
