@@ -38,7 +38,7 @@
     <ul class="list-reset center m0 p0 flex justify-center nowrap">
       {{- $currentPage := . -}}
       {{ range .Site.Menus.top -}}
-      <li class="nx-nav-item my2 upper {{ if $currentPage.IsMenuCurrent "top" . }}active{{ end }}">
+      <li class="nx-nav-item my2 {{ if $currentPage.IsMenuCurrent "top" . }}active{{ end }}">
         <a class="text-decoration-none block" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
       </li>
       {{- end }}
