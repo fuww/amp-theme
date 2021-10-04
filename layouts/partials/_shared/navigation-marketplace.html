@@ -39,7 +39,7 @@
         <ul class="list-reset center m0 p0 flex justify-center nowrap">
             {{- $currentPage := . -}}
             {{ range .Site.Menus.marketplace -}}
-            <li class="nx-nav-item my2 upper {{ if $currentPage.IsMenuCurrent "marketplace" . }}active{{ end }}">
+            <li class="nx-nav-item my2 {{ if $currentPage.IsMenuCurrent "marketplace" . }}active{{ end }}">
                 <a class="{{ if $currentPage.IsMenuCurrent "marketplace" . }}active theme-primary{{else}}black-high{{ end }}"
                     href="{{ .URL | absLangURL }}">{{ .Name }}</a>
             </li>
