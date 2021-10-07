@@ -1,5 +1,6 @@
 {{ partial "structure/head-amp" . }} {{/* Body starts inside head-amp */}}
 <div></div>
+{{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
 {{ block "hero" . }}
 <header class="hero header-hero">
     {{ partial "_shared/hero" . }}
@@ -25,6 +26,5 @@
     </div>
 </main>
 {{ block "main-blank" . }}{{ end }}
-{{ block "navigation" . }}{{ partial "_shared/navigation" . }}{{ end }}
 {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}
 {{ partial "structure/footer-amp-scripts" . }}
