@@ -1,0 +1,32 @@
+{{ define "title"}}
+<div></div>
+{{ end }}
+{{ define "main"}}
+<div class="p2 bg-white grid-content layout-newsletter mdl-grid mdl-grid--no-spacing">
+  <h1 class="mb3">{{ .Params.header_title }}</h1>
+  <div class="pb2 sm-col sm-col-6 md-col-6 lg-col-6">
+    <p class="fu-main-section__text"> {{ .Params.text1 }} </p>
+    <blockquote class="fu-main-section__text--diff"> <strong>{{ .Params.text2bold }}</strong>
+      {{ .Params.text2regular }}
+      <span class="bold italic">{{ .Params.text2bolditalic }}</span>
+    </blockquote>
+    <p class="fu-main-section__text"> {{ .Params.text3 }} </p>
+    <div class="arrow-right"></div>
+  </div>
+  <div class="sm-px2 md-px3 pb4 sm-col sm-col-6 md-col-6 lg-col-6">
+    <div id="mc_embed_signup">
+      <div class="page-form center">
+        {{ .Content }}
+      </div>
+      <div class="mb2 center">
+        <a href="/newsletter/subscribe" class="bg-white col-12 btn btn-outline center mt0 mb3">Subscribe Now</a>
+      </div>
+    </div>
+    <div class="block col-12 body2 tiny">
+      <em class="">{{ .Params.privacypolicy_em }}: </em>
+      {{ .Params.privacypolicy }} <a class="bold underline" href='https://fashionunited.info/privacy'>{{
+        .Params.privacypolicy_url }}</a>.
+    </div>
+  </div>
+</div>
+{{ end }}
