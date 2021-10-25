@@ -1,4 +1,4 @@
-<footer class="pt4">
+<footer class="pt4 mt4">
   <div class="container">
     {{/* <div class="clearfix mxn2"> */}}
       <div class="mx-auto">
@@ -6,13 +6,13 @@
           <div class="col col-6 md-col-2">
             <ul class="list-reset">
               <li>
-                <h4 class="h4 my1">
+                <h4 class="h5 my1">
                   {{ .Site.Params.footer1Title}}
                 </h4>
               </li>
               {{- $currentPage := . -}}
               {{ range .Site.Menus.footer1 -}}
-              <li class="grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer1" . }}active{{
+              <li class="footer-list-item line-height-1 grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer1" . }}active{{
                 end }}">
                 <a class="" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
@@ -22,13 +22,13 @@
           <div class="col col-6 md-col-2">
             <ul class="list-reset">
               <li>
-                <h4 class="h4 my1">
+                <h4 class="h5 my1">
                   {{ .Site.Params.footer2Title}}
                 </h4>
               </li>
               {{- $currentPage := . -}}
               {{ range .Site.Menus.footer2 -}}
-              <li class="grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer2" . }}active{{
+              <li class="footer-list-item line-height-1 grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer2" . }}active{{
                 end }}">
                 <a class="" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
@@ -38,13 +38,13 @@
           <div class="col col-6 md-col-2">
             <ul class="list-reset">
               <li>
-                <h4 class="h4 my1">
+                <h4 class="h5 my1">
                   {{ .Site.Params.footer3Title}}
                 </h4>
               </li>
               {{- $currentPage := . -}}
               {{ range .Site.Menus.footer3 -}}
-              <li class="grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer3" . }}active{{
+              <li class="footer-list-item line-height-1 grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer3" . }}active{{
                 end }}">
                 <a class="" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
@@ -54,13 +54,13 @@
           <div class="col col-6 md-col-2">
             <ul class="list-reset">
               <li>
-                <h4 class="h4 my1">
+                <h4 class="h5 my1">
                   {{ .Site.Params.footer4Title }}
                 </h4>
               </li>
               {{- $currentPage := . -}}
               {{ range .Site.Menus.footer4 -}}
-              <li class="grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer4" . }}active{{
+              <li class="footer-list-item line-height-1 grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer4" . }}active{{
                 end }}">
                 <a class="" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
@@ -70,13 +70,13 @@
           <div class="col col-6 md-col-2">
             <ul class="list-reset">
               <li>
-                <h4 class="h4 my1">
+                <h4 class="h5 my1">
                   {{ .Site.Params.footer5Title}}
                 </h4>
               </li>
               {{- $currentPage := . -}}
               {{ range .Site.Menus.footer5 -}}
-              <li class="grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer5" . }}active{{
+              <li class="footer-list-item line-height-1 grey py1 block text-decoration-none {{ if $currentPage.IsMenuCurrent " footer5" . }}active{{
                 end }}">
                 <a class="" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
@@ -85,7 +85,7 @@
           </div>
         </div>
       </div>
-      <div class="p2 pb4">
+      <div class="p4 pb4">
         <p class="center mb0">
           <strong>{{ .Site.Params.footerMoreInfoTitle }}</strong>{{ .Site.Params.footerMoreInfotext1 }}
         </p>
