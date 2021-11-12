@@ -3257,7 +3257,18 @@ h6.line-height-2 {
   }
 }
 
+.featured-flex {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: block;
+}
+
 @media (min-width: 52.06rem) {
+  .featured-flex {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+  }
   .mkt-featured:after {
     content: '';
     position: absolute;
