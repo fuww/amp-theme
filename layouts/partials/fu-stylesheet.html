@@ -780,11 +780,23 @@ h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .head
 
 h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .header-link,h6:hover .header-link{opacity:1}
 
-.nx-headerbar{max-width:1440px;margin:0 auto;-webkit-box-shadow:none;box-shadow:none}
+.nx-headerbar{-webkit-box-shadow:none;box-shadow:none;border-bottom:1px solid #dbdbdb}
 
 .nx-headerbar-nav{-webkit-box-flex:0;-ms-flex:none;flex:none}
 
 .nx-headerbar-title{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;margin:23px 0}
+
+.nx-nav-links{height:40px;overflow-x:scroll}
+
+.nx-nav-links ul{display:-webkit-box;display:-ms-flexbox;display:flex}
+
+@media(min-width: 600px){.nx-nav-links ul{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}
+
+@media(min-width: 600px){.nx-nav-links{overflow-x:auto}}
+
+.nx-header-bar-center{max-width:1440px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;width:100%}
+
+.nx-nav-item .nav-item-link{font-size:14px;line-height:40px}
 
 @media(min-width: 52em){.nx-headerbar-nav{-webkit-box-flex:1;-ms-flex:1;flex:1}}
 

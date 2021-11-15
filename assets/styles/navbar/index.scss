@@ -3,9 +3,8 @@
 $navbar-height: 64px;
 
 .nx-headerbar {
-  max-width: 1440px;
-  margin: 0 auto;
   box-shadow: none;
+  border-bottom: 1px solid #dbdbdb;
 
   &-nav {
     flex: none;
@@ -15,6 +14,36 @@ $navbar-height: 64px;
     display: flex;
     width: 100%;
     margin: 23px 0;
+  }
+}
+.nx-nav-links {
+  height: 40px;
+  overflow-x: scroll;
+
+  ul {
+    display: flex;
+
+    @media(min-width: 600px) {
+     justify-content: center;
+    }
+  }
+
+  @media(min-width: 600px) {
+    overflow-x: auto;
+  }
+}
+
+.nx-header-bar-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+}
+
+.nx-nav-item {
+  .nav-item-link {
+    font-size: 14px;
+    line-height: 40px;
   }
 }
 

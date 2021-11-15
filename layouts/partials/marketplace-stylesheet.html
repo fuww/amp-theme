@@ -704,11 +704,23 @@ footer .container .mx-auto .clearfix{display:-webkit-box;display:-ms-flexbox;dis
 
 @media(min-width: 840px){.grid-wrapper{grid-template-columns:1fr 3fr 1fr;grid-template-areas:"breadcrumbs breadcrumbs  breadcrumbs" "nav    header  sidebar" "nav    content sidebar" "nav    content ad" "footer footer  footer"}.main-nav nav ul{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}
 
-.nx-headerbar{max-width:1440px;margin:0 auto;-webkit-box-shadow:none;box-shadow:none}
+.nx-headerbar{-webkit-box-shadow:none;box-shadow:none;border-bottom:1px solid #dbdbdb}
 
 .nx-headerbar-nav{-webkit-box-flex:0;-ms-flex:none;flex:none}
 
 .nx-headerbar-title{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;margin:23px 0}
+
+.nx-nav-links{height:40px;overflow-x:scroll}
+
+.nx-nav-links ul{display:-webkit-box;display:-ms-flexbox;display:flex}
+
+@media(min-width: 600px){.nx-nav-links ul{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}
+
+@media(min-width: 600px){.nx-nav-links{overflow-x:auto}}
+
+.nx-header-bar-center{max-width:1440px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;width:100%}
+
+.nx-nav-item .nav-item-link{font-size:14px;line-height:40px}
 
 @media(min-width: 52em){.nx-headerbar-nav{-webkit-box-flex:1;-ms-flex:1;flex:1}}
 
