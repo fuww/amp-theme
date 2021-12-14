@@ -45,7 +45,7 @@
     <ul class="list-reset m0 p0 nx-label">
       {{- $currentPage := . -}}
       {{ range .Site.Menus.sidebar -}}
-      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm {{ if $currentPage.IsMenuCurrent " top"
+      <li class="nx-nav-item border-bottom upper nx-sidebar-nav-item nx-title-sm {{ if $currentPage.IsMenuCurrent "top" . }}active{{ end }}">
         . }}active{{ end }}">
         <a class="nx-nav-link pl1 pr4 py2 inline-block" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
       </li>
