@@ -262,6 +262,7 @@ h1,
     letter-spacing: get-letter-spacing_(-1.5, 3.75);
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     margin: 0 0 24px;
 }
 
@@ -273,6 +274,7 @@ h2,
     letter-spacing: get-letter-spacing_(-0.5, 2.125);
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     // margin: 12px 0;
     margin: 0;
     margin-top: 3rem;
@@ -287,6 +289,7 @@ h3,
     letter-spacing: normal;
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     // margin: 12px 0;
     margin: 0;
     margin-top: 3rem;
@@ -301,6 +304,7 @@ h4,
     letter-spacing: get-letter-spacing_(.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     margin: 12px 0;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
@@ -314,6 +318,7 @@ h5,
     letter-spacing: get-letter-spacing_(0.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     margin: 12px 0;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
@@ -327,6 +332,7 @@ h6,
     letter-spacing: get-letter-spacing_(0.25, 1.25);
     text-decoration: inherit;
     text-transform: inherit;
+    word-break: break-word;
     margin: 12px 0;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
