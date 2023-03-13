@@ -1,3 +1,3 @@
-module gitlab.com/fuww/amp-theme
+module gitlab.com/fashionunited/public/amp-theme
 
 go 1.16
